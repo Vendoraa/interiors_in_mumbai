@@ -17,7 +17,7 @@ const AboutUs = () => {
     return (
         <>
             <SEO
-                title="About Us"
+                title="Expert Interior Designers | 35+ Years Experience"
                 description="Learn about Interiors in Mumbai, a team of expert designers and craftsmen with over 35 years of experience in transforming living spaces in Mumbai."
                 keywords="About Interiors in Mumbai, Interior Design Experts, Experienced Designers Mumbai, Home Renovation Specialists, Our Team"
             />

@@ -2,21 +2,21 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { IMAGES } from '../constants/theme'
 
-const Sidebar=[
-    {image:IMAGES.service1},
-    {image:IMAGES.service2},
-    {image:IMAGES.service3},
-    {image:IMAGES.service4},
-    {image:IMAGES.service5},
-    {image:IMAGES.service6},
+const Sidebar = [
+    { image: IMAGES.service1 },
+    { image: IMAGES.service2 },
+    { image: IMAGES.service3 },
+    { image: IMAGES.service4 },
+    { image: IMAGES.service5 },
+    { image: IMAGES.service6 },
 ]
-const ContentSidebar = ({openSide}) => {
+const ContentSidebar = ({ openSide }) => {
     return (
         <>
             <div className={`contact-sidebar ${openSide ? 'active' : ''}`}>
                 <div className="contact-box">
                     <div className="logo-contact logo-dark">
-                        <Link to={'/'}><img src={IMAGES.logo1} alt="" /></Link>
+                        <Link to={'/'}><img src={IMAGES.logo1} alt="Interiors in Mumbai logo" /></Link>
                     </div>
                     <div className="m-b50 contact-text">
                         <div className="dz-title">
@@ -32,21 +32,21 @@ const ContentSidebar = ({openSide}) => {
                     </div>
                     <div className="widget bg-white widget_gallery">
                         <ul id="lightgallery" className="lightgallery m-b0">
-                          {
-                            Sidebar.map((item, ind)=>(
-                                <li key={ind}>
-                                    <div 
-                                        className="dlab-post-thum dlab-img-effect"
+                            {
+                                Sidebar.map((item, ind) => (
+                                    <li key={ind}>
+                                        <div
+                                            className="dlab-post-thum dlab-img-effect"
                                         >
-                                        <span className="lightimg">
-                                            <img src={item.image} alt="" />
-                                        </span>
-                                    </div>
-                                </li>
+                                            <span className="lightimg">
+                                                <img src={item.image} alt="Interior design project gallery" />
+                                            </span>
+                                        </div>
+                                    </li>
 
-                            ))
-                          }
-                           
+                                ))
+                            }
+
                         </ul>
                     </div>
                 </div>

@@ -5,16 +5,16 @@ import { Autoplay } from 'swiper'
 import { Link } from 'react-router-dom'
 
 const testimonial2 = [
-    {id:1, testimonial2Img: IMAGES.pic13, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
-    {id:2, testimonial2Img: IMAGES.pic14, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
-    {id:3, testimonial2Img: IMAGES.pic15, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
-    {id:4, testimonial2Img: IMAGES.pic16, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
-    {id:5, testimonial2Img: IMAGES.pic17, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
-    {id:6, testimonial2Img: IMAGES.pic13, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
-    {id:7, testimonial2Img: IMAGES.pic14, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
-    {id:8, testimonial2Img: IMAGES.pic15, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
-    {id:9, testimonial2Img: IMAGES.pic16, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
-    {id:10, testimonial2Img: IMAGES.pic17, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
+    { id: 1, testimonial2Img: IMAGES.pic13, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
+    { id: 2, testimonial2Img: IMAGES.pic14, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
+    { id: 3, testimonial2Img: IMAGES.pic15, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
+    { id: 4, testimonial2Img: IMAGES.pic16, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
+    { id: 5, testimonial2Img: IMAGES.pic17, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
+    { id: 6, testimonial2Img: IMAGES.pic13, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
+    { id: 7, testimonial2Img: IMAGES.pic14, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
+    { id: 8, testimonial2Img: IMAGES.pic15, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
+    { id: 9, testimonial2Img: IMAGES.pic16, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
+    { id: 10, testimonial2Img: IMAGES.pic17, title: "Amelia Stanley", subtitle: "Fitness Zumba Coach", },
 ]
 const Testimonial2 = () => {
     return (
@@ -27,8 +27,8 @@ const Testimonial2 = () => {
                     speed={1000}
                     loop={true}
                     autoplay={{
-                        delay:500,
-                        disableOnInteraction:false
+                        delay: 500,
+                        disableOnInteraction: false
                     }}
                     breakpoints={{
                         1500: {
@@ -50,11 +50,11 @@ const Testimonial2 = () => {
                 >
                     <div className="swiper-wrapper">
                         {
-                            testimonial2.map((i,ind) => (
+                            testimonial2.map((i, ind) => (
                                 <SwiperSlide className="swiper-slide" key={ind}>
                                     <div className="card dz-team style-1">
                                         <div className="card-media">
-                                            <img src={i.testimonial2Img} alt="" />
+                                            <img src={i.testimonial2Img} alt={`${i.name} - Interior design client testimonial`} />
                                         </div>
                                         <div className="card-body">
                                             <h5 className="dz-name m-b5"><Link></Link>{i.title}</h5>

@@ -14,7 +14,7 @@ const Services = () => {
     return (
         <>
             <SEO
-                title="Our Services"
+                title="Interior Design Services Mumbai | Residential & Commercial"
                 description="Explore our wide range of interior design services in Mumbai, including residential design, commercial spaces, turnkey projects, and custom furniture."
                 keywords="Interior Design Services Mumbai, Residential Interiors, Commercial Interior Design, Turnkey Projects, Custom Furniture Design"
             />

@@ -15,7 +15,7 @@ const CommanBanner = (props) => {
             >
                 <div className="container-fluid">
                     <div className="dz-bnr-inr-entry">
-                        <h1>{props.mainTitle}</h1>
+                        <h2>{props.mainTitle}</h2>
                         <nav className="breadcrumb-row">
                             <ul className="breadcrumb">
                                 <li className="breadcrumb-item"><Link to={"/"}>{props.parentTitle}</Link></li>
