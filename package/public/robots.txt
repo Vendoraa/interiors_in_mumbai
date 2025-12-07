@@ -3,4 +3,4 @@ User-agent: *
 Disallow: /private/
 Allow: /
 
-Sitemap: https://shrishti-interiors.com/sitemap.xml
+Sitemap: https://interiorsinmumbai.com/sitemap.xml
