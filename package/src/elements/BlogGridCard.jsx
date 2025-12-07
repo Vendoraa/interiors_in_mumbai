@@ -8,7 +8,7 @@ const BlogGridCard = (props) => {
             <div className="col-xl-6 col-lg-6 card-container">
                 <div className="dz-card blog-grid style-1 m-b50 aos-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <div className="dz-media">
-                        <Link to="/blog-details"><img src={props.image} alt="" /></Link>
+                        <Link to="/blog-details"><img src={props.image} alt={props.title || "Interior design blog post"} /></Link>
                     </div>
                     <div className="dz-info">
                         <div className="dz-meta">

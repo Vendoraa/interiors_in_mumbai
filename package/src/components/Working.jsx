@@ -19,14 +19,14 @@ const Working = () => {
                 <div className="col-lg-6">
                     <div className="dz-media">
                         <div className="img1 aos-item">
-                            <img src={pic1} alt="" />
+                            <img src={pic1} alt="Interior design consultation process" />
                         </div>
 
                         <div className="img2 aos-item" data-aos="fade-up">
-                            <img src={pic2} alt="" />
+                            <img src={pic2} alt="3D design and planning" />
                         </div>
                         <div className="img3 aos-item">
-                            <img src={pic3} alt="" />
+                            <img src={pic3} alt="Project execution and delivery" />
                         </div>
                     </div>
                 </div>

@@ -43,7 +43,7 @@ const Progress = () => {
                         </div>
                         <div className="col-lg-6 aos-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                             <div className="content-media right">
-                                <img src={IMAGES.progress} alt="" />
+                                <img src={IMAGES.progress} alt="Interior design skills and expertise visualization" />
                             </div>
                         </div>
                     </div>

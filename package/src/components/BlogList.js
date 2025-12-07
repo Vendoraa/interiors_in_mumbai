@@ -44,7 +44,7 @@ export const BlogList = () => {
     <div className="content-inner">
       <div className="container">
         <div className="blog-list">
-          <h1>Latest Blog Posts</h1>
+          <h2>Latest Blog Posts</h2>
           <div className="row">
             {blogPosts.map(post => (
               <div key={post.sys.id} className="col-lg-6 col-md-6">

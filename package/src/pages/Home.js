@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Parallax, Pagination, Navigation } from "swiper";
+import { Parallax } from "swiper";
 
 
 import pic2 from '../assets/images/main-slider/pic2.png';
@@ -26,7 +26,7 @@ const Home = () => {
     return (
         <>
             <SEO
-                title="Home"
+                title="Luxury Interior Design & Home Renovation Services"
                 description="Leading interior designers in Mumbai specializing in luxury home renovations, modern office designs, and complete turnkey projects."
                 keywords="Interior Designers Mumbai, Luxury Interiors, Home Renovation Mumbai, Office Design, Turnkey Interior Contractors, Best Interior Designers"
             />
@@ -45,18 +45,15 @@ const Home = () => {
                             slidesPerView={1}
                             parallax={true}
                             speed={1500}
-                            loop={true}
-                            pagination={{
-                                el: ".pagination-styled",
-                                type: "fraction",
-                            }}
-                            modules={[Pagination, Parallax, Navigation]}
+                            loop={false}
+                            allowTouchMove={false}
+                            modules={[Parallax]}
                         >
                             {
                                 slideImg.map((i, index) => (
                                     <SwiperSlide className="swiper-slide" key={index} tag='div'>
                                         <div className="silder-img overlay-black-light">
-                                            <img src={i.img} data-swiper-parallax="30%" alt="" fetchPriority={index === 0 ? "high" : undefined} loading={index === 0 ? "eager" : "lazy"} />
+                                            <img src={i.img} data-swiper-parallax="30%" alt="Interior design showcase - luxury home renovation by Interiors in Mumbai" fetchPriority={index === 0 ? "high" : undefined} loading={index === 0 ? "eager" : "lazy"} />
                                         </div>
                                         <div className="silder-content" data-swiper-parallax="-40%">
                                             <div className="inner-content">
@@ -72,19 +69,7 @@ const Home = () => {
                             }
 
                         </Swiper>
-                        <div className="slider-one-pagination">
-                            <div className="btn-prev swiper-button-prev1 swiper-button-white"
-                                onClick={() => swiperRef.current.swiper.slidePrev()}
-                                role="button"
-                                aria-label="Previous slide"
-                            ><i className="las la-long-arrow-alt-left"></i>PREV</div>
-                            <div className="swiper-pagination pagination-styled"></div>
-                            <div className="btn-next swiper-button-next1 swiper-button-white"
-                                onClick={() => swiperRef.current.swiper.slideNext()}
-                                role="button"
-                                aria-label="Next slide"
-                            >NEXT<i className="las la-long-arrow-alt-right"></i></div>
-                        </div>
+
                     </div>
                 </div>
                 <section className="section-full content-inner about-bx2" style={{ backgroundImage: `url(${IMAGES.background2})`, backgroundPosition: 'right bottom', backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>

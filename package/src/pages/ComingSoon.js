@@ -60,7 +60,7 @@ const ComingSoon = () => {
         <div className="dz-coming-soon style-4">
           <div className="sidenav-menu">
             <div className="logo">
-              <Link to="/"><img src={IMAGES.comingsoonIcon} alt="" /></Link>
+              <Link to="/"><img src={IMAGES.comingsoonIcon} alt="Interiors in Mumbai icon" /></Link>
             </div>
             <ul className="dz-social-icon">
               <li><Link><span>Facebook</span></Link></li>
@@ -96,13 +96,13 @@ const ComingSoon = () => {
             </div>
           </div>
           <div className="slider-box">
-            <img src={IMAGES.bg8} alt="" />
+            <img src={IMAGES.bg8} alt="Modern interior design background" />
           </div>
         </div>
         <div className={`contact-sidebar ${getIn ? 'active' : ''}`}>
           <div className="contact-box">
             <div className="logo-contact logo-dark">
-              <Link to="/"><img src={IMAGES.logo1} alt="" /></Link>
+              <Link to="/"><img src={IMAGES.logo1} alt="Interiors in Mumbai logo" /></Link>
             </div>
             <div className="m-b50 contact-text">
               <div className="dz-title">
@@ -148,7 +148,7 @@ const ComingSoon = () => {
         <div className="menu-close" onClick={() => setGetIn(false)}></div>
         <Modal className={`inquiry-modal `} show={addfade} onHide={setAddfade} centered>
           <div className="inquiry-adv">
-            <img src={IMAGES.modal} alt="" />
+            <img src={IMAGES.modal} alt="Interior design modal image" />
           </div>
           <div className="contact-modal">
             <div className="modal-header">

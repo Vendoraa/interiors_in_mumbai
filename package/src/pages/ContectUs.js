@@ -64,7 +64,7 @@ const ContectUs = () => {
   return (
     <>
       <SEO
-        title="Contact Us"
+        title="Contact Us | Get Your Free Interior Design Consultation"
         description="Get in touch with Interiors in Mumbai for your next interior design project. Contact us for appointments, quotes, and consultations."
         keywords="Contact Interior Designers Mumbai, Interior Design Consultation, Book Appointment, Interiors in Mumbai Contact, Office Location"
       />

@@ -73,11 +73,11 @@ const BlogGrid = () => {
               {!loading && blogs.length > 0 ? (
                 blogs.map((blog, index) => {
                   const { fields, sys } = blog;
-                  const imageUrl = fields.featuredImage?.fields?.file?.url ? 
-                    `https:${fields.featuredImage.fields.file.url}` : 
+                  const imageUrl = fields.featuredImage?.fields?.file?.url ?
+                    `https:${fields.featuredImage.fields.file.url}` :
                     IMAGES.blogGridPic1;
                   const dateInfo = formatDate(sys.createdAt);
-                  
+
                   return (
                     <div key={sys.id} className="col-xl-6 col-lg-6 card-container">
                       <div className="dz-card blog-grid style-1 m-b50 aos-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay={200 * (index % 3)}>
@@ -128,15 +128,15 @@ const BlogGrid = () => {
                     <div className="dz-card blog-grid style-1 m-b50 aos-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                       <div className="dz-media">
                         <Swiper className="swiper-container post-swiper"
-                        modules={[Navigation]}
-                        ref={swiperRef}
-                        speed={1200}
-                        loop={true}
+                          modules={[Navigation]}
+                          ref={swiperRef}
+                          speed={1200}
+                          loop={true}
                         >
                           {
                             blogGrid.map((item, index) => (
                               <SwiperSlide className="swiper-slide" key={index}>
-                                <Link to="/blog-details"><img src={item.img} alt="" /></Link>
+                                <Link to="/blog-details"><img src={item.img} alt={item.title || "Interior design blog article"} /></Link>
                               </SwiperSlide>
                             ))
                           }
@@ -177,7 +177,7 @@ const BlogGrid = () => {
                     <div className="dz-card blog-grid style-1 m-b50 post-video aos-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                       <div className="dz-media">
                         <Link to="/blog-details">
-                          <img src={IMAGES.blogGridPic3} alt="" />
+                          <img src={IMAGES.blogGridPic3} alt="Interior design inspiration and trends" />
                           <div className="post-video-icon fa fa-play"></div>
                         </Link>
                       </div>
