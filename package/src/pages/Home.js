@@ -27,7 +27,7 @@ const Home = () => {
         <>
             <SEO
                 title="Home"
-                description="Welcome to Interiors in Mumbai. We are the leading interior designers in Mumbai, specializing in luxury home renovations, modern office designs, and turnkey projects."
+                description="Leading interior designers in Mumbai specializing in luxury home renovations, modern office designs, and complete turnkey projects."
                 keywords="Interior Designers Mumbai, Luxury Interiors, Home Renovation Mumbai, Office Design, Turnkey Interior Contractors, Best Interior Designers"
             />
 

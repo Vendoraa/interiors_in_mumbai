@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
+import CanonicalUrl from './components/CanonicalUrl';
+import GoogleAnalytics from './components/GoogleAnalytics';
+import MetaPixel from './components/MetaPixel';
 
 import 'react-modal-video/scss/modal-video.scss';
 import "./assets/vendor/switcher/switcher.css";
@@ -40,6 +43,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <GoogleAnalytics />
+        <MetaPixel />
+        <CanonicalUrl />
         <HelmetProvider>
           <div className="page-wraper">
             <Suspense fallback={
