@@ -1,29 +1,30 @@
 import React from 'react'
 import { IMAGES } from '../constants/theme'
+
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { motion } from "framer-motion"
+
 import { Autoplay } from 'swiper'
 
 
 
 const brand = [
-    {logo: IMAGES.brand1 },
-    {logo: IMAGES.brand2 },
-    {logo: IMAGES.brand3 },
-    {logo: IMAGES.brand4 },
-    {logo: IMAGES.brand5 },
-    {logo: IMAGES.brand6 },
-    {logo: IMAGES.brand1 },
-    {logo: IMAGES.brand2 },
-    {logo: IMAGES.brand3 },
-    {logo: IMAGES.brand4 },
-    {logo: IMAGES.brand5 },
-    {logo: IMAGES.brand6 },
+    { logo: IMAGES.brand1 },
+    { logo: IMAGES.brand2 },
+    { logo: IMAGES.brand3 },
+    { logo: IMAGES.brand4 },
+    { logo: IMAGES.brand5 },
+    { logo: IMAGES.brand6 },
+    { logo: IMAGES.brand1 },
+    { logo: IMAGES.brand2 },
+    { logo: IMAGES.brand3 },
+    { logo: IMAGES.brand4 },
+    { logo: IMAGES.brand5 },
+    { logo: IMAGES.brand6 },
 
 ]
 
 const Brand = () => {
-    
+
     return (
         <>
 
@@ -34,8 +35,8 @@ const Brand = () => {
                 loop={true}
                 modules={[Autoplay]}
                 autoplay={{
-                    delay:1200,
-                    disableOnInteraction:false
+                    delay: 1200,
+                    disableOnInteraction: false
                 }}
                 breakpoints={{
                     1191: {

@@ -1,4 +1,4 @@
-import React, { useState , useRef} from 'react'
+import React, { useState, useRef } from 'react'
 import { IMAGES } from '../constants/theme';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -8,49 +8,49 @@ import { Modal } from 'react-bootstrap';
 const ComingSoon = () => {
   const [addfade, setAddfade] = useState(false);
   const [getIn, setGetIn] = useState(false);
-  const d = new Date();
-    
-  const [timerDays, setTimerDays] = useState('00');	
-	const [timerHours, setTimerHours] = useState('00');	
-	const [timerMinutes, setTimerMinutes] = useState('00');	
-	const [timerSeconds, setTimerSeconds] = useState('00');	
-	let interval = useRef();
-	
-	const startTimer = () =>{
-	
-		var WebsiteLaunchDate = new Date();
-		var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-		WebsiteLaunchDate.setMonth(WebsiteLaunchDate.getMonth() + 1);
-		WebsiteLaunchDate =  WebsiteLaunchDate.getDate() + " " + monthNames[WebsiteLaunchDate.getMonth()] + " " + WebsiteLaunchDate.getFullYear();
-		
-	
-		const countdownDate = new Date(WebsiteLaunchDate +' 23:5').getTime();	
-		interval = setInterval(()=>{
-			const now = new Date().getTime();
-			const distance = countdownDate - now;
-			const days = Math.floor(distance / (1000*60*60*24));
-			const hours = Math.floor((distance % (1000*60*60*24)/(1000*60*60)));
-			const minutes = Math.floor((distance % (1000*60*60)/(1000*60)));
-			const seconds = Math.floor((distance % (1000*60))/1000);
-			
-			if(distance < 0){				
-				clearInterval(interval.current);
-			} else {				
-				setTimerDays(days);
-				setTimerHours(hours);
-				setTimerMinutes(minutes);
-				setTimerSeconds(seconds);
-			}	
-		},1000);
-	};
-	
-	//componentDidMount
- 	useEffect(()=>{
-		startTimer();
-		return()=>{
-			clearInterval(interval.current);
-		};
-	});
+
+
+  const [timerDays, setTimerDays] = useState('00');
+  const [timerHours, setTimerHours] = useState('00');
+  const [timerMinutes, setTimerMinutes] = useState('00');
+  const [timerSeconds, setTimerSeconds] = useState('00');
+  let interval = useRef();
+
+  const startTimer = () => {
+
+    var WebsiteLaunchDate = new Date();
+    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    WebsiteLaunchDate.setMonth(WebsiteLaunchDate.getMonth() + 1);
+    WebsiteLaunchDate = WebsiteLaunchDate.getDate() + " " + monthNames[WebsiteLaunchDate.getMonth()] + " " + WebsiteLaunchDate.getFullYear();
+
+
+    const countdownDate = new Date(WebsiteLaunchDate + ' 23:5').getTime();
+    interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)));
+      const minutes = Math.floor((distance % (1000 * 60 * 60) / (1000 * 60)));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      if (distance < 0) {
+        clearInterval(interval.current);
+      } else {
+        setTimerDays(days);
+        setTimerHours(hours);
+        setTimerMinutes(minutes);
+        setTimerSeconds(seconds);
+      }
+    }, 1000);
+  };
+
+  //componentDidMount
+  useEffect(() => {
+    startTimer();
+    return () => {
+      clearInterval(interval.current);
+    };
+  });
 
 
   return (
@@ -90,8 +90,8 @@ const ComingSoon = () => {
                 </div>
               </div>
               <div className="dz-coming-btn" style={{ zIndex: 99 }}>
-                <Link to={"#"} className="btn btn-primary openbtn m-r10 black btn-rounded" onClick={()=>setGetIn(true)}>GET IN TOUCH</Link>
-                <button onClick={() => { setAddfade(true)}} data-bs-target="#exampleModal" className="btn btn-secondary btn-rounded" >SUBSCRIBE NOW</button>
+                <Link to={"#"} className="btn btn-primary openbtn m-r10 black btn-rounded" onClick={() => setGetIn(true)}>GET IN TOUCH</Link>
+                <button onClick={() => { setAddfade(true) }} data-bs-target="#exampleModal" className="btn btn-secondary btn-rounded" >SUBSCRIBE NOW</button>
               </div>
             </div>
           </div>
@@ -101,9 +101,9 @@ const ComingSoon = () => {
         </div>
         <div className={`contact-sidebar ${getIn ? 'active' : ''}`}>
           <div className="contact-box">
-              <div className="logo-contact logo-dark">
-                  <Link to="/"><img src={IMAGES.logo1} alt="" /></Link>
-              </div>
+            <div className="logo-contact logo-dark">
+              <Link to="/"><img src={IMAGES.logo1} alt="" /></Link>
+            </div>
             <div className="m-b50 contact-text">
               <div className="dz-title">
                 <h4>About US</h4>
@@ -145,32 +145,32 @@ const ComingSoon = () => {
             </div>
           </div>
         </div>
-        <div className="menu-close" onClick={()=>setGetIn(false)}></div>       
-        <Modal className={`inquiry-modal `} show={addfade} onHide={setAddfade} centered>        
-            <div className="inquiry-adv">
-              <img src={IMAGES.modal} alt="" />
+        <div className="menu-close" onClick={() => setGetIn(false)}></div>
+        <Modal className={`inquiry-modal `} show={addfade} onHide={setAddfade} centered>
+          <div className="inquiry-adv">
+            <img src={IMAGES.modal} alt="" />
+          </div>
+          <div className="contact-modal">
+            <div className="modal-header">
+              <i className="flaticon-email"></i>
+              <h5 className="modal-title" id="exampleModalLongTitle">SUBSCRIBE TO OUR NEWSLATTER</h5>
+              <button onClick={() => { setAddfade(false) }} className="btn-close" >&times;</button>
             </div>
-            <div className="contact-modal">
-              <div className="modal-header">
-                <i className="flaticon-email"></i>
-                <h5 className="modal-title" id="exampleModalLongTitle">SUBSCRIBE TO OUR NEWSLATTER</h5>
-                <button onClick={() => { setAddfade(false)}}  className="btn-close" >&times;</button>
-              </div>
-              <div className="modal-body">                
-                <form  className="dzForm">
-                  <div className="form-group mb-3">
-                    <input type="text" name="dzName" required className="form-control" placeholder="YOUR NAME" />
-                  </div>
-                  <div className="form-group mb-3">
-                    <input type="email" name="dzEmail" required className="form-control" placeholder="YOUR EMAIL ADDRESS" />
-                  </div>
-                  <div className="form-group text-center">
-                    <button name="submit" type="submit" className="btn btn-primary btn-rounded">SUBSCRIBE NOW</button>
-                  </div>
-                </form>
-              </div>
+            <div className="modal-body">
+              <form className="dzForm">
+                <div className="form-group mb-3">
+                  <input type="text" name="dzName" required className="form-control" placeholder="YOUR NAME" />
+                </div>
+                <div className="form-group mb-3">
+                  <input type="email" name="dzEmail" required className="form-control" placeholder="YOUR EMAIL ADDRESS" />
+                </div>
+                <div className="form-group text-center">
+                  <button name="submit" type="submit" className="btn btn-primary btn-rounded">SUBSCRIBE NOW</button>
+                </div>
+              </form>
             </div>
-           
+          </div>
+
         </Modal>
 
       </div>
