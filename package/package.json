@@ -1,0 +1,62 @@
+{
+  "name": "visva",
+  "version": "0.1.0",
+  "homepage": "https://visva.dexignzone.com/react/demo/",
+  "private": true,
+  "dependencies": {
+    "@react-spring/parallax": "^9.7.2",
+    "@react-spring/web": "^9.7.2",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.2.3",
+    "contentful": "^10.12.0",
+    "framer-motion": "^10.12.12",
+    "html2pdf.js": "^0.10.3",
+    "lightgallery": "^2.7.1",
+    "node-sass": "8.0.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
+    "react-countup": "^6.4.2",
+    "react-dom": "^18.2.0",
+    "react-google-recaptcha": "^2.1.0",
+    "react-helmet-async": "^2.0.5",
+    "react-hook-form": "^7.43.9",
+    "react-modal-image": "^2.6.0",
+    "react-modal-video": "^2.0.0",
+    "react-parallax": "^3.5.1",
+    "react-responsive-masonry": "^2.1.7",
+    "react-router-dom": "^6.11.1",
+    "react-scripts": "5.0.1",
+    "react-swiper": "^0.1.5",
+    "reactjs-popup": "^2.0.5",
+    "swiper": "^9.3.2",
+    "web-vitals": "^2.1.4",
+    "yet-another-react-lightbox": "^3.8.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "sass": "node-sass --watch src/assets/scss/main.scss src/assets/css/style.css --source-map src/assets/css/style.css.map"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "html2pdf.js": "^0.10.3",
+    "imagemin-webp": "^8.0.0"
+  }
+}
