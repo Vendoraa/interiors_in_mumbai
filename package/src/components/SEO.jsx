@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, keywords, image }) => {
     const siteTitle = "Interiors in Mumbai";
-    const defaultDescription = "Interiors in Mumbai - Luxury Interior Design provides an easy and visually appealing platform to showcase your work to clients. Ideal for architects, interior designers, and photographers.";
+    const defaultDescription = "Premier interior design firm in Mumbai offering luxury home renovations, modern office design, and turnkey architectural projects.";
     const defaultKeywords = "interior design, mumbai, architects, home renovation, luxury interiors";
     const defaultImage = "https://visva.dexignzone.com/react/social-image.png";
 
