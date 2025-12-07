@@ -127,76 +127,76 @@ const ServicesDetail = () => {
           </motion.div>
         );
       case "Interior Design":
-      
+      // eslint-disable-next-line no-fallthrough
       default:
-  return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: isLoaded ? 1 : 0 }} transition={{ duration: 0.5 }}>
-      <h2 className="title mb-2">Transform Your Space with Expert Interior Design</h2>
-      <p>Discover the perfect blend of style and functionality. Our expert team specializes in transforming homes into beautiful, personalized spaces. Whether you're looking for a modern makeover or a classic touch, we cater to all your interior design needs.</p>
-      <div className="row">
-        <div className="col-lg-6">
-          <img src={IMAGES.ServicePic1} className="m-b30 w-100" alt="" />
-          <p className="m-b0">Our experienced designers work closely with you to bring your vision to life. From selecting the perfect color palette to choosing the right furniture, we ensure every detail is just right.</p>
-        </div>
-        <div className="col-lg-6">
-          <img src={IMAGES.ServicePic2} className="m-b30 w-100" alt="" />
-          <p className="m-b0">Quality craftsmanship and attention to detail are at the heart of what we do. We take pride in delivering interiors that not only look stunning but also stand the test of time.</p>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-};
+        return (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: isLoaded ? 1 : 0 }} transition={{ duration: 0.5 }}>
+            <h2 className="title mb-2">Transform Your Space with Expert Interior Design</h2>
+            <p>Discover the perfect blend of style and functionality. Our expert team specializes in transforming homes into beautiful, personalized spaces. Whether you're looking for a modern makeover or a classic touch, we cater to all your interior design needs.</p>
+            <div className="row">
+              <div className="col-lg-6">
+                <img src={IMAGES.ServicePic1} className="m-b30 w-100" alt="" />
+                <p className="m-b0">Our experienced designers work closely with you to bring your vision to life. From selecting the perfect color palette to choosing the right furniture, we ensure every detail is just right.</p>
+              </div>
+              <div className="col-lg-6">
+                <img src={IMAGES.ServicePic2} className="m-b30 w-100" alt="" />
+                <p className="m-b0">Quality craftsmanship and attention to detail are at the heart of what we do. We take pride in delivering interiors that not only look stunning but also stand the test of time.</p>
+              </div>
+            </div>
+          </motion.div>
+        );
+    }
+  };
 
-return (
-<>
-<div className="page-content bg-white">
-<CommanBanner mainTitle="Services" parentTitle="Home" pageName="Service Details" bgImage={IMAGES.bnr5} />
-<section className="section-full content-inner-2" style={{ backgroundImage: `url(${IMAGES.ServicesDetailBg2})`, backgroundPosition: 'right bottom', backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>
-  <div className="container">
-    <div className="row">
-      <div className="col-lg-8 col-md-7 aos-item" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="500">
-        <div className="service-detail">
-          <div className="dz-page-text">
-            {renderContent()}
+  return (
+    <>
+      <div className="page-content bg-white">
+        <CommanBanner mainTitle="Services" parentTitle="Home" pageName="Service Details" bgImage={IMAGES.bnr5} />
+        <section className="section-full content-inner-2" style={{ backgroundImage: `url(${IMAGES.ServicesDetailBg2})`, backgroundPosition: 'right bottom', backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-8 col-md-7 aos-item" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="500">
+                <div className="service-detail">
+                  <div className="dz-page-text">
+                    {renderContent()}
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-5 m-b30 aos-item right" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="300">
+                <div className="sticky-top">
+                  <div className="widget ext-sidebar-menu">
+                    <ul className="menu">
+                      <li className={selectedService === "Interior Design" ? "active" : ""}>
+                        <Link onClick={() => setSelectedService("Interior Design")}>Interior Design</Link>
+                      </li>
+                      <li className={selectedService === "Floor Plan Design" ? "active" : ""}>
+                        <Link onClick={() => setSelectedService("Floor Plan Design")}>Floor Plan Design</Link>
+                      </li>
+                      <li className={selectedService === "Custom Furniture" ? "active" : ""}>
+                        <Link onClick={() => setSelectedService("Custom Furniture")}>Custom Furniture</Link>
+                      </li>
+                      <li className={selectedService === "Painting" ? "active" : ""}>
+                        <Link onClick={() => setSelectedService("Painting")}>Painting</Link>
+                      </li>
+                      <li className={selectedService === "Electrical" ? "active" : ""}>
+                        <Link onClick={() => setSelectedService("Electrical")}>Electrical</Link>
+                      </li>
+                      <li className={selectedService === "Space Saving" ? "active" : ""}>
+                        <Link onClick={() => setSelectedService("Space Saving")}>Space Saving</Link>
+                      </li>
+                      <li className={selectedService === "Modular Kitchen" ? "active" : ""}>
+                        <Link onClick={() => setSelectedService("Modular Kitchen")}>Modular Kitchen</Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       </div>
-      <div className="col-lg-4 col-md-5 m-b30 aos-item right" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="300">
-        <div className="sticky-top">
-          <div className="widget ext-sidebar-menu">
-            <ul className="menu">
-              <li className={selectedService === "Interior Design" ? "active" : ""}>
-                <Link onClick={() => setSelectedService("Interior Design")}>Interior Design</Link>
-              </li>
-              <li className={selectedService === "Floor Plan Design" ? "active" : ""}>
-                <Link onClick={() => setSelectedService("Floor Plan Design")}>Floor Plan Design</Link>
-              </li>
-              <li className={selectedService === "Custom Furniture" ? "active" : ""}>
-                <Link onClick={() => setSelectedService("Custom Furniture")}>Custom Furniture</Link>
-              </li>
-              <li className={selectedService === "Painting" ? "active" : ""}>
-                <Link onClick={() => setSelectedService("Painting")}>Painting</Link>
-              </li>
-              <li className={selectedService === "Electrical" ? "active" : ""}>
-                <Link onClick={() => setSelectedService("Electrical")}>Electrical</Link>
-              </li>
-              <li className={selectedService === "Space Saving" ? "active" : ""}>
-                <Link onClick={() => setSelectedService("Space Saving")}>Space Saving</Link>
-              </li>
-              <li className={selectedService === "Modular Kitchen" ? "active" : ""}>
-                <Link onClick={() => setSelectedService("Modular Kitchen")}>Modular Kitchen</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
-</>
-)
+    </>
+  )
 }
 
 export default ServicesDetail;

@@ -1,5 +1,5 @@
 import React from 'react'
-import { IMAGES } from '../constants/theme'
+
 import { Link } from 'react-router-dom'
 
 const BlogGridCard = (props) => {
@@ -27,8 +27,8 @@ const BlogGridCard = (props) => {
                             <p>You can align your image to the left, right, or center with Link caption, link and alt text New Journey to the Mars in the Gutenberg editor, you can drag and drop an.</p>
                         </div>
                         <div className="read-more">
-                            <Link 
-                             className="btn btn-primary btn-rounded btn-sm hover-icon">
+                            <Link
+                                className="btn btn-primary btn-rounded btn-sm hover-icon">
                                 <span>Read More </span>
                                 <i className="fas fa-arrow-right"></i>
                             </Link>

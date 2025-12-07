@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useContentful } from '../useContentful';
 import CommanBanner from '../elements/CommanBanner';
 import { IMAGES } from '../constants/theme';
-import html2pdf from 'html2pdf.js';
+
 
 const BlogDetail = () => {
   const [blogs, setBlogs] = useState([]);
@@ -41,19 +41,7 @@ const BlogDetail = () => {
     fetchBlogs();
   }, [getEntries]);
 
-  const handleDownloadPDF = (blogId) => {
-    const blogElement = document.getElementById(`blog-${blogId}`);
-    if (blogElement) {
-      const options = {
-        margin: 1,
-        filename: `blog-post-${blogId}.pdf`,
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-      };
-      html2pdf().set(options).from(blogElement).save();
-    }
-  };
+
 
   return (
     <div className="page-content bg-white">
