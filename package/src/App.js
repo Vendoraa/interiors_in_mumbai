@@ -39,7 +39,7 @@ const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
 function App() {
   return (
     <>
-      <BrowserRouter basename="/react/demo">
+      <BrowserRouter>
         <HelmetProvider>
           <div className="page-wraper">
             <Suspense fallback={
