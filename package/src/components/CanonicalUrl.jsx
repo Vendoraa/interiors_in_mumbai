@@ -5,7 +5,7 @@ const CanonicalUrl = () => {
     const location = useLocation();
 
     useEffect(() => {
-        const canonicalUrl = 'https://shrishti-interiors.com' + location.pathname;
+        const canonicalUrl = 'https://www.interiorsinmumbai.com' + location.pathname;
         let link = document.querySelector("link[rel='canonical']");
 
         if (!link) {
