@@ -1,10 +1,20 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const GoogleAnalytics = () => {
     const location = useLocation();
+    const initialized = useRef(false);
 
     useEffect(() => {
+        // Only initialize once
+        if (initialized.current) return;
+
+        // Check if already loaded
+        if (window.gtag) {
+            initialized.current = true;
+            return;
+        }
+
         // Dynamic script injection to keep it out of index.html
         const script1 = document.createElement('script');
         script1.async = true;
@@ -20,11 +30,7 @@ const GoogleAnalytics = () => {
     `;
         document.head.appendChild(script2);
 
-        return () => {
-            // Optional: Cleanup if needed, though GA usually stays
-            document.head.removeChild(script1);
-            document.head.removeChild(script2);
-        };
+        initialized.current = true;
     }, []);
 
     useEffect(() => {

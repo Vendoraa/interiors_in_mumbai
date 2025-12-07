@@ -42,20 +42,89 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
     "name": "Interiors in Mumbai",
+    "image": "https://www.interiorsinmumbai.com/logo.png",
     "url": "https://www.interiorsinmumbai.com",
-    "logo": "https://www.interiorsinmumbai.com/logo.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91 998 724 1424",
-      "contactType": "Customer Service"
+    "telephone": "+919987241424",
+    "email": "hello@interiorsinmumbai.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mira Road",
+      "addressLocality": "Mira-Bhayandar",
+      "addressRegion": "Maharashtra",
+      "postalCode": "401107",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 19.2813,
+      "longitude": 72.8642
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "10:00",
+        "closes": "19:00"
+      }
+    ],
+    "priceRange": "₹₹₹",
+    "areaServed": {
+      "@type": "City",
+      "name": "Mumbai"
     },
     "sameAs": [
       "https://www.facebook.com/interiorsinmumbai",
       "https://www.instagram.com/interiorsinmumbai",
       "https://twitter.com/interiorsinmumbai"
-    ]
+    ],
+    "description": "Mumbai's premier interior design firm specializing in luxury home renovations, modern office spaces, and turnkey projects.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Interior Design Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Interior Design",
+            "description": "Complete interior design services for homes and offices"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Home Renovation",
+            "description": "Luxury home renovation and remodeling services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Office Design",
+            "description": "Modern office space design and fit-out"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Turnkey Projects",
+            "description": "Complete turnkey architectural and interior projects"
+          }
+        }
+      ]
+    }
   }
   </script>
 </head>

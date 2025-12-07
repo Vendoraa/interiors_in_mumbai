@@ -1,10 +1,20 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const MetaPixel = () => {
     const location = useLocation();
+    const initialized = useRef(false);
 
     useEffect(() => {
+        // Only initialize once
+        if (initialized.current) return;
+
+        // Check if already loaded
+        if (window.fbq) {
+            initialized.current = true;
+            return;
+        }
+
         // Inject Meta Pixel script
         const script = document.createElement('script');
         script.innerHTML = `
@@ -31,15 +41,7 @@ const MetaPixel = () => {
         noscript.appendChild(img);
         document.body.appendChild(noscript);
 
-        return () => {
-            // Cleanup on unmount
-            if (script.parentNode) {
-                document.head.removeChild(script);
-            }
-            if (noscript.parentNode) {
-                document.body.removeChild(noscript);
-            }
-        };
+        initialized.current = true;
     }, []);
 
     useEffect(() => {
