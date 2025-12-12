@@ -1,0 +1,151 @@
+/* Cookie Consent Custom Styling for Interiors in Mumbai */
+
+/* Override default cookie consent styles to match site theme */
+:root {
+    --cc-bg: #fff;
+    --cc-text: #333;
+    --cc-btn-primary-bg: #2563eb;
+    --cc-btn-primary-text: #fff;
+    --cc-btn-primary-hover-bg: #1d4ed8;
+    --cc-btn-secondary-bg: #f3f4f6;
+    --cc-btn-secondary-text: #333;
+    --cc-btn-secondary-hover-bg: #e5e7eb;
+    --cc-toggle-bg-on: #2563eb;
+    --cc-toggle-bg-off: #d1d5db;
+    --cc-cookie-category-block-bg: #f9fafb;
+    --cc-overlay-bg: rgba(0, 0, 0, 0.6);
+    --cc-separator-border-color: #e5e7eb;
+}
+
+/* Modal positioning and appearance */
+#cc-main .cm {
+    font-family: 'Roboto', sans-serif;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Title styling */
+#cc-main .cm__title {
+    font-family: 'Merriweather', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+}
+
+/* Description text */
+#cc-main .cm__desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Buttons */
+#cc-main button {
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 10px 24px;
+}
+
+#cc-main button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Primary button (Accept all) */
+#cc-main .cm__btn--primary {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+/* Preferences modal */
+#cc-main .pm {
+    border-radius: 12px;
+    max-width: 600px;
+}
+
+#cc-main .pm__title {
+    font-family: 'Merriweather', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+}
+
+/* Cookie category sections */
+#cc-main .pm__section {
+    margin-bottom: 20px;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 8px;
+}
+
+#cc-main .pm__section-title {
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+#cc-main .pm__section-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Toggle switches */
+#cc-main .pm__toggle {
+    margin-top: 8px;
+}
+
+/* Footer link */
+#cc-main .cm__footer a,
+#cc-main .pm__footer a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#cc-main .cm__footer a:hover,
+#cc-main .pm__footer a:hover {
+    text-decoration: underline;
+}
+
+/* Cookie table styling */
+#cc-main .pm__cookie-table {
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+#cc-main .pm__cookie-table th {
+    background: #f3f4f6;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    #cc-main .cm {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    #cc-main .pm {
+        max-width: 95%;
+    }
+}
+
+/* Animation */
+#cc-main .cm,
+#cc-main .pm {
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

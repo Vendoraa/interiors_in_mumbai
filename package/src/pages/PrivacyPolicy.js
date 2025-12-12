@@ -30,6 +30,43 @@ const PrivacyPolicy = () => {
                                 <li style={{ marginBottom: '10px' }}>To send you marketing and promotional materials (with your consent).</li>
                                 <li style={{ marginBottom: '10px' }}>To analyze how the Site is used.</li>
                             </ul>
+                            <h3 style={{ fontFamily: 'Merriweather, serif', fontWeight: '600', color: '#222', fontSize: '24px', marginBottom: '15px' }}>Cookie Policy</h3>
+                            <p style={{ marginBottom: '15px' }}>Our website uses cookies to enhance your browsing experience and analyze site traffic. This section explains what cookies are, how we use them, and your choices regarding cookies.</p>
+                            <h4 style={{ fontFamily: 'Merriweather, serif', fontWeight: '600', color: '#222', fontSize: '20px', marginBottom: '12px' }}>What Are Cookies?</h4>
+                            <p style={{ marginBottom: '15px' }}>Cookies are small text files that are stored on your device (computer, tablet, or mobile) when you visit a website. They help the website remember information about your visit, making it easier to use and more useful to you.</p>
+                            <h4 style={{ fontFamily: 'Merriweather, serif', fontWeight: '600', color: '#222', fontSize: '20px', marginBottom: '12px' }}>Types of Cookies We Use</h4>
+                            <ul className="bullet-style" style={{ paddingLeft: '20px', listStyleType: 'disc', marginBottom: '15px' }}>
+                                <li style={{ marginBottom: '10px' }}><strong>Strictly Necessary Cookies:</strong> These cookies are essential for the website to function properly and cannot be disabled. They do not store any personally identifiable information.</li>
+                                <li style={{ marginBottom: '10px' }}><strong>Analytics Cookies (Google Analytics):</strong> We use Google Analytics to understand how visitors interact with our website. These cookies collect information about:
+                                    <ul style={{ paddingLeft: '20px', marginTop: '8px' }}>
+                                        <li>Pages visited and time spent on each page</li>
+                                        <li>Browser type and device information</li>
+                                        <li>Geographic location (city/country level)</li>
+                                        <li>How you arrived at our site</li>
+                                    </ul>
+                                    <br />Google Analytics uses cookies like <code>_ga</code> (expires after 2 years) and <code>_gid</code> (expires after 24 hours).
+                                </li>
+                                <li style={{ marginBottom: '10px' }}><strong>Marketing Cookies (Meta Pixel/Facebook):</strong> We use Meta Pixel to measure the effectiveness of our advertising and show you relevant ads. This cookie (<code>_fbp</code>, expires after 3 months) tracks:
+                                    <ul style={{ paddingLeft: '20px', marginTop: '8px' }}>
+                                        <li>Your interactions with our ads on Facebook/Instagram</li>
+                                        <li>Conversions and events on our website</li>
+                                        <li>Anonymous user behavior for retargeting</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <h4 style={{ fontFamily: 'Merriweather, serif', fontWeight: '600', color: '#222', fontSize: '20px', marginBottom: '12px' }}>Managing Your Cookie Preferences</h4>
+                            <p style={{ marginBottom: '15px' }}>You have full control over which cookies you allow:</p>
+                            <ul className="bullet-style" style={{ paddingLeft: '20px', listStyleType: 'disc', marginBottom: '15px' }}>
+                                <li style={{ marginBottom: '10px' }}><strong>Cookie Banner:</strong> When you first visit our site, you'll see a cookie consent banner. You can choose to "Accept all" or "Reject all" cookies, or click "Manage preferences" to select which types of cookies you want to allow.</li>
+                                <li style={{ marginBottom: '10px' }}><strong>Browser Settings:</strong> Most web browsers allow you to control cookies through their settings. You can set your browser to refuse cookies or delete certain cookies. However, this may affect your ability to use some features of our Site.</li>
+                                <li style={{ marginBottom: '10px' }}><strong>Opt-Out Links:</strong>
+                                    <ul style={{ paddingLeft: '20px', marginTop: '8px' }}>
+                                        <li>Google Analytics: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style={{ color: '#007bff' }}>Google Analytics Opt-out Browser Add-on</a></li>
+                                        <li>Facebook Ads: <a href="https://www.facebook.com/help/568137493302217" target="_blank" rel="noopener noreferrer" style={{ color: '#007bff' }}>Facebook Ad Preferences</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p style={{ marginBottom: '15px', padding: '12px', backgroundColor: '#f8f9fa', borderLeft: '4px solid #007bff' }}><strong>Note:</strong> Blocking certain cookies may impact your experience on our website and prevent us from providing certain features.</p>
                             <h3 style={{ fontFamily: 'Merriweather, serif', fontWeight: '600', color: '#222', fontSize: '24px', marginBottom: '15px' }}>Sharing of Information</h3>
                             <p style={{ marginBottom: '15px' }}>We may share your information with third-party service providers who help us operate the Site and provide our services. These third parties are obligated to keep your information confidential and use it only for the purposes we have disclosed.</p>
                             <p style={{ marginBottom: '15px' }}>We will not share your personal information with any third-party for their own marketing purposes without your consent.</p>
