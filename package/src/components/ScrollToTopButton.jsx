@@ -42,7 +42,7 @@ const ScrollToTopButton = () => {
                     <i className="fas fa-chevron-up"></i>
                 </div>
             )}
-            <style jsx>{`
+            <style>{`
                 .scroll-to-top-btn {
                     position: fixed;
                     bottom: 100px; /* Positioned above the WhatsApp button */

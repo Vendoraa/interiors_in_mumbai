@@ -53,7 +53,7 @@ const Home = () => {
                                 slideImg.map((i, index) => (
                                     <SwiperSlide className="swiper-slide" key={index} tag='div'>
                                         <div className="silder-img overlay-black-light">
-                                            <img src={i.img} data-swiper-parallax="30%" alt="Interior design showcase - luxury home renovation by Interiors in Mumbai" fetchPriority={index === 0 ? "high" : undefined} loading={index === 0 ? "eager" : "lazy"} />
+                                            <img src={i.img} data-swiper-parallax="30%" alt="Interior design showcase - luxury home renovation by Interiors in Mumbai" fetchpriority={index === 0 ? "high" : undefined} loading={index === 0 ? "eager" : "lazy"} />
                                         </div>
                                         <div className="silder-content" data-swiper-parallax="-40%">
                                             <div className="inner-content">

@@ -3,6 +3,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import CanonicalUrl from './components/CanonicalUrl';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import MetaPixel from './components/MetaPixel';
+import CookieConsent from './components/CookieConsent';
 
 import 'react-modal-video/scss/modal-video.scss';
 import "./assets/vendor/switcher/switcher.css";
@@ -46,6 +47,7 @@ function App() {
         <GoogleAnalytics />
         <MetaPixel />
         <CanonicalUrl />
+        <CookieConsent />
         <HelmetProvider>
           <div className="page-wraper">
             <Suspense fallback={
