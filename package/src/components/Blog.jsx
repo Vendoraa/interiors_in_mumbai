@@ -14,14 +14,14 @@ const Blog = () => {
       try {
         // Use the useContentful hook instead of direct fetch
         const response = await getEntries('blogPost', { order: '-sys.createdAt', limit: 3 });
-        
+
         if (response && response.items) {
           const blogPosts = response.items.map((item) => {
             const { sys, fields } = item;
             return {
               id: sys.id,
-              featuredImage: fields.featuredImage?.fields?.file?.url 
-                ? `https:${fields.featuredImage.fields.file.url}` 
+              featuredImage: fields.featuredImage?.fields?.file?.url
+                ? `https:${fields.featuredImage.fields.file.url}`
                 : IMAGES.pic1,
               title: fields.title || "Untitled Blog Post",
               description: fields.excerpt || fields.description || (fields.content?.substring(0, 120) + "..."),
@@ -90,7 +90,7 @@ const Blog = () => {
                     <div className="dz-info">
                       <div className="dz-meta">
                         <ul>
-                          <li className="post-date" style={{ fontSize:'13px'}}>
+                          <li className="post-date" style={{ fontSize: '13px' }}>
                             {blog.date && (
                               <>
                                 <strong>{new Date(blog.date).toLocaleDateString('en-US', { day: 'numeric', month: 'long' })}</strong>
@@ -101,7 +101,7 @@ const Blog = () => {
                       </div>
                       <h5 className="dz-title"><Link to={blog.url}>{blog.title}</Link></h5>
                       <div className="read-more">
-                        <Link to={blog.url} className="btn btn-primary btn-rounded btn-sm hover-icon">
+                        <Link to={blog.url} className="btn btn-primary btn-rounded btn-sm hover-icon" aria-label={`Read more about ${blog.title}`}>
                           <span>Read More</span>
                           <i className="fas fa-arrow-right"></i>
                         </Link>

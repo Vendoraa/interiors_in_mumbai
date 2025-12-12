@@ -48,6 +48,14 @@ export const IMAGES = {
 
   mumbai2bhk: require('../assets/images/work/mumbai_2bhk.png'),
   mumbai3bhk: require('../assets/images/work/mumbai_3bhk.png'),
+  portfolioLivingRoom: require('../assets/images/work/portfolio_living_room.png'),
+
+  // Location Banners
+  miraRoadBanner: require('../assets/images/banner/mira_road_banner.png'),
+  andheriBanner: require('../assets/images/banner/andheri_banner.png'),
+  bandraBanner: require('../assets/images/banner/bandra_banner.png'),
+  powaiBanner: require('../assets/images/banner/powai_banner.png'),
+  thaneBanner: require('../assets/images/banner/thane_banner.png'),
   mumbaiKitchen: require('../assets/images/work/mumbai_kitchen.png'),
 
   service1: require('../assets/images/services/pic1.jpg'),

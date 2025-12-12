@@ -39,6 +39,12 @@ const BlogDetail = React.lazy(() => import("./pages/BlogDetail"));
 const BlogDetails = React.lazy(() => import("./pages/BlogDetails"));
 const ContectUs = React.lazy(() => import("./pages/ContectUs"));
 const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
+const Pricing = React.lazy(() => import("./pages/Pricing"));
+const InteriorDesignersMiraRoad = React.lazy(() => import("./pages/InteriorDesignersMiraRoad"));
+const InteriorDesignersAndheri = React.lazy(() => import("./pages/InteriorDesignersAndheri"));
+const InteriorDesignersBandra = React.lazy(() => import("./pages/InteriorDesignersBandra"));
+const InteriorDesignersPowai = React.lazy(() => import("./pages/InteriorDesignersPowai"));
+const InteriorDesignersThane = React.lazy(() => import("./pages/InteriorDesignersThane"));
 
 function App() {
   return (
@@ -80,6 +86,12 @@ function App() {
                     <Route path="blog-details" element={<BlogDetail />} />
                     <Route path="contact-us" element={<ContectUs />} />
                     <Route path="privacy-policy" element={<PrivacyPolicy />} />
+                    <Route path="pricing" element={<Pricing />} />
+                    <Route path="interior-designers-mira-road" element={<InteriorDesignersMiraRoad />} />
+                    <Route path="interior-designers-andheri" element={<InteriorDesignersAndheri />} />
+                    <Route path="interior-designers-bandra" element={<InteriorDesignersBandra />} />
+                    <Route path="interior-designers-powai" element={<InteriorDesignersPowai />} />
+                    <Route path="interior-designers-thane" element={<InteriorDesignersThane />} />
                   </Route>
                 </Routes>
               </LazyLoadErrorBoundary>
