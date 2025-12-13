@@ -24,7 +24,7 @@ const ContentSidebar = ({ openSide }) => {
                             <div className="dz-separator style-1 text-primary mb-0"></div>
                         </div>
                         <p>Aliquam erat volutpat. Nunc erat massa, porttitor vel egestas sit amet, tristique at massa. Donec posuere odio neque, in ultricies lorem aliquet eu. Donec venenatis libero Link nulla placerat egestas.</p>
-                        <Link to={'/about-us'} className="btn btn-primary btn-sm btn-rounded">READ MORE</Link>
+                        <Link to={'/about-us'} className="btn btn-primary btn-sm btn-rounded" aria-label="Read more about our company">READ MORE</Link>
                     </div>
                     <div className="dz-title">
                         <h4>Gallery</h4>

@@ -46,6 +46,7 @@ const PopularService = () => {
                                         <Link
                                             to={`/services-details?service=${encodeURIComponent(item.heading)}`}
                                             className="btn btn-primary btn-rounded btn-sm hover-icon"
+                                            aria-label={`Read more about ${item.heading}`}
                                         >
                                             <span>Read More</span>
                                             <i className="fas fa-arrow-right"></i>

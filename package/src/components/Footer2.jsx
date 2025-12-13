@@ -27,12 +27,22 @@ const Footer2 = () => {
 										<div className="widget widget_services">
 											<h4 className="footer-title">Useful Links</h4>
 											<ul>
-												<li><Link to="/index">Home</Link></li>
+												<li><Link to="/">Home</Link></li>
 												<li><Link to="/about-us">About Us</Link></li>
-												<li><Link to="/services-details">Services</Link></li>
+												<li><Link to="/pricing">Pricing</Link></li>
+												<li><Link to="/services">Services</Link></li>
 												<li><Link to="/portfolio">Portfolio</Link></li>
-												<li><Link to="/blog-grid">Blogs</Link></li>
 												<li><Link to="/contact-us">Contact Us</Link></li>
+											</ul>
+										</div>
+										<div className="widget widget_services">
+											<h4 className="footer-title">Locations</h4>
+											<ul>
+												<li><Link to="/interior-designers-mira-road">Mira Road</Link></li>
+												<li><Link to="/interior-designers-andheri">Andheri</Link></li>
+												<li><Link to="/interior-designers-bandra">Bandra</Link></li>
+												<li><Link to="/interior-designers-powai">Powai</Link></li>
+												<li><Link to="/interior-designers-thane">Thane</Link></li>
 											</ul>
 										</div>
 									</div>
