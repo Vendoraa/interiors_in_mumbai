@@ -15,21 +15,49 @@ import Faq from '../components/Faq';
 
 import HowWeWork from '../components/HowWeWork';
 import SEO from '../components/SEO';
+import { Helmet } from 'react-helmet-async';
 
 const slideImg = [
     { text: "Interiors in Mumbai", img: process.env.PUBLIC_URL + "/images/main-slider/pic1.png" },
     { text: "DESIGNING", img: pic2 },
 ];
+
 const Home = () => {
     const swiperRef = React.useRef(null);
+
+    const organizationSchema = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Interiors in Mumbai",
+        "url": "https://www.interiorsinmumbai.com",
+        "logo": "https://www.interiorsinmumbai.com/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+919987241424",
+            "contactType": "customer service",
+            "areaServed": "Mumbai",
+            "availableLanguage": ["English", "Hindi", "Marathi"]
+        },
+        "sameAs": [
+            "https://www.facebook.com/dexignzone/",
+            "https://www.instagram.com/dexignzone/",
+            "https://twitter.com/dexignzones/",
+            "https://www.youtube.com/@dexignzone1723"
+        ]
+    };
 
     return (
         <>
             <SEO
-                title="Luxury Interior Design & Home Renovation Services"
-                description="Leading interior designers in Mumbai specializing in luxury home renovations, modern office designs, and complete turnkey projects."
-                keywords="Interior Designers Mumbai, Luxury Interiors, Home Renovation Mumbai, Office Design, Turnkey Interior Contractors, Best Interior Designers"
+                title="Premium Interior Design & Home Renovation Services"
+                description="Leading interior designers in Mumbai specializing in premium home renovations, modern office designs, and complete turnkey projects."
+                keywords="Interior Designers Mumbai, Premium Interiors, Home Renovation Mumbai, Office Design, Turnkey Interior Contractors, Best Interior Designers"
             />
+            <Helmet>
+                <script type="application/ld+json">
+                    {JSON.stringify(organizationSchema)}
+                </script>
+            </Helmet>
 
             <div className="page-content bg-white">
                 <div className="slidearea">
@@ -53,7 +81,7 @@ const Home = () => {
                                 slideImg.map((i, index) => (
                                     <SwiperSlide className="swiper-slide" key={index} tag='div'>
                                         <div className="silder-img overlay-black-light">
-                                            <img src={i.img} data-swiper-parallax="30%" alt="Interior design showcase - luxury home renovation by Interiors in Mumbai" fetchpriority={index === 0 ? "high" : undefined} loading={index === 0 ? "eager" : "lazy"} />
+                                            <img src={i.img} data-swiper-parallax="30%" alt="Interior design showcase - premium home renovation by Interiors in Mumbai" fetchpriority={index === 0 ? "high" : undefined} loading={index === 0 ? "eager" : "lazy"} />
                                         </div>
                                         <div className="silder-content" data-swiper-parallax="-40%">
                                             <div className="inner-content">

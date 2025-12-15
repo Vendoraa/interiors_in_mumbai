@@ -86,6 +86,10 @@ const Header = () => {
                                         <i className="fas fa-map-marker-alt"></i>
                                         <h6 className="title">Shop 7, Sai Aisharwad Bldg, Mira Road East</h6>
                                     </div>
+                                    <div className="extra-icon-box">
+                                        <i className="fas fa-phone-alt"></i>
+                                        <h6 className="title">+91 998 724 1424</h6>
+                                    </div>
                                 </div>
                             </div>
                             <div className={`header-nav navbar-collapse collapse justify-content-end ${open ? 'show' : ''}`} id="navbarNavDropdown">

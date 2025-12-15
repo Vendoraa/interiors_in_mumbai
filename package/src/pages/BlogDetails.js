@@ -4,6 +4,8 @@ import CommanBanner from '../elements/CommanBanner';
 import { IMAGES } from '../constants/theme';
 import { useContentful } from '../useContentful';
 import html2pdf from 'html2pdf.js';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -14,7 +16,7 @@ const BlogDetails = () => {
   const { getEntry, getEntries, clearCache } = useContentful();
   const blogRef = useRef(null);
   const navigate = useNavigate();
-  
+
   // Prevent unnecessary re-renders with memoized functions
   const fetchBlogDetail = useCallback(async (postId) => {
     if (!postId) {
@@ -22,12 +24,12 @@ const BlogDetails = () => {
       setLoading(false);
       return;
     }
-    
+
     try {
       setLoading(true);
       console.log('Fetching blog with ID:', postId);
       const entry = await getEntry(postId);
-      
+
       if (entry) {
         console.log('Blog data retrieved');
         setBlog(entry);
@@ -46,11 +48,11 @@ const BlogDetails = () => {
   const fetchRecentPosts = useCallback(async () => {
     try {
       // Always get the 3 most recent posts
-      const response = await getEntries('blogPost', { 
+      const response = await getEntries('blogPost', {
         order: '-sys.createdAt',
         limit: 3
       });
-      
+
       if (response && response.items && response.items.length > 0) {
         setRecentPosts(response.items);
       } else {
@@ -91,12 +93,12 @@ const BlogDetails = () => {
   // Fixed: Properly navigate to the new post when clicked
   const handleRecentPostClick = useCallback((postId, event) => {
     event.preventDefault();
-    
+
     if (postId === id) return; // Don't do anything if clicking the current post
-    
+
     // Use React Router's navigate function to change URL and trigger proper navigation
     navigate(`/blog-details/${postId}`);
-    
+
     // Scroll to top
     window.scrollTo(0, 0);
   }, [id, navigate]);
@@ -107,12 +109,12 @@ const BlogDetails = () => {
     if (blog) {
       blogRef.current = blog;
     }
-    
+
     // Only fetch if we don't have the blog post yet or if ID changed
     if (!blog || (blog && blog.sys.id !== id)) {
       fetchBlogDetail(id);
     }
-    
+
     fetchRecentPosts();
   }, [id, fetchBlogDetail, fetchRecentPosts, blog]);
 
@@ -138,25 +140,25 @@ const BlogDetails = () => {
   const formatRecentPostDate = (dateString) => {
     if (!dateString) return '';
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
+    return date.toLocaleDateString('en-US', {
       day: 'numeric',
-      month: 'long', 
+      month: 'long',
       year: 'numeric'
     });
   };
 
   // Content helper functions
   const getBlogContent = (fields) => {
-    return fields.content || fields.description || fields.body || fields.plainContent || '';
+    return fields.description_rich_text || fields.content || fields.description || fields.body || fields.plainContent || '';
   };
 
   const formatPlainTextContent = (content) => {
     if (!content) return '';
-    
+
     if (content.includes('<p>') || content.includes('<div>')) {
       return { __html: content };
     }
-    
+
     const paragraphs = content.split('\n').filter(p => p.trim() !== '');
     return { __html: paragraphs.map(p => `<p>${p}</p>`).join('') };
   };
@@ -214,9 +216,9 @@ const BlogDetails = () => {
                 <div className="col-xl-8 col-lg-8">
                   <div className="blog-single dz-card sidebar enhanced-blog-content">
                     <div className="dz-media">
-                      <img src={currentBlog.fields.featuredImage?.fields?.file?.url ? 
-                        `https:${currentBlog.fields.featuredImage.fields.file.url}` : IMAGES.blogGridPic1} 
-                        alt={currentBlog.fields.title || "Blog image"} 
+                      <img src={currentBlog.fields.featuredImage?.fields?.file?.url ?
+                        `https:${currentBlog.fields.featuredImage.fields.file.url}` : IMAGES.blogGridPic1}
+                        alt={currentBlog.fields.title || "Blog image"}
                         className="img-fluid rounded"
                       />
                     </div>
@@ -238,14 +240,122 @@ const BlogDetails = () => {
                         </ul>
                       </div>
                       <h2 className="dz-title blog-title">{currentBlog.fields.title}</h2>
-                      
+
                       {/* Blog content section */}
                       <div id="blog-content" className="dz-post-text">
-                        <div 
-                          dangerouslySetInnerHTML={formatPlainTextContent(getBlogContent(currentBlog.fields))} 
-                          className="blog-content" 
-                        />
-                        
+                        <div className="blog-content">
+                          {(() => {
+                            const content = getBlogContent(currentBlog.fields);
+                            if (typeof content === 'object' && content.nodeType === 'document') {
+                              // Safety check for imported constants
+                              if (!BLOCKS || !INLINES) {
+                                console.warn('Contentful Rich Text types (BLOCKS/INLINES) are undefined. Please restart your dev server.');
+                                return <div dangerouslySetInnerHTML={formatPlainTextContent(content)} />;
+                              }
+
+                              const renderOptions = {
+                                renderNode: {
+                                  [BLOCKS.EMBEDDED_ASSET]: (node) => {
+                                    if (!node.data.target.fields) return null;
+                                    const { file, title } = node.data.target.fields;
+                                    return (
+                                      <div className="text-center my-4">
+                                        <img
+                                          src={`https:${file.url}`}
+                                          alt={title || 'Blog Image'}
+                                          className="img-fluid rounded"
+                                          style={{ maxHeight: '500px', objectFit: 'contain' }}
+                                        />
+                                        {/* {title && <p className="text-muted mt-2 small">{title}</p>} */}
+                                      </div>
+                                    );
+                                  },
+                                  [BLOCKS.PARAGRAPH]: (node, children) => <p className="mb-4">{children}</p>,
+                                  [BLOCKS.HEADING_1]: (node, children) => <h1 className="mt-5 mb-3">{children}</h1>,
+                                  [BLOCKS.HEADING_2]: (node, children) => <h2 className="mt-4 mb-3">{children}</h2>,
+                                  [BLOCKS.HEADING_3]: (node, children) => <h3 className="mt-4 mb-2">{children}</h3>,
+                                  // Custom renderer for UL to force bullets
+                                  [BLOCKS.UL_LIST]: (node, children) => (
+                                    <ul className="mb-4" style={{ listStyle: 'none', paddingLeft: 0 }}>
+                                      {React.Children.map(children, child => (
+                                        <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '8px' }}>
+                                          <span style={{ marginRight: '10px', color: 'var(--primary)', fontSize: '1.2em', lineHeight: '1.5' }}>•</span>
+                                          <div style={{ flex: 1 }}>{child.props.children}</div>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  ),
+                                  // Custom renderer for OL to force numbers
+                                  [BLOCKS.OL_LIST]: (node, children) => (
+                                    <ol className="mb-4" style={{ listStyle: 'none', paddingLeft: 0, counterReset: 'blog-counter' }}>
+                                      {React.Children.map(children, child => (
+                                        <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '8px', counterIncrement: 'blog-counter' }}>
+                                          <span style={{ marginRight: '10px', color: 'var(--primary)', fontWeight: 'bold' }}>
+                                            {/* We can't easily get the index here without complex logic, so we'll use CSS counters if possible, 
+                                                but for now let's try to use the index if available or just a generic marker if not. 
+                                                Actually, let's use a simpler approach for OL: let the browser handle it but wrap it robustly.
+                                                If UL failed, OL likely will too. Let's try to force it with a span counter.
+                                            */}
+                                            <span style={{ content: 'counter(blog-counter) "."' }}></span>
+                                          </span>
+                                          <div style={{ flex: 1 }}>{child.props.children}</div>
+                                        </li>
+                                      ))}
+                                    </ol>
+                                  ),
+                                  // Fallback for list items if they are not caught by the parent custom renderer
+                                  // Note: The above custom renderers for UL/OL iterate over children. 
+                                  // If we don't define LIST_ITEM here, the default renderer will be used for the content *inside* the custom LI we made above?
+                                  // Actually, documentToReactComponents renders the children. 
+                                  // If we define UL_LIST, 'children' will be an array of React elements rendered from LIST_ITEM nodes.
+                                  // So we need to be careful.
+
+                                  // BETTER APPROACH: 
+                                  // Define UL_LIST to just be the container.
+                                  // Define LIST_ITEM to be the flex container with the bullet.
+                                  [BLOCKS.UL_LIST]: (node, children) => <ul className="mb-4" style={{ listStyle: 'none', paddingLeft: 0 }}>{children}</ul>,
+                                  [BLOCKS.OL_LIST]: (node, children) => <ol className="mb-4" style={{ listStyle: 'none', paddingLeft: 0, counterReset: 'blog-list-counter' }}>{children}</ol>,
+                                  [BLOCKS.LIST_ITEM]: (node, children) => {
+                                    // We need to know if we are in a UL or OL. 
+                                    // Context is hard here. 
+                                    // BUT, we can use CSS classes to differentiate if we could pass props.
+                                    // Since we can't easily pass props down to LIST_ITEM from UL_LIST in this API without context...
+
+                                    // Let's try the "nuclear" CSS approach again but with a different strategy:
+                                    // Use a specific class for the list items and force `display: list-item`
+
+                                    return (
+                                      <li className="blog-list-item" style={{
+                                        display: 'list-item',
+                                        listStyleType: 'disc',
+                                        listStylePosition: 'outside',
+                                        marginLeft: '10px',
+                                        paddingLeft: '5px'
+                                      }}>
+                                        {children}
+                                      </li>
+                                    );
+                                  },
+
+                                  [BLOCKS.QUOTE]: (node, children) => (
+                                    <blockquote className="blockquote border-start border-4 border-primary ps-4 fst-italic my-4 text-secondary bg-light p-3 rounded">
+                                      {children}
+                                    </blockquote>
+                                  ),
+                                  [INLINES.HYPERLINK]: (node, children) => (
+                                    <a href={node.data.uri} target="_blank" rel="noopener noreferrer" className="text-primary text-decoration-underline">
+                                      {children}
+                                    </a>
+                                  ),
+                                },
+                              };
+                              return documentToReactComponents(content, renderOptions);
+                            } else {
+                              return <div dangerouslySetInnerHTML={formatPlainTextContent(content)} />;
+                            }
+                          })()}
+                        </div>
+
                         {!getBlogContent(currentBlog.fields) && (
                           <div className="alert alert-info">
                             No content available for this blog post.
@@ -298,21 +408,21 @@ const BlogDetails = () => {
                           recentPosts.map((post) => (
                             <div className="widget-post clearfix" key={post.sys.id}>
                               <div className="dz-media">
-                                <a 
-                                  href={`/blog-details/${post.sys.id}`} 
+                                <a
+                                  href={`/blog-details/${post.sys.id}`}
                                   onClick={(e) => handleRecentPostClick(post.sys.id, e)}
                                 >
-                                  <img 
-                                    src={post.fields.featuredImage?.fields?.file?.url ? 
-                                      `https:${post.fields.featuredImage.fields.file.url}` : 
-                                      IMAGES.recentPicture1} 
+                                  <img
+                                    src={post.fields.featuredImage?.fields?.file?.url ?
+                                      `https:${post.fields.featuredImage.fields.file.url}` :
+                                      IMAGES.recentPicture1}
                                     alt={post.fields.title || "Recent blog"}
                                   />
                                 </a>
                               </div>
                               <div className="dz-info">
                                 <h6 className="title">
-                                  <a 
+                                  <a
                                     href={`/blog-details/${post.sys.id}`}
                                     onClick={(e) => handleRecentPostClick(post.sys.id, e)}
                                   >
@@ -423,12 +533,21 @@ const BlogDetails = () => {
           line-height: 1.6;
         }
         
-        .blog-content ul, .blog-content ol {
-          margin: 0 0 1.8rem 1.25rem;
-          padding-left: 1rem;
+        /* Force list styling with high specificity */
+        .blog-content ul {
+          list-style-type: disc !important;
+          margin-left: 10px !important;
+          padding-left: 10px !important;
+        }
+        
+        .blog-content ol {
+          list-style-type: decimal !important;
+          margin-left: 10px !important;
+          padding-left: 5px !important;
         }
         
         .blog-content li {
+          display: list-item !important;
           margin-bottom: 0.75rem;
           line-height: 1.7;
         }

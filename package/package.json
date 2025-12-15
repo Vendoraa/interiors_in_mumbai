@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^16.1.6",
+    "@contentful/rich-text-types": "^17.2.5",
     "@emailjs/browser": "^4.4.1",
     "@react-spring/parallax": "^9.7.2",
     "@react-spring/web": "^9.7.2",
