@@ -53,9 +53,9 @@ const InteriorDesignersAndheri = () => {
     return (
         <>
             <SEO
-                title="Top Interior Designers in Andheri West & East | Luxury Home Interiors"
-                description="Premium interior design services in Andheri, Lokhandwala, and Versova. We specialize in luxury apartments, celebrity homes, and modern office spaces in Andheri."
-                keywords="interior designers andheri west, interior designers lokhandwala, interior decorators andheri east, luxury interiors versova, office interior design andheri"
+                title="Top Interior Designers in Andheri West & East | Premium Home Interiors"
+                description="Premium interior design services in Andheri, Lokhandwala, and Versova. We specialize in premium apartments, celebrity homes, and modern office spaces in Andheri."
+                keywords="interior designers andheri west, interior designers lokhandwala, interior decorators andheri east, premium interiors versova, office interior design andheri"
             />
             <Helmet>
                 <script type="application/ld+json">
@@ -72,14 +72,14 @@ const InteriorDesignersAndheri = () => {
                             <div className="col-lg-8 m-b30">
                                 <div className="section-head style-1">
                                     <h6 className="sub-title text-primary">Andheri's Design Experts</h6>
-                                    <h2 className="title">Luxury Interiors for Andheri Homes</h2>
+                                    <h2 className="title">Premium Interiors for Andheri Homes</h2>
                                     <p>Andheri is the heart of Mumbai's lifestyle. From the posh high-rises of Lokhandwala to the spacious apartments in Versova and the corporate hubs of Andheri East, we understand the diverse design needs of this vibrant suburb. We bring a blend of glamour and functionality to your space.</p>
                                 </div>
 
                                 <div className="row m-b30">
                                     <div className="col-md-6">
                                         <ul className="list-check primary">
-                                            <li>Luxury High-Rise Specialists</li>
+                                            <li>Premium High-Rise Specialists</li>
                                             <li>Celebrity Home Design Experience</li>
                                             <li>Space-Saving Solutions</li>
                                             <li>Modern & Contemporary Styles</li>
@@ -119,7 +119,7 @@ const InteriorDesignersAndheri = () => {
                                                 <span className="icon-cell"><i className="flaticon-office"></i></span>
                                             </div>
                                             <div className="icon-content">
-                                                <h4 className="dlab-title m-b10">Luxury Apartments</h4>
+                                                <h4 className="dlab-title m-b10">Premium Apartments</h4>
                                                 <p>Bespoke designs for 3BHK, 4BHK, and Penthouses with premium finishes.</p>
                                             </div>
                                         </div>

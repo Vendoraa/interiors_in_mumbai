@@ -53,9 +53,9 @@ const InteriorDesignersMiraRoad = () => {
     return (
         <>
             <SEO
-                title="Best Interior Designers & Contractors in Mira Road | Turnkey Execution"
-                description="Top-rated interior designers and contractors in Mira Road. We specialize in full home renovation, civil work, and turnkey execution for 1BHK, 2BHK, 3BHK in Kanakia, Lodha."
-                keywords="interior designers mira road, interior contractor mira road, home renovation contractor, civil work mira road, turnkey interior contractor, interior decorators mira road"
+                title="Interior Contractors in Mira Road | Turnkey Civil & Home Renovation Experts"
+                description="Looking for trusted Interior Contractors in Mira Road? We provide end-to-end civil work, home renovation, and turnkey execution for 1BHK, 2BHK, 3BHK. Get a free quote."
+                keywords="interior contractors in mira road, civil contractors mira road, home renovation contractors mira road, turnkey interior contractors, interior designers mira road, flat renovation mira road"
             />
             <Helmet>
                 <script type="application/ld+json">
@@ -111,6 +111,56 @@ const InteriorDesignersMiraRoad = () => {
                                         <a href="#">Srishti Complex</a>
                                         <a href="#">RNA Broadway</a>
                                         <a href="#">Unique Gardens</a>
+                                    </div>
+                                </div>
+
+                                <h3>Our Home Renovation Process</h3>
+                                <p>As professional contractors, we follow a strict timeline to ensure your project is delivered on time:</p>
+                                <ul className="list-check primary m-b30">
+                                    <li><strong>Step 1: Demolition & Civil Work</strong> - Breaking of old tiles, plastering, and waterproofing.</li>
+                                    <li><strong>Step 2: Electrical & Plumbing</strong> - New wiring (Polycab/Finolex) and plumbing (Astral/Ashirvad).</li>
+                                    <li><strong>Step 3: False Ceiling (POP)</strong> - Framing and gypsum board installation (Saint-Gobain).</li>
+                                    <li><strong>Step 4: Carpentry & Furniture</strong> - On-site fabrication or modular installation.</li>
+                                    <li><strong>Step 5: Finishing & Painting</strong> - Final touches with premium paints (Asian Paints Royale).</li>
+                                </ul>
+
+                                <h3>Frequently Asked Questions</h3>
+                                <div className="accordion dz-accordion accordion-sm" id="accordionFaq">
+                                    <div className="accordion-item">
+                                        <h2 className="accordion-header" id="headingOne">
+                                            <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Do you provide labor-only contracting services?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFaq">
+                                            <div className="accordion-body">
+                                                Yes, we offer both turnkey (material + labor) and labor-only contracting services for civil work, painting, and carpentry in Mira Road.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="accordion-item">
+                                        <h2 className="accordion-header" id="headingTwo">
+                                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                What is the cost of 1BHK renovation in Mira Road?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFaq">
+                                            <div className="accordion-body">
+                                                A complete 1BHK renovation in Mira Road typically starts from ₹3.5 Lakhs, depending on the scope of civil work and material selection.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="accordion-item">
+                                        <h2 className="accordion-header" id="headingThree">
+                                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                Do you handle society permissions?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFaq">
+                                            <div className="accordion-body">
+                                                Yes, we assist with all necessary documentation and drawings required for society NOC permissions in Mira Road complexes.
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 

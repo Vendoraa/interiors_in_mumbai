@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, keywords, image }) => {
     const siteTitle = "Interiors in Mumbai";
-    const defaultDescription = "Premier interior design firm in Mumbai offering luxury home renovations, modern office design, and turnkey architectural projects.";
-    const defaultKeywords = "interior design, mumbai, architects, home renovation, luxury interiors";
+    const defaultDescription = "Premier interior design firm in Mumbai offering premium home renovations, modern office design, and turnkey architectural projects.";
+    const defaultKeywords = "interior design, mumbai, architects, home renovation, premium interiors";
     const defaultImage = "https://visva.dexignzone.com/react/social-image.png";
 
     const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle;

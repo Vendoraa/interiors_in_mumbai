@@ -53,9 +53,9 @@ const InteriorDesignersBandra = () => {
     return (
         <>
             <SEO
-                title="Luxury Interior Designers in Bandra & Pali Hill | High-End Home Decor"
-                description="Exclusive interior design services for Bandra, Pali Hill, and Carter Road. We create bespoke luxury interiors for sea-facing apartments and heritage bungalows."
-                keywords="interior designers bandra west, luxury interiors pali hill, interior decorators bandra, sea facing apartment design, bungalow renovation mumbai"
+                title="Premium Interior Designers in Bandra & Pali Hill | High-End Home Decor"
+                description="Exclusive interior design services for Bandra, Pali Hill, and Carter Road. We create bespoke premium interiors for sea-facing apartments and heritage bungalows."
+                keywords="interior designers bandra west, premium interiors pali hill, interior decorators bandra, sea facing apartment design, bungalow renovation mumbai"
             />
             <Helmet>
                 <script type="application/ld+json">
@@ -73,13 +73,13 @@ const InteriorDesignersBandra = () => {
                                 <div className="section-head style-1">
                                     <h6 className="sub-title text-primary">Queen of Suburbs</h6>
                                     <h2 className="title">Bespoke Interiors for Bandra Homes</h2>
-                                    <p>Bandra represents the pinnacle of Mumbai luxury. Whether it's a heritage bungalow in Pali Hill, a sea-facing apartment on Carter Road, or a modern high-rise in BKC, our designs reflect sophistication and elegance. We specialize in creating unique, personality-driven spaces for the discerning Bandra resident.</p>
+                                    <p>Bandra represents the pinnacle of Mumbai living. Whether it's a heritage bungalow in Pali Hill, a sea-facing apartment on Carter Road, or a modern high-rise in BKC, our designs reflect sophistication and elegance. We specialize in creating unique, personality-driven spaces for the discerning Bandra resident.</p>
                                 </div>
 
                                 <div className="row m-b30">
                                     <div className="col-md-6">
                                         <ul className="list-check primary">
-                                            <li>Ultra-Luxury Design Concepts</li>
+                                            <li>Ultra-Premium Design Concepts</li>
                                             <li>Heritage Home Restoration</li>
                                             <li>Imported Furniture Sourcing</li>
                                             <li>Art & Decor Curation</li>
@@ -130,7 +130,7 @@ const InteriorDesignersBandra = () => {
                                                 <span className="icon-cell"><i className="flaticon-blueprint"></i></span>
                                             </div>
                                             <div className="icon-content">
-                                                <h4 className="dlab-title m-b10">Modern Luxury</h4>
+                                                <h4 className="dlab-title m-b10">Modern Elegance</h4>
                                                 <p>Sleek, contemporary designs for new high-rises with Italian marble and premium veneers.</p>
                                             </div>
                                         </div>
@@ -141,7 +141,7 @@ const InteriorDesignersBandra = () => {
                                                 <span className="icon-cell"><i className="flaticon-kitchen"></i></span>
                                             </div>
                                             <div className="icon-content">
-                                                <h4 className="dlab-title m-b10">Luxury Kitchens</h4>
+                                                <h4 className="dlab-title m-b10">Premium Kitchens</h4>
                                                 <p>Imported modular kitchens with island counters and built-in appliances.</p>
                                             </div>
                                         </div>

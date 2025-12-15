@@ -5,11 +5,12 @@ import SEO from '../components/SEO';
 import CommanBanner from '../elements/CommanBanner';
 import Progress from '../components/Progress';
 import Faq from '../components/Faq';
+import BeforeAfterSlider from '../components/BeforeAfterSlider';
 
 const ImaGallery = [
     { id: 1, catagery: "Interior Design", img: IMAGES.portfolioLivingRoom, title: "Modern Living Room", location: "Mira Road" },
     { id: 2, catagery: "Interior Design", img: IMAGES.mumbai2bhk, title: "2BHK Apartment", location: "Andheri" },
-    { id: 3, catagery: "Interior Design", img: IMAGES.mumbai3bhk, title: "Luxury 3BHK", location: "Bandra" },
+    { id: 3, catagery: "Interior Design", img: IMAGES.mumbai3bhk, title: "Premium 3BHK", location: "Bandra" },
     { id: 4, catagery: "Interior Design", img: IMAGES.mumbaiKitchen, title: "Modular Kitchen", location: "Powai" },
     { id: 5, catagery: "Construction", img: IMAGES.service5, title: "Commercial Space", location: "Thane" },
     { id: 6, catagery: "Interior Design", img: IMAGES.service3, title: "Master Bedroom", location: "Mumbai" },
@@ -29,12 +30,32 @@ const Portfolio = () => {
     return (
         <>
             <SEO
-                title="Interior Design Portfolio | Luxury Projects Mumbai"
-                description="View our portfolio of stunning interior design projects in Mumbai. From luxury apartments to modern offices, see how we transform spaces."
-                keywords="Interior Design Portfolio, Mumbai Interior Projects, Luxury Home Design Gallery, Office Interior Portfolio, Recent Works"
+                title="Interior Design Portfolio | Premium Projects Mumbai"
+                description="View our portfolio of stunning interior design projects in Mumbai. From premium apartments to modern offices, see how we transform spaces."
+                keywords="Interior Design Portfolio, Mumbai Interior Projects, Premium Home Design Gallery, Office Interior Portfolio, Recent Works"
             />
             <div className="page-content bg-white">
                 <CommanBanner mainTitle="Portfolio" parentTitle="Home" pageName="Portfolio" bgImage={IMAGES.bnr8} />
+
+                {/* Before/After Slider Section */}
+                <section className="content-inner-2">
+                    <div className="container">
+                        <div className="section-head style-1 text-center">
+                            <h6 className="sub-title text-primary">Transformation</h6>
+                            <h2 className="title">See the Difference</h2>
+                            <p>Slide to see the dramatic transformation of a 1BHK living room in Mira Road.</p>
+                        </div>
+                        <div className="row justify-content-center">
+                            <div className="col-lg-10">
+                                <BeforeAfterSlider
+                                    beforeImage={IMAGES.before1bhk}
+                                    afterImage={IMAGES.after1bhk}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <section className="content-inner line-img overflow-hidden">
                     <div className="site-filters style-1 clearfix center">
                         <ul className="filters" data-toggle="buttons">

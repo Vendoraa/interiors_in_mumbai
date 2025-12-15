@@ -13,7 +13,7 @@ const Pricing = () => {
         "minPrice": "600",
         "maxPrice": "3000",
         "unitCode": "SQF",
-        "description": "Interior design services ranging from basic to luxury packages"
+        "description": "Interior design services ranging from basic to premium packages"
     };
 
     return (
@@ -100,7 +100,7 @@ const Pricing = () => {
                                 <div className="pricingtable-wrapper style-1">
                                     <div className="pricingtable-inner">
                                         <div className="pricingtable-title">
-                                            <h3>Luxury Elite</h3>
+                                            <h3>Elite</h3>
                                             <p>For those who want the absolute best</p>
                                         </div>
                                         <div className="pricingtable-price">
@@ -111,7 +111,7 @@ const Pricing = () => {
                                             <li><i className="fa fa-check text-primary"></i> Veneer / PU / Duco Finish</li>
                                             <li><i className="fa fa-check text-primary"></i> High-End Modular Kitchen</li>
                                             <li><i className="fa fa-check text-primary"></i> Italian Marble Flooring</li>
-                                            <li><i className="fa fa-check text-primary"></i> Luxury Texture Paints</li>
+                                            <li><i className="fa fa-check text-primary"></i> Premium Texture Paints</li>
                                             <li><i className="fa fa-check text-primary"></i> Automation & Premium Lighting</li>
                                             <li><i className="fa fa-check text-primary"></i> 90+ Days Delivery</li>
                                         </ul>
@@ -140,7 +140,7 @@ const Pricing = () => {
                                                 <th>Size (Approx)</th>
                                                 <th>Basic Package</th>
                                                 <th>Premium Package</th>
-                                                <th>Luxury Package</th>
+                                                <th>Elite Package</th>
                                             </tr>
                                         </thead>
                                         <tbody>

@@ -49,6 +49,8 @@ export const IMAGES = {
   mumbai2bhk: require('../assets/images/work/mumbai_2bhk.png'),
   mumbai3bhk: require('../assets/images/work/mumbai_3bhk.png'),
   portfolioLivingRoom: require('../assets/images/work/portfolio_living_room.png'),
+  before1bhk: require('../assets/images/work/raw_1bhk_edit.png'),
+  after1bhk: require('../assets/images/work/after_1bhk_edit.png'),
 
   // Location Banners
   miraRoadBanner: require('../assets/images/banner/mira_road_banner.png'),

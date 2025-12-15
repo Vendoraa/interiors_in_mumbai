@@ -5,10 +5,10 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const portfolioBlog = [
-    { image: IMAGES.mumbai2bhk, title: 'Luxury 2 BHK Interior', location: 'Bandra West', subtitle: 'INTERIOR DESIGN', },
+    { image: IMAGES.mumbai2bhk, title: 'Premium 2 BHK Interior', location: 'Bandra West', subtitle: 'INTERIOR DESIGN', },
     { image: IMAGES.mumbai3bhk, changeStyle: 'mt-5', title: 'Sea View 3 BHK', location: 'Marine Drive', subtitle: 'ARCHITECTURAL', },
     { image: IMAGES.mumbaiKitchen, title: 'Modern Modular Kitchen', location: 'Andheri East', subtitle: 'INTERIOR DESIGN', },
-    { image: IMAGES.mumbai2bhk, changeStyle: 'mt-5', title: 'Compact Luxury Home', location: 'Juhu', subtitle: 'INTERIOR DESIGN', },
+    { image: IMAGES.mumbai2bhk, changeStyle: 'mt-5', title: 'Compact Modern Home', location: 'Juhu', subtitle: 'INTERIOR DESIGN', },
     { image: IMAGES.mumbai3bhk, title: 'Premium South Bombay Apt', location: 'Worli', subtitle: 'ARCHITECTURAL', },
     { image: IMAGES.mumbaiKitchen, changeStyle: 'mt-5', title: 'High-Rise Kitchen Design', location: 'Powai', subtitle: 'INTERIOR DESIGN', },
 ];
