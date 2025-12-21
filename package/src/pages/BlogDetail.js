@@ -16,8 +16,18 @@ const BlogDetail = () => {
       try {
         const response = await getEntries('blogPost', { order: '-sys.createdAt' });
         if (response && response.items) {
+          // Helper to create SEO-friendly slugs
+          const createSlug = (title) => {
+            return title
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/(^-|-$)/g, '');
+          };
+
           const blogPosts = response.items.map((item) => {
             const { sys, fields } = item;
+            const slug = fields.slug || createSlug(fields.title || '');
+
             return {
               id: sys.id,
               featuredImage: fields.featuredImage?.fields?.file?.url
@@ -26,7 +36,7 @@ const BlogDetail = () => {
               title: fields.title || 'Untitled Blog Post',
               description: fields.excerpt || fields.description || '',
               date: sys.createdAt || new Date().toISOString(),
-              url: `/blog-details/${sys.id}`,
+              url: slug ? `/blog-details/${slug}` : `/blog-details/${sys.id}`,
             };
           });
           setBlogs(blogPosts);

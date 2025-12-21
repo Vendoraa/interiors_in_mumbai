@@ -12,6 +12,28 @@ const SEO = ({ title, description, keywords, image }) => {
     const metaKeywords = keywords || defaultKeywords;
     const metaImage = image || defaultImage;
 
+    // Generate BreadcrumbList Schema
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.interiorsinmumbai.com"
+            },
+            // Dynamic breadcrumbs would be added here based on props or route
+            // For now, we'll add a generic second level if title is present
+            ...(title ? [{
+                "@type": "ListItem",
+                "position": 2,
+                "name": title,
+                "item": window.location.href
+            }] : [])
+        ]
+    };
+
     return (
         <Helmet>
             {/* Standard metadata tags */}
@@ -30,6 +52,11 @@ const SEO = ({ title, description, keywords, image }) => {
             <meta name="twitter:title" content={metaTitle} />
             <meta name="twitter:description" content={metaDescription} />
             <meta name="twitter:image" content={metaImage} />
+
+            {/* Breadcrumb Schema */}
+            <script type="application/ld+json">
+                {JSON.stringify(breadcrumbSchema)}
+            </script>
         </Helmet>
     );
 };

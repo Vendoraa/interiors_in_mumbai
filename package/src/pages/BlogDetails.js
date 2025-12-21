@@ -17,18 +17,60 @@ const BlogDetails = () => {
   const blogRef = useRef(null);
   const navigate = useNavigate();
 
+  // Helper to create SEO-friendly slugs
+  const createSlug = (title) => {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+  };
+
   // Prevent unnecessary re-renders with memoized functions
-  const fetchBlogDetail = useCallback(async (postId) => {
-    if (!postId) {
-      setError('Blog ID not provided');
+  const fetchBlogDetail = useCallback(async (identifier) => {
+    if (!identifier) {
+      setError('Blog identifier not provided');
       setLoading(false);
       return;
     }
 
     try {
       setLoading(true);
-      console.log('Fetching blog with ID:', postId);
-      const entry = await getEntry(postId);
+      console.log('Fetching blog with identifier:', identifier);
+
+      // 1. Try to fetch as ID first (backward compatibility & fast path)
+      // Contentful IDs are usually alphanumeric and ~22 chars. Slugs usually have hyphens.
+      // If it looks like an ID, try it.
+      let entry = null;
+      if (!identifier.includes('-') && identifier.length > 15) {
+        try {
+          entry = await getEntry(identifier);
+        } catch (e) {
+          console.log('Not found by ID, trying slug...');
+        }
+      }
+
+      // 2. If not found by ID, try to find by slug field
+      if (!entry) {
+        const response = await getEntries('blogPost', {
+          'fields.slug': identifier,
+          limit: 1
+        });
+        if (response && response.items && response.items.length > 0) {
+          entry = response.items[0];
+        }
+      }
+
+      // 3. If still not found (no slug field yet), fetch all and match title-slug (Fallback)
+      if (!entry) {
+        console.log('Slug lookup failed, trying title match fallback...');
+        const allPosts = await getEntries('blogPost');
+        if (allPosts && allPosts.items) {
+          entry = allPosts.items.find(post => {
+            const slug = post.fields.slug || createSlug(post.fields.title || '');
+            return slug === identifier;
+          });
+        }
+      }
 
       if (entry) {
         console.log('Blog data retrieved');
@@ -43,7 +85,7 @@ const BlogDetails = () => {
     } finally {
       setLoading(false);
     }
-  }, [getEntry]);
+  }, [getEntry, getEntries]);
 
   const fetchRecentPosts = useCallback(async () => {
     try {
@@ -91,13 +133,17 @@ const BlogDetails = () => {
   }, [getEntries]);
 
   // Fixed: Properly navigate to the new post when clicked
-  const handleRecentPostClick = useCallback((postId, event) => {
+  const handleRecentPostClick = useCallback((post, event) => {
     event.preventDefault();
 
-    if (postId === id) return; // Don't do anything if clicking the current post
+    // Use slug if available, otherwise ID
+    const slug = post.fields.slug || createSlug(post.fields.title || '');
+    const identifier = slug || post.sys.id;
+
+    if (identifier === id) return; // Don't do anything if clicking the current post
 
     // Use React Router's navigate function to change URL and trigger proper navigation
-    navigate(`/blog-details/${postId}`);
+    navigate(`/blog-details/${identifier}`);
 
     // Scroll to top
     window.scrollTo(0, 0);
@@ -111,7 +157,8 @@ const BlogDetails = () => {
     }
 
     // Only fetch if we don't have the blog post yet or if ID changed
-    if (!blog || (blog && blog.sys.id !== id)) {
+    // Note: 'id' from useParams is now actually 'slug' or 'id'
+    if (!blog || (blog && blog.sys.id !== id && blog.fields.slug !== id)) {
       fetchBlogDetail(id);
     }
 
@@ -291,11 +338,6 @@ const BlogDetails = () => {
                                       {React.Children.map(children, child => (
                                         <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '8px', counterIncrement: 'blog-counter' }}>
                                           <span style={{ marginRight: '10px', color: 'var(--primary)', fontWeight: 'bold' }}>
-                                            {/* We can't easily get the index here without complex logic, so we'll use CSS counters if possible, 
-                                                but for now let's try to use the index if available or just a generic marker if not. 
-                                                Actually, let's use a simpler approach for OL: let the browser handle it but wrap it robustly.
-                                                If UL failed, OL likely will too. Let's try to force it with a span counter.
-                                            */}
                                             <span style={{ content: 'counter(blog-counter) "."' }}></span>
                                           </span>
                                           <div style={{ flex: 1 }}>{child.props.children}</div>
@@ -303,27 +345,9 @@ const BlogDetails = () => {
                                       ))}
                                     </ol>
                                   ),
-                                  // Fallback for list items if they are not caught by the parent custom renderer
-                                  // Note: The above custom renderers for UL/OL iterate over children. 
-                                  // If we don't define LIST_ITEM here, the default renderer will be used for the content *inside* the custom LI we made above?
-                                  // Actually, documentToReactComponents renders the children. 
-                                  // If we define UL_LIST, 'children' will be an array of React elements rendered from LIST_ITEM nodes.
-                                  // So we need to be careful.
-
-                                  // BETTER APPROACH: 
-                                  // Define UL_LIST to just be the container.
-                                  // Define LIST_ITEM to be the flex container with the bullet.
                                   [BLOCKS.UL_LIST]: (node, children) => <ul className="mb-4" style={{ listStyle: 'none', paddingLeft: 0 }}>{children}</ul>,
                                   [BLOCKS.OL_LIST]: (node, children) => <ol className="mb-4" style={{ listStyle: 'none', paddingLeft: 0, counterReset: 'blog-list-counter' }}>{children}</ol>,
                                   [BLOCKS.LIST_ITEM]: (node, children) => {
-                                    // We need to know if we are in a UL or OL. 
-                                    // Context is hard here. 
-                                    // BUT, we can use CSS classes to differentiate if we could pass props.
-                                    // Since we can't easily pass props down to LIST_ITEM from UL_LIST in this API without context...
-
-                                    // Let's try the "nuclear" CSS approach again but with a different strategy:
-                                    // Use a specific class for the list items and force `display: list-item`
-
                                     return (
                                       <li className="blog-list-item" style={{
                                         display: 'list-item',
@@ -336,7 +360,6 @@ const BlogDetails = () => {
                                       </li>
                                     );
                                   },
-
                                   [BLOCKS.QUOTE]: (node, children) => (
                                     <blockquote className="blockquote border-start border-4 border-primary ps-4 fst-italic my-4 text-secondary bg-light p-3 rounded">
                                       {children}
@@ -405,40 +428,46 @@ const BlogDetails = () => {
                       </div>
                       <div className="widget-post-bx">
                         {recentPosts.length > 0 ? (
-                          recentPosts.map((post) => (
-                            <div className="widget-post clearfix" key={post.sys.id}>
-                              <div className="dz-media">
-                                <a
-                                  href={`/blog-details/${post.sys.id}`}
-                                  onClick={(e) => handleRecentPostClick(post.sys.id, e)}
-                                >
-                                  <img
-                                    src={post.fields.featuredImage?.fields?.file?.url ?
-                                      `https:${post.fields.featuredImage.fields.file.url}` :
-                                      IMAGES.recentPicture1}
-                                    alt={post.fields.title || "Recent blog"}
-                                  />
-                                </a>
-                              </div>
-                              <div className="dz-info">
-                                <h6 className="title">
+                          recentPosts.map((post) => {
+                            // Calculate slug for recent posts too
+                            const slug = post.fields.slug || createSlug(post.fields.title || '');
+                            const linkUrl = slug ? `/blog-details/${slug}` : `/blog-details/${post.sys.id}`;
+
+                            return (
+                              <div className="widget-post clearfix" key={post.sys.id}>
+                                <div className="dz-media">
                                   <a
-                                    href={`/blog-details/${post.sys.id}`}
-                                    onClick={(e) => handleRecentPostClick(post.sys.id, e)}
+                                    href={linkUrl}
+                                    onClick={(e) => handleRecentPostClick(post, e)}
                                   >
-                                    {post.fields.title || "Untitled Post"}
+                                    <img
+                                      src={post.fields.featuredImage?.fields?.file?.url ?
+                                        `https:${post.fields.featuredImage.fields.file.url}` :
+                                        IMAGES.recentPicture1}
+                                      alt={post.fields.title || "Recent blog"}
+                                    />
                                   </a>
-                                </h6>
-                                <div className="dz-meta">
-                                  <ul>
-                                    <li className="post-date">
-                                      {formatRecentPostDate(post.sys.createdAt)}
-                                    </li>
-                                  </ul>
+                                </div>
+                                <div className="dz-info">
+                                  <h6 className="title">
+                                    <a
+                                      href={linkUrl}
+                                      onClick={(e) => handleRecentPostClick(post, e)}
+                                    >
+                                      {post.fields.title || "Untitled Post"}
+                                    </a>
+                                  </h6>
+                                  <div className="dz-meta">
+                                    <ul>
+                                      <li className="post-date">
+                                        {formatRecentPostDate(post.sys.createdAt)}
+                                      </li>
+                                    </ul>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          ))
+                            );
+                          })
                         ) : (
                           <div className="p-3 text-center">
                             <p>Loading recent posts...</p>
