@@ -3,11 +3,11 @@ import React from 'react';
 class LazyLoadErrorBoundary extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { hasError: false };
+        this.state = { hasError: false, error: null };
     }
 
     static getDerivedStateFromError(error) {
-        return { hasError: true };
+        return { hasError: true, error };
     }
 
     componentDidCatch(error, errorInfo) {
@@ -27,6 +27,23 @@ class LazyLoadErrorBoundary extends React.Component {
 
     render() {
         if (this.state.hasError) {
+            // Check if it's a chunk load error
+            const isChunkError = this.state.error && (
+                this.state.error.name === 'ChunkLoadError' ||
+                this.state.error.message.includes('Loading chunk')
+            );
+
+            // If it's a chunk error, show loading spinner while we reload
+            if (isChunkError) {
+                return (
+                    <div className="vh-100 d-flex align-items-center justify-content-center">
+                        <div className="spinner-border text-primary" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                );
+            }
+
             return (
                 <div className="vh-100 d-flex align-items-center justify-content-center">
                     <div className="text-center">

@@ -6,12 +6,22 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const container = document.getElementById('root');
+
+if (container.hasChildNodes()) {
+  ReactDOM.hydrateRoot(container,
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+} else {
+  const root = ReactDOM.createRoot(container);
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
 
 serviceWorkerRegistration.register();
 reportWebVitals();

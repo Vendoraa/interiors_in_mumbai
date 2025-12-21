@@ -52,6 +52,14 @@ const BlogGrid = () => {
     };
   };
 
+  // Helper to create SEO-friendly slugs
+  const createSlug = (title) => {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+  };
+
   return (
     <>
       <CommanBanner mainTitle="Blog grid" parentTitle="Home" pageName="Our blog" bgImage={IMAGES.bnr1} />
@@ -78,11 +86,16 @@ const BlogGrid = () => {
                     IMAGES.blogGridPic1;
                   const dateInfo = formatDate(sys.createdAt);
 
+                  // Use existing slug or create one from title
+                  const slug = fields.slug || createSlug(fields.title || '');
+                  // Fallback to ID if no title/slug (rare)
+                  const linkUrl = slug ? `/blog-details/${slug}` : `/blog-details/${sys.id}`;
+
                   return (
                     <div key={sys.id} className="col-xl-6 col-lg-6 card-container">
                       <div className="dz-card blog-grid style-1 m-b50 aos-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay={200 * (index % 3)}>
                         <div className="dz-media">
-                          <Link to={`/blog-details/${sys.id}`}>
+                          <Link to={linkUrl}>
                             <img src={imageUrl} alt={fields.title || "Blog post"} />
                           </Link>
                         </div>
@@ -104,13 +117,13 @@ const BlogGrid = () => {
                             </ul>
                           </div>
                           <h3 className="dz-title">
-                            <Link to={`/blog-details/${sys.id}`}>{fields.title}</Link>
+                            <Link to={linkUrl}>{fields.title}</Link>
                           </h3>
                           <div className="dz-post-text text">
                             <p>{fields.excerpt || fields.content?.substring(0, 120) + "..."}</p>
                           </div>
                           <div className="read-more">
-                            <Link to={`/blog-details/${sys.id}`} className="btn btn-primary btn-rounded btn-sm hover-icon">
+                            <Link to={linkUrl} className="btn btn-primary btn-rounded btn-sm hover-icon">
                               <span>Read More </span>
                               <i className="fas fa-arrow-right"></i>
                             </Link>
