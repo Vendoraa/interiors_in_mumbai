@@ -15,9 +15,19 @@ const Blog = () => {
         // Use the useContentful hook instead of direct fetch
         const response = await getEntries('blogPost', { order: '-sys.createdAt', limit: 3 });
 
+        // Helper to create SEO-friendly slugs
+        const createSlug = (title) => {
+          return title
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/(^-|-$)/g, '');
+        };
+
         if (response && response.items) {
           const blogPosts = response.items.map((item) => {
             const { sys, fields } = item;
+            const slug = fields.slug || createSlug(fields.title || '');
+
             return {
               id: sys.id,
               featuredImage: fields.featuredImage?.fields?.file?.url
@@ -26,8 +36,8 @@ const Blog = () => {
               title: fields.title || "Untitled Blog Post",
               description: fields.excerpt || fields.description || (fields.content?.substring(0, 120) + "..."),
               date: sys.createdAt || new Date().toISOString(),
-              // Set the proper URL with blog ID
-              url: `/blog-details/${sys.id}`
+              // Set the proper URL with slug, fallback to ID
+              url: slug ? `/blog-details/${slug}` : `/blog-details/${sys.id}`
             };
           });
           setBlogs(blogPosts);

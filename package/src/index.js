@@ -4,12 +4,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
-
-
 const container = document.getElementById('root');
+const fallbackContent = document.getElementById('seo-fallback');
 
-if (container.hasChildNodes()) {
-  ReactDOM.hydrateRoot(container,
+// Only hydrate if we have content AND it's not our manual fallback
+// In production (post-react-snap), the fallback div will be gone, replaced by actual app HTML
+if (container.hasChildNodes() && !fallbackContent) {
+  ReactDOM.hydrateRoot(container, 
     <React.StrictMode>
       <App />
     </React.StrictMode>
