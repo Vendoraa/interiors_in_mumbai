@@ -30,7 +30,7 @@ const Pricing = () => {
             </Helmet>
 
             <div className="page-content bg-white">
-                <CommanBanner mainTitle="Pricing & Packages" parentTitle="Home" pageName="Pricing" bgImage={IMAGES.bnr4} />
+                <CommanBanner mainTitle="Pricing & Packages" parentTitle="Home" pageName="Pricing" bgImage={IMAGES.bannerbg3} />
 
                 <section className="content-inner">
                     <div className="container">

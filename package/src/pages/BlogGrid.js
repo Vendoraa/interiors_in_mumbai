@@ -62,7 +62,7 @@ const BlogGrid = () => {
 
   return (
     <>
-      <CommanBanner mainTitle="Blog grid" parentTitle="Home" pageName="Our blog" bgImage={IMAGES.bnr1} />
+      <CommanBanner mainTitle="Blog grid" parentTitle="Home" pageName="Our blog" bgImage={IMAGES.bannerbg3} />
       <div className="page-content bg-white">
         <div className="content-inner">
           <div className="container">

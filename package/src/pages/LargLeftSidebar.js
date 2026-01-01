@@ -5,7 +5,7 @@ import LargeBlogCard from '../elements/LargeBlogCard'
 import LargeSidebar from '../components/LargeSidebar'
 import Pagination from '../elements/Pagination'
 import { Link } from 'react-router-dom'
-import {Swiper,SwiperSlide} from 'swiper/react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper'
 import ModalVideo from 'react-modal-video';
 
@@ -22,7 +22,7 @@ const LargLeftSidebar = () => {
     return (
         <>
             <div className="page-content bg-white">
-                <CommanBanner mainTitle="Large Left Sidebar" parentTitle="Home" pageName="Our Blog" bgImage={IMAGES.bnr4} />
+                <CommanBanner mainTitle="Large Left Sidebar" parentTitle="Home" pageName="Our Blog" bgImage={IMAGES.bannerbg3} />
                 <div className="content-inner">
                     <div className="container">
                         <div className="row">
@@ -37,18 +37,18 @@ const LargLeftSidebar = () => {
                                             speed={1220}
                                             loop={true}
                                         >
-                                               {
-                                                largBlogGrid.map((item, ind)=>(
+                                            {
+                                                largBlogGrid.map((item, ind) => (
                                                     <SwiperSlide className="swiper-slide"
-                                                     key={ind}
+                                                        key={ind}
                                                     >
                                                         <Link to="/blog-details"><img src={item.img} alt="" /></Link>
                                                     </SwiperSlide>
                                                 ))
-                                               }
+                                            }
                                             <div className="prev-post-swiper-btn"
-                                                onClick={()=>{swiperRef.current.swiper.slidePrev()}}
-                                             >
+                                                onClick={() => { swiperRef.current.swiper.slidePrev() }}
+                                            >
                                                 <i className="la fa-angle-left"></i>
                                             </div>
                                             <div className="next-post-swiper-btn"

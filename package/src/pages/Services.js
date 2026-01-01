@@ -19,7 +19,7 @@ const Services = () => {
                 keywords="Interior Design Services Mumbai, Residential Interiors, Commercial Interior Design, Turnkey Projects, Custom Furniture Design"
             />
             <div className="page-content bg-white">
-                <CommanBanner mainTitle="Our Services" parentTitle="Home" pageName="Our Services" bgImage={IMAGES.bnr6} />
+                <CommanBanner mainTitle="Our Services" parentTitle="Home" pageName="Our Services" bgImage={IMAGES.bannerbg3} />
                 <section className="content-inner-2" style={{ backgroundImage: `url(${IMAGES.background3})`, backgroundPosition: 'left top', backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>
                     <PopularService />
                 </section>
