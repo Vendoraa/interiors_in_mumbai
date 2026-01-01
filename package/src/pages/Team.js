@@ -14,11 +14,11 @@ const teamCard = [
     { teamImg: IMAGES.team6, name: "Lindsey Botosh", skill: "Architect" },
 ]
 
-function Team(){
+function Team() {
     return (
         <>
             <div className="page-content bg-white">
-                <CommanBanner mainTitle="Team" parentTitle="Home" pageName="Team" bgImage={IMAGES.bannerbg4} />
+                <CommanBanner mainTitle="Team" parentTitle="Home" pageName="Team" bgImage={IMAGES.bannerbg3} />
                 <section className="section-full content-inner">
                     <div className="container">
                         <div className="row">

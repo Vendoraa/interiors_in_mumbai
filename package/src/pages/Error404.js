@@ -8,7 +8,7 @@ const Error404 = () => {
         <>
 
             <div className="page-content bg-white">
-                <CommanBanner mainTitle="Error 404" parentTitle="Home" pageName="Error 404" bgImage={IMAGES.bnr1} />
+                <CommanBanner mainTitle="Error 404" parentTitle="Home" pageName="Error 404" bgImage={IMAGES.bannerbg3} />
 
                 <section className="content-inner" style={{ backgroundImage: `url(${IMAGES.bg2})`, backgroundPosition: 'right bottom', backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>
                     <div className="container">

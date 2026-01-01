@@ -151,7 +151,7 @@ const ServicesDetail = () => {
   return (
     <>
       <div className="page-content bg-white">
-        <CommanBanner mainTitle="Services" parentTitle="Home" pageName="Service Details" bgImage={IMAGES.bnr5} />
+        <CommanBanner mainTitle="Services" parentTitle="Home" pageName="Service Details" bgImage={IMAGES.bannerbg3} />
         <section className="section-full content-inner-2" style={{ backgroundImage: `url(${IMAGES.ServicesDetailBg2})`, backgroundPosition: 'right bottom', backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>
           <div className="container">
             <div className="row">

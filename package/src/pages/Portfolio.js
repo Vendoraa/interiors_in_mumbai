@@ -35,7 +35,7 @@ const Portfolio = () => {
                 keywords="Interior Design Portfolio, Mumbai Interior Projects, Premium Home Design Gallery, Office Interior Portfolio, Recent Works"
             />
             <div className="page-content bg-white">
-                <CommanBanner mainTitle="Portfolio" parentTitle="Home" pageName="Portfolio" bgImage={IMAGES.bnr8} />
+                <CommanBanner mainTitle="Portfolio" parentTitle="Home" pageName="Portfolio" bgImage={IMAGES.bannerbg3} />
 
                 {/* Before/After Slider Section */}
                 <section className="content-inner-2">

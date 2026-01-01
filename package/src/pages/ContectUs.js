@@ -103,7 +103,7 @@ const ContectUs = () => {
         keywords="Contact Interior Designers Mumbai, Interior Design Consultation, Book Appointment, Interiors in Mumbai Contact, Office Location"
       />
       <div className="page-content bg-white">
-        <CommanBanner mainTitle="Contact Us" parentTitle="Home" pageName="Contact Us" bgImage={IMAGES.bnr2} />
+        <CommanBanner mainTitle="Contact Us" parentTitle="Home" pageName="Contact Us" bgImage={IMAGES.bannerbg3} />
         <section className="content-inner">
           <div className="container">
             <div className="row">

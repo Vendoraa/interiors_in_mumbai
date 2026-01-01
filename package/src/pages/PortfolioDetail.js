@@ -39,7 +39,7 @@ const PortfolioDetail = () => {
         <>
             <div className="page-content bg-white">
 
-                <CommanBanner mainTitle="Portfolio Detail" parentTitle="Home" pageName="Portfolio Detail" bgImage={IMAGES.bnr7} />
+                <CommanBanner mainTitle="Portfolio Detail" parentTitle="Home" pageName="Portfolio Detail" bgImage={IMAGES.bannerbg3} />
                 <section className="section-full content-inner-2 port-detail" style={{ backgroundImage: `url(${IMAGES.bg2})`, backgroundPosition: 'right bottom', backgroundSize: '100%', backgroundRepeat: "no-repeat" }}>
                     <div className="container">
                         <div className="row mb-lg-5 mb-3 ">
@@ -165,14 +165,14 @@ const PortfolioDetail = () => {
                                                     <span data-exthumbimage="images/work/work-1/pic-1.jpg"
                                                         data-src="images/work/work-1/pic-1.jpg" className="view-btn lightimg"
                                                         title="INTERIOR DESIGN"
-                                                    >                                                        
+                                                    >
                                                     </span>
                                                     <h6 className="sub-title">INTERIOR DESIGN</h6>
                                                     <h4 className="title m-b15">
                                                         <Link to="/portfolio-details">Modern House Interior
                                                             <span>New York</span>
                                                         </Link>
-                                                        </h4>
+                                                    </h4>
                                                 </div>
                                             </div>
                                         </SwiperSlide>

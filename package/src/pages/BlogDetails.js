@@ -246,7 +246,7 @@ const BlogDetails = () => {
 
   return (
     <>
-      <CommanBanner mainTitle="Blog Details" parentTitle="Home" pageName="Blog Details" bgImage={IMAGES.bnr1} />
+      <CommanBanner mainTitle="Blog Details" parentTitle="Home" pageName="Blog Details" bgImage={IMAGES.bannerbg3} />
       <div className="page-content bg-white">
         <div className="content-inner">
           <div className="container">
