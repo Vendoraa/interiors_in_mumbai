@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import CommanBanner from '../elements/CommanBanner';
 import { IMAGES } from '../constants/theme';
 import SEO from '../components/SEO';
+import ServiceDetailSections from '../components/ServiceDetailSections';
+import { SERVICE_ORDER } from '../seo/serviceContent';
+import { Testimonials, Certifications, Warranty, ServiceAreas } from '../components/EeatSignals';
+import BeforeAfter from '../components/BeforeAfter';
 import { Helmet } from 'react-helmet-async';
 
 const InteriorDesignersAndheri = () => {
@@ -100,14 +104,14 @@ const InteriorDesignersAndheri = () => {
 
                                 <div className="widget widget_tag_cloud m-b30">
                                     <div className="tagcloud">
-                                        <a href="#">Lokhandwala Complex</a>
-                                        <a href="#">Oberoi Springs</a>
-                                        <a href="#">Rustomjee Elements</a>
-                                        <a href="#">Runwal Elegante</a>
-                                        <a href="#">Transcon Triumph</a>
-                                        <a href="#">Adani Western Heights</a>
-                                        <a href="#">Versova</a>
-                                        <a href="#">Seven Bungalows</a>
+                                        <span className="tag">Lokhandwala Complex</span>
+                                        <span className="tag">Oberoi Springs</span>
+                                        <span className="tag">Rustomjee Elements</span>
+                                        <span className="tag">Runwal Elegante</span>
+                                        <span className="tag">Transcon Triumph</span>
+                                        <span className="tag">Adani Western Heights</span>
+                                        <span className="tag">Versova</span>
+                                        <span className="tag">Seven Bungalows</span>
                                     </div>
                                 </div>
 
@@ -210,9 +214,37 @@ const InteriorDesignersAndheri = () => {
                         </div>
                     </div>
                 </section>
+                <section className="content-inner-2">
+                    <div className="container">
+                        <div className="section-head style-1 text-center">
+                            <h6 className="sub-title text-primary">OUR SERVICES</h6>
+                            <h2 className="title">Interior Design Services in Andheri</h2>
+                            <p>From modular kitchens to complete turnkey interiors, here are the services we provide across Andheri and nearby areas.</p>
+                        </div>
+                        {SERVICE_ORDER.map((key) => (
+                            <ServiceDetailSections key={key} serviceKey={key} location="Andheri" />
+                        ))}
+                    </div>
+                </section>
+                <section className="content-inner-2">
+                    <div className="container">
+                        <div className="section-head style-1 text-center">
+                            <h6 className="sub-title text-primary">WHY CHOOSE US</h6>
+                            <h2 className="title">Andheri's Trusted Interior Team</h2>
+                            <p>Local experience, certified work, and written warranties for homes across Andheri and nearby areas.</p>
+                        </div>
+                        <Testimonials limit={3} />
+                        <Certifications />
+                        <Warranty />
+                        <ServiceAreas />
+                    </div>
+                </section>
             </div>
         </>
     );
 };
 
 export default InteriorDesignersAndheri;
+
+
+

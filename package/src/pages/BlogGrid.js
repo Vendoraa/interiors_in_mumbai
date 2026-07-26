@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react'
 import CommanBanner from '../elements/CommanBanner'
 import { IMAGES } from '../constants/theme'
 import { Swiper, SwiperSlide } from 'swiper/react'
-// import 'swiper/css';
-import BlogGridCard from '../elements/BlogGridCard';
-import BlogGridCard2 from '../elements/BlogGridCard2';
-import { Link } from 'react-router-dom';
 import { Navigation } from 'swiper';
 import { useContentful } from '../useContentful';
+import SEO from '../components/SEO';
+import JsonLd from '../components/JsonLd';
+import { buildArticle, SITE_URL } from '../seo/schema';
+import { Link } from 'react-router-dom';
+import BlogGridCard from '../elements/BlogGridCard';
+import BlogGridCard2 from '../elements/BlogGridCard2';
 
 // Fallback blog data if Contentful fetch fails
 const blogGrid = [
@@ -62,7 +64,40 @@ const BlogGrid = () => {
 
   return (
     <>
-      <CommanBanner mainTitle="Blog grid" parentTitle="Home" pageName="Our blog" bgImage={IMAGES.bannerbg3} />
+      <SEO
+        title="Blog Grid | Interior Design Ideas & Tips"
+        description="Browse our interior design blog grid for the latest home renovation tips, modular kitchen ideas, and decor trends from Interiors in Mumbai."
+        keywords="interior design blog, home renovation ideas, decor trends mumbai, interior decorator blog, modular kitchen tips"
+      />
+      {blogs.length > 0 && (
+        <JsonLd
+          data={{
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            itemListElement: blogs.map((blog, index) => {
+              const { fields, sys } = blog;
+              const imageUrl = fields.featuredImage?.fields?.file?.url
+                ? `https:${fields.featuredImage.fields.file.url}`
+                : IMAGES.blogGridPic1;
+              const slug = fields.slug || createSlug(fields.title || '');
+              const linkUrl = slug ? `/blog-details/${slug}` : `/blog-details/${sys.id}`;
+              return {
+                '@type': 'ListItem',
+                position: index + 1,
+                url: `${SITE_URL}${linkUrl}`,
+                item: buildArticle({
+                  headline: fields.title,
+                  description: fields.excerpt || fields.content?.substring(0, 120) + '...',
+                  image: imageUrl,
+                  datePublished: sys.createdAt,
+                  url: `${SITE_URL}${linkUrl}`,
+                }),
+              };
+            }),
+          }}
+        />
+      )}
+      <CommanBanner mainTitle="Blog grid" parentTitle="Home" pageName="Our blog" bgImage={IMAGES.bnr1} />
       <div className="page-content bg-white">
         <div className="content-inner">
           <div className="container">

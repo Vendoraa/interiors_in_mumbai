@@ -1,0 +1,293 @@
+const SERVICES = {
+  "Interior Design": {
+    slug: "interior-design",
+    title: "Interior Design",
+    what: "Interior design is the process of planning, designing, and executing the look and function of a home or office so every room works for the way you live. Our interior design service in Mumbai covers space planning, colour and material selection, furniture layouts, lighting design, and complete turnkey execution.",
+    whyNeed: "Most Mumbai apartments have limited square footage, awkward layouts, and strict society rules. Good interior design helps you get the most usable space, avoid costly mistakes, and create a home that feels larger. Without a proper plan you risk wasted corners, poor lighting, weak storage, and rework, whereas a professional design gives you a clear 3D vision before any money is spent on materials.",
+    benefits: [
+      "Better use of every square foot with smart storage and layout planning",
+      "A cohesive look tailored to your style instead of mismatched pieces",
+      "Fewer surprises and cost overruns thanks to 3D renders and fixed quotes",
+      "One team handling design plus execution, so nothing falls between the cracks",
+      "Higher resale and rental value for your Mumbai property",
+    ],
+    process: [
+      "Free consultation and site measurement at your home",
+      "Concept design with mood boards and a preliminary layout",
+      "Detailed 3D renders and a fixed quotation",
+      "Material finalisation (plywood, laminate, paint, hardware)",
+      "Civil, carpentry, electrical, and painting execution",
+      "Quality checks and final handover with warranty",
+    ],
+    costRange: "Complete home interior design in Mumbai typically costs ₹3.5 lakhs for a 1BHK, ₹6 to 10 lakhs for a 2BHK, and ₹12 lakhs and above for a 3BHK, depending on materials and scope.",
+    timeline: "Most projects are completed in 30 to 90 days, depending on the size of the home and the level of customisation.",
+    materials: [
+      "BWP (boiling water proof) plywood for kitchens and bathrooms",
+      "Laminate, acrylic, veneer, and PU finishes",
+      "Asian Paints and Berger premium paints",
+      "Hettich, Hafele, and Ebco hardware",
+      "Vitrified and ceramic tiles with branded electrical wiring",
+    ],
+    faqs: [
+      { q: "What is included in your interior design service?", a: "Our service includes space planning, 3D design, material selection, and full turnkey execution covering carpentry, false ceiling, electrical, plumbing, and painting." },
+      { q: "Do you handle both design and execution?", a: "Yes. We are a turnkey interior design and contracting firm, so the same team designs and builds your home, which avoids coordination gaps and extra cost." },
+      { q: "How long does a full home interior take in Mumbai?", a: "A typical 2BHK takes about 45 to 60 days, while larger or highly customised homes can take up to 90 days." },
+      { q: "Do you help with society permissions and NOC?", a: "Yes, we assist with the drawings and documentation needed for society NOC and approvals in Mumbai residential complexes." },
+    ],
+    related: ["Modular Kitchen", "Custom Furniture", "Painting", "Electrical", "Floor Plan Design", "Space Saving"],
+  },
+
+  "Modular Kitchen": {
+    slug: "modular-kitchen",
+    title: "Modular Kitchen",
+    what: "A modular kitchen is a factory-made, modular system of cabinets, drawers, and shutters built to fit your kitchen layout, with standardised modules that are easy to install and repair. Our modular kitchen service in Mumbai covers L-shape, U-shape, parallel, and straight layouts with smart storage and modern finishes.",
+    whyNeed: "Mumbai kitchens are usually small, so you need maximum storage and work space in a compact area. A modular kitchen gives you ergonomic counters, soft-close drawers, and tall units that use vertical space, making daily cooking faster and cleaner than with loose carpentry.",
+    benefits: [
+      "Up to 30% more storage with carousel units, pull-outs, and tall pantries",
+      "Easy to clean, termite-proof, and water-resistant materials",
+      "Soft-close hardware for a premium, noise-free feel",
+      "Faster installation than fully site-built kitchens",
+      "Modules can be repaired or replaced individually",
+    ],
+    process: [
+      "Site measurement and understanding your cooking habits",
+      "Layout plan (L, U, parallel, or straight) with 3D view",
+      "Finish and hardware selection (laminate, acrylic, veneer)",
+      "Factory fabrication of cabinets and shutters",
+      "Installation with counter, sink, and appliance fitting",
+      "Final alignment and handover",
+    ],
+    costRange: "A modular kitchen in Mumbai typically costs ₹1.5 to 4 lakhs, depending on size, finish (laminate vs acrylic), and hardware brand.",
+    timeline: "Most modular kitchens are designed and installed in 3 to 5 weeks.",
+    materials: [
+      "BWP marine plywood and MDF boards",
+      "Laminate, acrylic, and veneer shutter finishes",
+      "Hettich and Hafele channels, hinges, and soft-close systems",
+      "Granite or quartz countertops",
+      "Stainless steel and glass tall units",
+    ],
+    faqs: [
+      { q: "How much does a modular kitchen cost in Mumbai?", a: "A standard modular kitchen costs roughly ₹1.5 to 4 lakhs. Laminate finishes are more budget-friendly, while acrylic and veneer with imported hardware cost more." },
+      { q: "Which material is best for a Mumbai kitchen?", a: "We recommend BWP (boiling water proof) plywood with a laminate or acrylic finish because it resists moisture and termites, which matters in Mumbai's humidity." },
+      { q: "Can you make a modular kitchen for a small 1BHK?", a: "Yes. We specialise in straight and L-shape layouts with tall units and pull-outs that maximise storage even in compact 1BHK kitchens." },
+    ],
+    related: ["Custom Furniture", "Electrical", "Painting", "Space Saving", "Interior Design"],
+  },
+  "Custom Furniture": {
+    slug: "custom-furniture",
+    title: "Custom Furniture",
+    what: "Custom furniture is made-to-measure woodwork built for your exact space and style, instead of ready-made pieces that may not fit. Our custom furniture service in Mumbai covers wardrobes, beds, sofa-cum-storage, study tables, TV units, and bespoke pieces designed around how you use your home.",
+    whyNeed: "Ready-made furniture rarely fits Mumbai apartments, where ceiling heights, wall widths, and corners are unique. Custom furniture uses every inch, gives you the storage you actually need, and matches the rest of your interiors.",
+    benefits: [
+      "Fits awkward corners, bay windows, and non-standard wall sizes",
+      "Built-in storage that reduces clutter in small homes",
+      "Choice of finish, colour, and hardware to match your theme",
+      "Stronger joints and longer life than mass-produced furniture",
+      "One-of-a-kind pieces tailored to your lifestyle",
+    ],
+    process: [
+      "Understand your storage needs and style preference",
+      "Measure the space and propose a design with sketches",
+      "Finalise material, finish, and hardware",
+      "Carpentry fabrication at our workshop",
+      "On-site installation and finishing",
+      "Final inspection and handover",
+    ],
+    costRange: "Custom furniture in Mumbai typically costs ₹50,000 to 3 lakhs per piece or set, depending on size, material, and finish.",
+    timeline: "Most custom furniture is delivered in 2 to 4 weeks after design approval.",
+    materials: [
+      "BWP and commercial plywood",
+      "Engineered wood and solid wood options",
+      "Laminate, veneer, and PU paint finishes",
+      "Hettich and Hafele hinges, channels, and handles",
+      "Tempered glass and metal accents",
+    ],
+    faqs: [
+      { q: "Is custom furniture more durable than ready-made?", a: "Yes. Custom pieces use BWP plywood and branded hardware with stronger joints, so they last longer and can be repaired locally." },
+      { q: "How long does custom furniture take in Mumbai?", a: "After design approval, most wardrobes and beds are delivered in 2 to 4 weeks." },
+      { q: "Can you match the furniture to my existing interiors?", a: "Absolutely. We match finish, colour, and profile to your current interior design so everything looks cohesive." },
+    ],
+    related: ["Space Saving", "Modular Kitchen", "Interior Design", "Painting"],
+  },
+
+  "Painting": {
+    slug: "painting",
+    title: "Painting",
+    what: "Our professional painting service covers interior and exterior walls, textures, waterproofing, and colour consultation for homes and offices. We handle surface preparation, priming, and a clean, flawless finish using premium paints.",
+    whyNeed: "Mumbai's humidity, monsoon, and salty air cause damp patches, peeling, and fungus. Proper surface preparation and the right paint protect your walls, improve air quality, and refresh the entire look of your home without structural work.",
+    benefits: [
+      "Protection from dampness, fungus, and weathering",
+      "Brighter, fresher rooms with the right colour psychology",
+      "Low-VOC options that are safer for families",
+      "Clean, streak-free finish with proper priming",
+      "Quick transformation compared to renovation",
+    ],
+    process: [
+      "Inspection of walls for dampness and cracks",
+      "Surface cleaning, crack filling, and priming",
+      "Colour consultation and finish selection",
+      "Application of base coats and finish coats",
+      "Texture or water-proofing as required",
+      "Clean-up and final touch-ups",
+    ],
+    costRange: "Home painting in Mumbai costs about ₹15 to 40 per sq ft, or ₹25,000 to 1.5 lakhs for a full 2BHK, depending on paint and texture.",
+    timeline: "A standard 2BHK is usually painted in 5 to 10 days.",
+    materials: [
+      "Asian Paints, Berger, and Nerolac emulsions",
+      "Waterproofing compounds for exteriors and bathrooms",
+      "Texture and royalty finishes",
+      "Primer and putty for smooth surfaces",
+      "Low-VOC and anti-fungal formulations",
+    ],
+    faqs: [
+      { q: "How much does home painting cost in Mumbai?", a: "Interior painting is roughly ₹15 to 40 per square foot. Textures and waterproofing cost extra, and a full 2BHK usually lands between ₹25,000 and 1.5 lakhs." },
+      { q: "Do you provide waterproofing for monsoon?", a: "Yes. We treat exterior walls and bathrooms with waterproofing compounds to prevent damp patches during the Mumbai monsoon." },
+      { q: "Which paint brand do you use?", a: "We primarily use Asian Paints, Berger, and Nerolac, and can match any brand you prefer." },
+    ],
+    related: ["Interior Design", "Civil Work", "Modular Kitchen", "Custom Furniture"],
+  },
+
+  "Electrical": {
+    slug: "electrical",
+    title: "Electrical",
+    what: "Our electrical service covers new wiring, rewiring, lighting design, switchboards, inverter and fan installations, and repairs for homes and offices. All work is done by experienced electricians with safety and compliance in mind.",
+    whyNeed: "Old or faulty wiring is a fire and shock risk, and Mumbai's power fluctuations can damage appliances. Proper electrical planning gives you safe circuits, enough points for modern devices, and good lighting that makes rooms usable and efficient.",
+    benefits: [
+      "Safer homes with compliant wiring and earthing",
+      "Well-planned points for AC, geyser, and EV chargers",
+      "Layered lighting (ambient, task, accent) for comfort",
+      "Reduced power wastage with the right fixtures",
+      "Fewer breakdowns and easy future upgrades",
+    ],
+    process: [
+      "Load assessment and lighting layout plan",
+      "Concealed conduit and cabling work",
+      "Switchboard, socket, and MCB distribution setup",
+      "Fixture and appliance point installation",
+      "Earthing and safety testing",
+      "Final connection and handover",
+    ],
+    costRange: "Electrical work in Mumbai typically costs ₹30,000 to 1.5 lakhs, depending on the size of the home and the number of points.",
+    timeline: "A full home electrical fit-out usually takes 5 to 12 days.",
+    materials: [
+      "Polycab and Finolex copper wires",
+      "Legrand, Schneider, and Anchor switches",
+      "MCB and ELCB safety devices",
+      "Concealed PVC and metal conduits",
+      "LED and smart lighting fixtures",
+    ],
+    faqs: [
+      { q: "Do you handle complete rewiring of old flats?", a: "Yes. We rewire old Mumbai flats with concealed conduits, new MCB boards, and earthing for safety." },
+      { q: "How long does electrical work take?", a: "A standard home electrical fit-out takes about 5 to 12 days, depending on the number of points." },
+      { q: "Is the wiring safe for AC and geyser loads?", a: "We size cables and MCBs for AC, geyser, and appliance loads so your circuits never overload." },
+    ],
+    related: ["Interior Design", "Painting", "Modular Kitchen", "Civil Work"],
+  },
+
+  "Floor Plan Design": {
+    slug: "floor-plan-design",
+    title: "Floor Plan Design",
+    what: "Floor plan design is the technical layout that shows walls, rooms, doors, windows, and furniture placement to scale. Our floor plan design service in Mumbai gives you 2D plans and detailed drawings that form the backbone of any renovation or new home.",
+    whyNeed: "Before spending on materials, you need a plan that proves the space works. A good floor plan prevents blocked passages, poor ventilation, and wasted area, and it is required for society approvals and contractor quotes in Mumbai.",
+    benefits: [
+      "Clear, to-scale layout before any money is spent",
+      "Better flow, light, and ventilation across rooms",
+      "Easy to get accurate quotes from contractors",
+      "Required drawings for society and bank approvals",
+      "A base for 3D visualisation and execution",
+    ],
+    process: [
+      "Site measurement and requirement study",
+      "Initial 2D layout with room sizes",
+      "Revision based on your feedback",
+      "Furniture layout and circulation plan",
+      "Final CAD drawings and marking plan",
+      "Handover with files for execution",
+    ],
+    costRange: "Floor plan design in Mumbai costs about ₹5,000 to 25,000, depending on the size and detail required.",
+    timeline: "Most floor plans are ready in 3 to 7 days.",
+    materials: [
+      "AutoCAD and SketchUp drawings",
+      "PDF and printable mark-ups",
+      "Furniture and electrical overlay plans",
+      "Ventilation and circulation studies",
+      "Scaled 2D and basic 3D views",
+    ],
+    faqs: [
+      { q: "Do you provide 3D views with the floor plan?", a: "Yes. Along with 2D CAD drawings, we can provide basic 3D views so you can visualise the space before execution." },
+      { q: "Are floor plans needed for society approval?", a: "In most Mumbai societies, a marked layout is required for NOC and renovation approvals, which we provide." },
+      { q: "How quickly can I get a floor plan?", a: "After site measurement, a detailed floor plan is usually ready in 3 to 7 days." },
+    ],
+    related: ["Interior Design", "Civil Work", "Electrical", "Space Saving"],
+  },
+
+  "Space Saving": {
+    slug: "space-saving",
+    title: "Space Saving",
+    what: "Space-saving design uses multifunctional furniture, built-in storage, and smart layouts to make small homes feel bigger. Our space-saving service in Mumbai is built for 1BHK and 2BHK apartments where every square foot counts.",
+    whyNeed: "Mumbai homes are compact, and buying standard furniture leaves dead space. Space-saving solutions like wall beds, lofts, and concealed storage give you a functional home without crowding the rooms.",
+    benefits: [
+      "More open floor area in small apartments",
+      "Hidden storage in beds, stairs, and partitions",
+      "Multifunctional pieces (sofa-cum-bed, study-cum-dining)",
+      "Cleaner, less cluttered rooms",
+      "Lower overall cost than moving to a bigger home",
+    ],
+    process: [
+      "Study how each room is actually used",
+      "Propose multifunctional and built-in options",
+      "3D layout showing cleared circulation space",
+      "Fabrication of custom space-saving units",
+      "Installation and mechanism fitting",
+      "Final handover with usage guidance",
+    ],
+    costRange: "Space-saving solutions in Mumbai typically cost ₹50,000 to 2 lakhs, depending on the number of custom units.",
+    timeline: "Most space-saving projects are completed in 2 to 4 weeks.",
+    materials: [
+      "BWP plywood with laminate and PU finishes",
+      "Hydraulic and pull-down bed mechanisms",
+      "Sliding and tall storage systems",
+      "Hettich and Hafele fittings",
+      "Lightweight engineered panels",
+    ],
+    faqs: [
+      { q: "Can space-saving work for a rented 1BHK?", a: "Yes. We use modular, reversible units like sofa-cum-beds and freestanding storage that add function without permanent changes." },
+      { q: "What are the best space-saving ideas for small Mumbai flats?", a: "Wall beds, lofts, under-bed storage, foldable study tables, and floor-to-ceiling wardrobes give the most space back in compact homes." },
+      { q: "How much does a space-saving makeover cost?", a: "Depending on the units, a space-saving upgrade usually costs ₹50,000 to 2 lakhs." },
+    ],
+    related: ["Custom Furniture", "Interior Design", "Modular Kitchen", "Floor Plan Design"],
+  },
+};
+
+export default SERVICES;
+export const SERVICE_ORDER = ["Interior Design", "Modular Kitchen", "Custom Furniture", "Painting", "Electrical", "Floor Plan Design", "Space Saving"];
+
+export const localize = (service, location) => {
+  if (!location) return service;
+  const loc = location.trim();
+  const withLoc = (text) => text.replace(/in Mumbai/g, `in ${loc}`).replace(/Mumbai /g, `${loc} `).replace(/Mumbai/g, loc);
+  return {
+    ...service,
+    title: `${service.title} in ${loc}`,
+    what: withLoc(service.what),
+    whyNeed: withLoc(service.whyNeed),
+    benefits: service.benefits,
+    process: service.process,
+    costRange: withLoc(service.costRange),
+    timeline: service.timeline,
+    materials: service.materials,
+    faqs: [
+      ...service.faqs,
+      {
+        q: `Do you provide ${service.title.toLowerCase()} in ${loc}?`,
+        a: `Yes. We provide ${service.title.toLowerCase()} across ${loc} and nearby areas, with local site visits, material selection, and turnkey execution handled by our ${loc} team.`,
+      },
+      {
+        q: `How do I get a quote for ${service.title.toLowerCase()} in ${loc}?`,
+        a: `You can book a free site visit in ${loc} and we will share a fixed 3D design and quotation within a few days.`,
+      },
+    ],
+    related: service.related,
+  };
+};
+
