@@ -5,6 +5,7 @@ import { IMAGES } from '../constants/theme';
 import SEO from '../components/SEO';
 import ReCAPTCHA from 'react-google-recaptcha';
 import emailjs from '@emailjs/browser';
+import { COMPANY, SERVICE_AREAS, WARRANTY } from '../seo/eeat';
 
 const cards = [
   { id: '01', icon: "flaticon-telephone", title: "Text Now", detail: "+91 998 724 1424,", detail2: "+91 836 965 8010" },
@@ -12,7 +13,7 @@ const cards = [
   { id: '03', icon: "flaticon-placeholder", title: "Location", detail: "Shop 7, Aashirwad Bldg,", detail2: "Mira Road East, Mumbai" },
 ]
 
-const ContectUs = () => {
+const ContactUs = () => {
   const [formData, setFormData] = useState({
     dzFirstName: '',
     dzLastName: '',
@@ -59,12 +60,11 @@ const ContectUs = () => {
       };
 
       // Send email using EmailJS
-      // IMPORTANT: Replace these with your actual EmailJS credentials
       await emailjs.send(
-        'service_8f5xwpr',        // Replace with your Service ID
-        'template_etleu4e',       // Replace with your Template ID
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         templateParams,
-        'lY5qAXLbSM__HqB2l'         // Replace with your Public Key
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       );
 
       setFormStatus('✅ Thank you for getting in touch! We will respond shortly.');
@@ -122,6 +122,48 @@ const ContectUs = () => {
                   </div>
                 ))
               }
+            </div>
+          </div>
+        </section>
+        <section className="content-inner-2">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-4 col-md-12 m-b30">
+                <div className="widget">
+                  <h4 className="widget-title">Business Hours</h4>
+                  <ul className="list-check primary">
+                    <li>Monday – Saturday: 10:00 AM – 7:00 PM</li>
+                    <li>Sunday: Closed</li>
+                  </ul>
+                  <h4 className="widget-title m-t30">Contact</h4>
+                  <ul>
+                    <li><i className="ti-mobile m-r10 text-primary"></i> +91 998 724 1424</li>
+                    <li><i className="ti-mobile m-r10 text-primary"></i> +91 836 965 8010</li>
+                    <li><i className="ti-email m-r10 text-primary"></i> hello@interiorsinmumbai.com</li>
+                    <li><i className="ti-location-pin m-r10 text-primary"></i> {COMPANY.address}</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-12 m-b30">
+                <div className="widget">
+                  <h4 className="widget-title">Service Areas</h4>
+                  <div>
+                    {SERVICE_AREAS.map((area, i) => (
+                      <span className="tag m-b10" style={{ display: 'inline-block' }} key={i}>{area}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-12 m-b30">
+                <div className="widget">
+                  <h4 className="widget-title">Warranty</h4>
+                  <ul className="list-check primary">
+                    {WARRANTY.map((w, i) => (
+                      <li key={i}><strong>{w.title}:</strong> {w.text}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -292,7 +334,7 @@ const ContectUs = () => {
                     </div>
                     <div className="col-sm-12 m-b20">
                       <ReCAPTCHA
-                        sitekey="6LftpxUrAAAAALKd87FzA7HSmLYUIvl-EtyJzo7B"
+                        sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
                         onChange={onCaptchaChange}
                       />
                     </div>
@@ -316,4 +358,4 @@ const ContectUs = () => {
   );
 };
 
-export default ContectUs;
+export default ContactUs;

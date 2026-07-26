@@ -1,16 +1,19 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const SEO = ({ title, description, keywords, image }) => {
+const SEO = ({ title, description, keywords, image, canonical }) => {
     const siteTitle = "Interiors in Mumbai";
     const defaultDescription = "Premier interior design firm in Mumbai offering premium home renovations, modern office design, and turnkey architectural projects.";
     const defaultKeywords = "interior design, mumbai, architects, home renovation, premium interiors";
-    const defaultImage = "https://visva.dexignzone.com/react/social-image.png";
+    const defaultImage = `${process.env.REACT_APP_SITE_URL || "https://www.interiorsinmumbai.com"}/og-image.png`;
 
     const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle;
     const metaDescription = description || defaultDescription;
     const metaKeywords = keywords || defaultKeywords;
     const metaImage = image || defaultImage;
+
+    const siteUrl = process.env.REACT_APP_SITE_URL || "https://www.interiorsinmumbai.com";
+    const canonicalUrl = canonical || (typeof window !== 'undefined' ? `${siteUrl}${window.location.pathname}` : siteUrl);
 
     // Generate BreadcrumbList Schema
     const breadcrumbSchema = {
@@ -29,7 +32,7 @@ const SEO = ({ title, description, keywords, image }) => {
                 "@type": "ListItem",
                 "position": 2,
                 "name": title,
-                "item": window.location.href
+                "item": canonicalUrl
             }] : [])
         ]
     };
@@ -40,6 +43,9 @@ const SEO = ({ title, description, keywords, image }) => {
             <title>{metaTitle}</title>
             <meta name='description' content={metaDescription} />
             <meta name='keywords' content={metaKeywords} />
+
+            {/* Canonical URL */}
+            <link rel="canonical" href={canonicalUrl} />
 
             {/* Open Graph tags */}
             <meta property="og:title" content={metaTitle} />
