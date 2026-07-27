@@ -63,7 +63,21 @@
       "/interior-designers-powai",
       "/interior-designers-thane"
     ],
-    "delay": 2000
+    "delay": 5000,
+    "timeout": 30000,
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--disable-accelerated-2d-canvas",
+      "--no-first-run",
+      "--no-zygote",
+      "--single-process",
+      "--disable-gpu"
+    ],
+    "skipThirdPartyRequests": true,
+    "removeScriptTags": false,
+    "removeBlobs": false
   },
   "eslintConfig": {
     "extends": [
