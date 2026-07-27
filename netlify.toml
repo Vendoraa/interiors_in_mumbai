@@ -1,6 +1,6 @@
 [build]
   base = "package"
-  command = "npm run build"
+  command = "echo 'Skipping build - deploying pre-rendered static files from deploy-build branch'"
   publish = "build"
 
 [build.environment]
