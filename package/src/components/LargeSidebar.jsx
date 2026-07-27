@@ -54,7 +54,7 @@ const LargeSidebar = () => {
                             </div>
                             <div className="widget-post clearfix">
                                 <div className="dz-media">
-                                    <Link to="/blog-details"><img src={IMAGES.post3} alt="" /></Link>
+                                    <Link to="/blog-details"><img src={IMAGES.post3} alt="We Are Building Global Company Offices" /></Link>
                                 </div>
                                 <div className="dz-info">
                                     <h4 className="title"><Link to="/blog-details">We Are Building Global Company Offices</Link></h4>
@@ -67,7 +67,7 @@ const LargeSidebar = () => {
                             </div>
                             <div className="widget-post clearfix">
                                 <div className="dz-media">
-                                    <Link to="/blog-details"><img src={IMAGES.post4} alt="" /></Link>
+                                    <Link to="/blog-details"><img src={IMAGES.post4} alt="About Our Board of Directors" /></Link>
                                 </div>
                                 <div className="dz-info">
                                     <h4 className="title"><Link to="/blog-details">About Our Board of Directors</Link></h4>

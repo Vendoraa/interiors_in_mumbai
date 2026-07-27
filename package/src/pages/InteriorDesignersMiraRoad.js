@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import CommanBanner from '../elements/CommanBanner';
 import { IMAGES } from '../constants/theme';
 import SEO from '../components/SEO';
+import ServiceDetailSections from '../components/ServiceDetailSections';
+import { SERVICE_ORDER } from '../seo/serviceContent';
+import { Testimonials, Certifications, Warranty, ServiceAreas } from '../components/EeatSignals';
+import BeforeAfter from '../components/BeforeAfter';
 import { Helmet } from 'react-helmet-async';
 
 const InteriorDesignersMiraRoad = () => {
@@ -103,14 +107,14 @@ const InteriorDesignersMiraRoad = () => {
 
                                 <div className="widget widget_tag_cloud m-b30">
                                     <div className="tagcloud">
-                                        <a href="#">Kanakia Spaces</a>
-                                        <a href="#">Lodha Aqua</a>
-                                        <a href="#">Jangid Complex</a>
-                                        <a href="#">Shanti Nagar</a>
-                                        <a href="#">Poonam Sagar</a>
-                                        <a href="#">Srishti Complex</a>
-                                        <a href="#">RNA Broadway</a>
-                                        <a href="#">Unique Gardens</a>
+                                        <span className="tag">Kanakia Spaces</span>
+                                        <span className="tag">Lodha Aqua</span>
+                                        <span className="tag">Jangid Complex</span>
+                                        <span className="tag">Shanti Nagar</span>
+                                        <span className="tag">Poonam Sagar</span>
+                                        <span className="tag">Srishti Complex</span>
+                                        <span className="tag">RNA Broadway</span>
+                                        <span className="tag">Unique Gardens</span>
                                     </div>
                                 </div>
 
@@ -264,9 +268,37 @@ const InteriorDesignersMiraRoad = () => {
                         </div>
                     </div>
                 </section>
+                <section className="content-inner-2">
+                    <div className="container">
+                        <div className="section-head style-1 text-center">
+                            <h6 className="sub-title text-primary">OUR SERVICES</h6>
+                            <h2 className="title">Interior Design Services in Mira Road</h2>
+                            <p>From modular kitchens to complete turnkey interiors, here are the services we provide across Mira Road and nearby areas.</p>
+                        </div>
+                        {SERVICE_ORDER.map((key) => (
+                            <ServiceDetailSections key={key} serviceKey={key} location="Mira Road" />
+                        ))}
+                    </div>
+                </section>
+                <section className="content-inner-2">
+                    <div className="container">
+                        <div className="section-head style-1 text-center">
+                            <h6 className="sub-title text-primary">WHY CHOOSE US</h6>
+                            <h2 className="title">Mira Road's Trusted Interior Team</h2>
+                            <p>Local experience, certified work, and written warranties for homes across Mira Road and nearby areas.</p>
+                        </div>
+                        <Testimonials limit={3} />
+                        <Certifications />
+                        <Warranty />
+                        <ServiceAreas />
+                    </div>
+                </section>
             </div>
         </>
     );
 };
 
 export default InteriorDesignersMiraRoad;
+
+
+

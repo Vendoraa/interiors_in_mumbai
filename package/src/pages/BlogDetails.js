@@ -6,6 +6,8 @@ import { useContentful } from '../useContentful';
 import html2pdf from 'html2pdf.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
+import SEO from '../components/SEO';
+import { Helmet } from 'react-helmet-async';
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -244,8 +246,46 @@ const BlogDetails = () => {
   // Use the blog from state or from ref as a fallback
   const currentBlog = blog || blogRef.current;
 
+  // Dynamic Blog Schema
+  const blogSchema = currentBlog ? {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": currentBlog.fields.title || "Blog Post",
+    "image": currentBlog.fields.featuredImage?.fields?.file?.url ? `https:${currentBlog.fields.featuredImage.fields.file.url}` : "https://visva.dexignzone.com/react/social-image.png",
+    "datePublished": currentBlog.sys.createdAt,
+    "dateModified": currentBlog.sys.updatedAt,
+    "author": {
+      "@type": "Person",
+      "name": currentBlog.fields.author || "Admin"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Interiors in Mumbai",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.interiorsinmumbai.com/logo.png"
+      }
+    },
+    "description": currentBlog.fields.excerpt || currentBlog.fields.description || "Read our latest blog post."
+  } : null;
+
   return (
     <>
+      {currentBlog && (
+        <>
+          <SEO
+            title={currentBlog.fields.title}
+            description={currentBlog.fields.excerpt || currentBlog.fields.description || ""}
+            keywords={currentBlog.fields.keywords || "interior design blog, mumbai interior designer"}
+            image={currentBlog.fields.featuredImage?.fields?.file?.url ? `https:${currentBlog.fields.featuredImage.fields.file.url}` : undefined}
+          />
+          <Helmet>
+            <script type="application/ld+json">
+              {JSON.stringify(blogSchema)}
+            </script>
+          </Helmet>
+        </>
+      )}
       <CommanBanner mainTitle="Blog Details" parentTitle="Home" pageName="Blog Details" bgImage={IMAGES.bannerbg3} />
       <div className="page-content bg-white">
         <div className="content-inner">

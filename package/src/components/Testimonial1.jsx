@@ -77,7 +77,7 @@ const Testimonial1 = () => {
                                             <Link className={`${item.className}`} aria-label={`View testimonial from ${item.name}`}>
                                                 <img
                                                     onClick={() => index < 3 ? swiperRef.current.swiper.slidePrev() : swiperRef.current.swiper.slideNext()}
-                                                    src={item.testimonialImg} alt=""
+                                                    src={item.testimonialImg} alt={`${item.name} testimonial`}
                                                 />
                                             </Link>
                                         </li>

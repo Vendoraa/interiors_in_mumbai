@@ -12,12 +12,12 @@ export const Menu = [
 
     {
         title: 'Services',
-        to: '/services-details',
+        to: '/services',
         path: '3',
     },
     {
         title: 'Blog',
-        to: '/blog-details',
+        to: '/blog',
         path: '4'
     },
     {

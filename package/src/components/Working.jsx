@@ -1,9 +1,9 @@
 import React from 'react'
 import Accordion from 'react-bootstrap/Accordion'
 import CountUp from 'react-countup'
-import pic1 from '../assets/images/work/mumbai_2bhk.png'
-import pic2 from '../assets/images/work/mumbai_3bhk.png'
-import pic3 from '../assets/images/work/mumbai_kitchen.png'
+import pic1 from '../assets/images/work/mumbai_2bhk.webp'
+import pic2 from '../assets/images/work/mumbai_3bhk.webp'
+import pic3 from '../assets/images/work/mumbai_kitchen.webp'
 
 const accordian = [
     { icon: "flaticon-crane", key: 0, heading: "Custom Furniture", text: "Elevate your home with unique charm through our bespoke custom furniture. Crafted with precision and passion, our pieces redefine your space with individuality and style." },

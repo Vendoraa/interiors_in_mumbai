@@ -15,10 +15,12 @@ const GoogleAnalytics = () => {
             return;
         }
 
+        const gaId = process.env.REACT_APP_GA_MEASUREMENT_ID || 'G-CW4NTXNVXX';
+
         // Dynamic script injection to keep it out of index.html
         const script1 = document.createElement('script');
         script1.async = true;
-        script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-CW4NTXNVXX';
+        script1.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
         document.head.appendChild(script1);
 
         const script2 = document.createElement('script');
@@ -26,7 +28,7 @@ const GoogleAnalytics = () => {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-CW4NTXNVXX');
+      gtag('config', '${gaId}');
     `;
         document.head.appendChild(script2);
 
@@ -36,7 +38,7 @@ const GoogleAnalytics = () => {
     useEffect(() => {
         // Track page views on route change
         if (window.gtag) {
-            window.gtag('config', 'G-CW4NTXNVXX', {
+            window.gtag('config', process.env.REACT_APP_GA_MEASUREMENT_ID || 'G-CW4NTXNVXX', {
                 page_path: location.pathname + location.search,
             });
         }
