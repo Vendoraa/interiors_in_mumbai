@@ -36,7 +36,7 @@
   --font-family-base: Source Sans Pro, sans-serif;
   --font-family-title: Source Sans Pro, sans-serif;
   --title: #212529;
-  --quote: url(../images/quote-1.png);
+  --quote: url(../images/quote-1.webp);
 }
 
 /*!
@@ -19296,7 +19296,7 @@ ul a.rsswidget:hover {
   z-index: -2;
   background: #f8f8f8;
   bottom: -120px;
-  background-image: url(../images/black-twill.png);
+  background-image: url(../images/black-twill.webp);
   opacity: 0.2;
 }
 
@@ -22753,7 +22753,7 @@ ul a.rsswidget:hover {
   bottom: -45px;
   width: 100%;
   height: 100%;
-  background-image: url(../images/white-twill.png);
+  background-image: url(../images/white-twill.webp);
   z-index: -1;
   opacity: 1;
 }
@@ -23204,7 +23204,7 @@ ul a.rsswidget:hover {
   z-index: -2;
   background: #f8f8f8;
   bottom: -120px;
-  background-image: url(../images/black-twill.png);
+  background-image: url(../images/black-twill.webp);
   opacity: 0.2;
 }
 
@@ -23309,7 +23309,7 @@ ul a.rsswidget:hover {
   width: 22%;
   height: 100%;
   position: absolute;
-  background: url(../images/main-slider/slider3/pattren.png);
+  background: url(../images/main-slider/slider3/pattren.webp);
   background-repeat: no-repeat;
   top: 0;
   z-index: -1;
@@ -26157,7 +26157,7 @@ pre {
 
 .under-construct:after {
   content: "";
-  background-image: url(../images/background/under-construct.jpg);
+  background-image: url(../images/background/under-construct.webp);
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -28787,7 +28787,7 @@ footer .ft-calltoaction .title {
 }
 
 .site-footer.style-1 {
-  background-image: url(../images/background/bg2-1.png);
+  background-image: url(../images/background/bg2-1.webp);
   background-size: contain;
 }
 
@@ -28832,7 +28832,7 @@ footer .ft-calltoaction .title {
 }
 
 .site-footer.style-2 {
-  background-image: url(../images/background/bg3.png);
+  background-image: url(../images/background/bg3.webp);
   background-size: cover;
   position: relative;
   z-index: 1;

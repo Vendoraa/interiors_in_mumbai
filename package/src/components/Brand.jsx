@@ -61,7 +61,7 @@ const Brand = () => {
                         brand.map((i, ind) => (
                             <SwiperSlide className="swiper-slide" key={ind}>
                                 <div className="clients-logo aos-item">
-                                    <img className="logo-main" src={i.logo} alt="" />
+                                    <img className="logo-main" src={i.logo} alt={`Partner brand logo ${ind + 1}`} />
                                 </div>
                             </SwiperSlide>
                         ))

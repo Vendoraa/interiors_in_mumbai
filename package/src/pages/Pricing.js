@@ -4,16 +4,29 @@ import CommanBanner from '../elements/CommanBanner';
 import { IMAGES } from '../constants/theme';
 import SEO from '../components/SEO';
 import { Helmet } from 'react-helmet-async';
+import { buildService } from '../seo/schema';
 
 const Pricing = () => {
-    const pricingSchema = {
-        "@context": "https://schema.org",
-        "@type": "PriceSpecification",
+    const pricingSchema = buildService({
+        name: 'Interior Design Packages in Mumbai',
+        description: 'Transparent interior design pricing in Mumbai. Basic packages from ₹600/sq ft to premium and elite packages. Cost breakdown for 1BHK, 2BHK and 3BHK homes.',
+        serviceType: 'Interior Design & Turnkey Contracting',
+        url: 'https://www.interiorsinmumbai.com/pricing',
+        image: 'https://www.interiorsinmumbai.com/logo512.png',
+    });
+    pricingSchema.offers = {
+        "@type": "Offer",
         "priceCurrency": "INR",
         "minPrice": "600",
         "maxPrice": "3000",
-        "unitCode": "SQF",
-        "description": "Interior design services ranging from basic to premium packages"
+        "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "INR",
+            "minPrice": "600",
+            "maxPrice": "3000",
+            "unitCode": "SQF",
+            "description": "Interior design services ranging from basic to premium packages"
+        }
     };
 
     return (

@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
-import CanonicalUrl from './components/CanonicalUrl';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import MetaPixel from './components/MetaPixel';
 import CookieConsent from './components/CookieConsent';
@@ -37,7 +36,7 @@ const LargLeftSidebar = React.lazy(() => import("./pages/LargLeftSidebar"));
 const ListLeftSidebar = React.lazy(() => import("./pages/ListLeftSidebar"));
 const BlogDetail = React.lazy(() => import("./pages/BlogDetail"));
 const BlogDetails = React.lazy(() => import("./pages/BlogDetails"));
-const ContectUs = React.lazy(() => import("./pages/ContectUs"));
+const ContactUs = React.lazy(() => import("./pages/ContactUs"));
 const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
 const Pricing = React.lazy(() => import("./pages/Pricing"));
 const InteriorDesignersMiraRoad = React.lazy(() => import("./pages/InteriorDesignersMiraRoad"));
@@ -52,7 +51,6 @@ function App() {
       <BrowserRouter>
         <GoogleAnalytics />
         <MetaPixel />
-        <CanonicalUrl />
         <CookieConsent />
         <HelmetProvider>
           <div className="page-wraper">
@@ -84,7 +82,7 @@ function App() {
                     <Route path="blog-list-left-sidebar" element={<ListLeftSidebar />} />
                     <Route path="blog-details/:id" element={<BlogDetails />} />
                     <Route path="blog-details" element={<BlogDetail />} />
-                    <Route path="contact-us" element={<ContectUs />} />
+                    <Route path="contact-us" element={<ContactUs />} />
                     <Route path="privacy-policy" element={<PrivacyPolicy />} />
                     <Route path="pricing" element={<Pricing />} />
                     <Route path="interior-designers-mira-road" element={<InteriorDesignersMiraRoad />} />

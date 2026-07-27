@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import CommanBanner from '../elements/CommanBanner';
 import { IMAGES } from '../constants/theme';
 import SEO from '../components/SEO';
+import ServiceDetailSections from '../components/ServiceDetailSections';
+import { SERVICE_ORDER } from '../seo/serviceContent';
+import { Testimonials, Certifications, Warranty, ServiceAreas } from '../components/EeatSignals';
+import BeforeAfter from '../components/BeforeAfter';
 import { Helmet } from 'react-helmet-async';
 
 const InteriorDesignersBandra = () => {
@@ -100,14 +104,14 @@ const InteriorDesignersBandra = () => {
 
                                 <div className="widget widget_tag_cloud m-b30">
                                     <div className="tagcloud">
-                                        <a href="#">Pali Hill</a>
-                                        <a href="#">Carter Road</a>
-                                        <a href="#">Bandstand</a>
-                                        <a href="#">Mount Mary</a>
-                                        <a href="#">Turner Road</a>
-                                        <a href="#">BKC (Bandra Kurla Complex)</a>
-                                        <a href="#">Khar West</a>
-                                        <a href="#">Hill Road</a>
+                                        <span className="tag">Pali Hill</span>
+                                        <span className="tag">Carter Road</span>
+                                        <span className="tag">Bandstand</span>
+                                        <span className="tag">Mount Mary</span>
+                                        <span className="tag">Turner Road</span>
+                                        <span className="tag">BKC (Bandra Kurla Complex)</span>
+                                        <span className="tag">Khar West</span>
+                                        <span className="tag">Hill Road</span>
                                     </div>
                                 </div>
 
@@ -210,9 +214,37 @@ const InteriorDesignersBandra = () => {
                         </div>
                     </div>
                 </section>
+                <section className="content-inner-2">
+                    <div className="container">
+                        <div className="section-head style-1 text-center">
+                            <h6 className="sub-title text-primary">OUR SERVICES</h6>
+                            <h2 className="title">Interior Design Services in Bandra</h2>
+                            <p>From modular kitchens to complete turnkey interiors, here are the services we provide across Bandra and nearby areas.</p>
+                        </div>
+                        {SERVICE_ORDER.map((key) => (
+                            <ServiceDetailSections key={key} serviceKey={key} location="Bandra" />
+                        ))}
+                    </div>
+                </section>
+                <section className="content-inner-2">
+                    <div className="container">
+                        <div className="section-head style-1 text-center">
+                            <h6 className="sub-title text-primary">WHY CHOOSE US</h6>
+                            <h2 className="title">Bandra's Trusted Interior Team</h2>
+                            <p>Local experience, certified work, and written warranties for homes across Bandra and nearby areas.</p>
+                        </div>
+                        <Testimonials limit={3} />
+                        <Certifications />
+                        <Warranty />
+                        <ServiceAreas />
+                    </div>
+                </section>
             </div>
         </>
     );
 };
 
 export default InteriorDesignersBandra;
+
+
+

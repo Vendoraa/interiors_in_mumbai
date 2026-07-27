@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import CommanBanner from '../elements/CommanBanner';
 import { IMAGES } from '../constants/theme';
 import SEO from '../components/SEO';
+import ServiceDetailSections from '../components/ServiceDetailSections';
+import { SERVICE_ORDER } from '../seo/serviceContent';
+import { Testimonials, Certifications, Warranty, ServiceAreas } from '../components/EeatSignals';
+import BeforeAfter from '../components/BeforeAfter';
 import { Helmet } from 'react-helmet-async';
 
 const InteriorDesignersThane = () => {
@@ -100,14 +104,14 @@ const InteriorDesignersThane = () => {
 
                                 <div className="widget widget_tag_cloud m-b30">
                                     <div className="tagcloud">
-                                        <a href="#">Hiranandani Estate</a>
-                                        <a href="#">Rustomjee Urbania</a>
-                                        <a href="#">Lodha Amara</a>
-                                        <a href="#">Dosti Vihar</a>
-                                        <a href="#">Kalpataru Sunrise</a>
-                                        <a href="#">Puraniks City</a>
-                                        <a href="#">Runwal Eirene</a>
-                                        <a href="#">Sheth Avalon</a>
+                                        <span className="tag">Hiranandani Estate</span>
+                                        <span className="tag">Rustomjee Urbania</span>
+                                        <span className="tag">Lodha Amara</span>
+                                        <span className="tag">Dosti Vihar</span>
+                                        <span className="tag">Kalpataru Sunrise</span>
+                                        <span className="tag">Puraniks City</span>
+                                        <span className="tag">Runwal Eirene</span>
+                                        <span className="tag">Sheth Avalon</span>
                                     </div>
                                 </div>
 
@@ -210,9 +214,37 @@ const InteriorDesignersThane = () => {
                         </div>
                     </div>
                 </section>
+                <section className="content-inner-2">
+                    <div className="container">
+                        <div className="section-head style-1 text-center">
+                            <h6 className="sub-title text-primary">OUR SERVICES</h6>
+                            <h2 className="title">Interior Design Services in Thane</h2>
+                            <p>From modular kitchens to complete turnkey interiors, here are the services we provide across Thane and nearby areas.</p>
+                        </div>
+                        {SERVICE_ORDER.map((key) => (
+                            <ServiceDetailSections key={key} serviceKey={key} location="Thane" />
+                        ))}
+                    </div>
+                </section>
+                <section className="content-inner-2">
+                    <div className="container">
+                        <div className="section-head style-1 text-center">
+                            <h6 className="sub-title text-primary">WHY CHOOSE US</h6>
+                            <h2 className="title">Thane's Trusted Interior Team</h2>
+                            <p>Local experience, certified work, and written warranties for homes across Thane and nearby areas.</p>
+                        </div>
+                        <Testimonials limit={3} />
+                        <Certifications />
+                        <Warranty />
+                        <ServiceAreas />
+                    </div>
+                </section>
             </div>
         </>
     );
 };
 
 export default InteriorDesignersThane;
+
+
+
