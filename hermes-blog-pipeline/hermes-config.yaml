@@ -26,10 +26,10 @@ mcp:
   contentful:
     type: local
     command: ["npx", "-y", "@contentful/mcp-server"]
-    env:
-      CONTENTFUL_MANAGEMENT_ACCESS_TOKEN: ""
-      SPACE_ID: "as5c0n8s85du"
-      ENVIRONMENT_ID: "master"
+env:
+      CONTENTFUL_MANAGEMENT_ACCESS_TOKEN: "REDACTED",
+      SPACE_ID: "as5c0n8s85du",
+      ENVIRONMENT_ID: "master",
       CONTENTFUL_HOST: "api.contentful.com"
 
 # Skills
