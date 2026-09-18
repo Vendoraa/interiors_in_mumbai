@@ -1,19 +1,23 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import useUserInteraction from '../useUserInteraction';
 
 const MetaPixel = () => {
     const location = useLocation();
     const initialized = useRef(false);
+    const interacted = useUserInteraction();
 
     useEffect(() => {
-        // Only initialize once
-        if (initialized.current) return;
+        // Only initialize once, and only after the user interacts (keeps pre-render bots and initial page load clean)
+        if (initialized.current || !interacted) return;
 
         // Check if already loaded
         if (window.fbq) {
             initialized.current = true;
             return;
         }
+
+        const pixelId = process.env.REACT_APP_META_PIXEL_ID || '2045773609581642';
 
         // Inject Meta Pixel script
         const script = document.createElement('script');
@@ -26,7 +30,7 @@ const MetaPixel = () => {
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '2045773609581642');
+            fbq('init', '${pixelId}');
             fbq('track', 'PageView');
         `;
         document.head.appendChild(script);
@@ -37,12 +41,12 @@ const MetaPixel = () => {
         img.height = 1;
         img.width = 1;
         img.style.display = 'none';
-        img.src = 'https://www.facebook.com/tr?id=2045773609581642&ev=PageView&noscript=1';
+        img.src = `https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`;
         noscript.appendChild(img);
         document.body.appendChild(noscript);
 
         initialized.current = true;
-    }, []);
+    }, [interacted]);
 
     useEffect(() => {
         // Track page views on route change

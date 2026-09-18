@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import CommanBanner from '../elements/CommanBanner'
+import SEO from '../components/SEO'
+import JsonLd from '../components/JsonLd'
+import { buildVideoObject } from '../seo/schema'
 import { IMAGES } from '../constants/theme'
 import ModalVideo from 'react-modal-video'
 import Lightbox from "yet-another-react-lightbox";
@@ -37,6 +40,20 @@ const PortfolioDetail = () => {
 
     return (
         <>
+            <SEO
+                title="Interior Design Portfolio | Project Gallery"
+                description="Explore our portfolio of luxury home renovations, modular kitchens, modern office layouts, and custom turnkey projects in Mumbai."
+                keywords="interior design portfolio, home renovation gallery, luxury residential projects, commercial office designs mumbai"
+            />
+            <JsonLd
+                data={buildVideoObject({
+                    name: 'Interiors in Mumbai - Project Showcase',
+                    description: 'Watch our interior design and turnkey execution showcase across Mumbai homes and offices.',
+                    thumbnailUrl: 'https://www.interiorsinmumbai.com/logo512.png',
+                    uploadDate: '2024-01-01T00:00:00Z',
+                    embedUrl: 'https://www.youtube.com/embed/sNCv3_NTNtU',
+                })}
+            />
             <div className="page-content bg-white">
 
                 <CommanBanner mainTitle="Portfolio Detail" parentTitle="Home" pageName="Portfolio Detail" bgImage={IMAGES.bannerbg3} />
@@ -45,7 +62,7 @@ const PortfolioDetail = () => {
                         <div className="row mb-lg-5 mb-3 ">
                             <div className="col-lg-12 col-md-12 m-b50 aos-item m-sm-b30" data-aos="fade-up"
                                 data-aos-duration="1000" data-aos-delay="200">
-                                <img src={IMAGES.workWorkpic1} alt="" />
+                                <img src={IMAGES.workWorkpic1} alt="Luxury interior design project showcase in Mumbai" />
                             </div>
                             <div className="col-lg-6 col-md-12 align-self-center aos-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                                 <h2 className="dz-title">Curabitur Commodo Eros Sit Amet Diam Dictum.</h2>
@@ -71,7 +88,7 @@ const PortfolioDetail = () => {
                                 </div>
                             </div>
                             <div className="col-lg-6 col-md-12 m-b30 aos-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-                                <img src={IMAGES.workWorkpic2} className="d-lg-block d-none" alt="" />
+                                <img src={IMAGES.workWorkpic2} className="d-lg-block d-none" alt="Modern residential interior renovation detail" />
                             </div>
                         </div>
                     </div>
@@ -85,7 +102,7 @@ const PortfolioDetail = () => {
                             <div className="col-lg-12 col-md-12 m-b30 aos-item" data-aos="fade-up" data-aos-duration="1000"
                                 data-aos-delay="200">
                                 <div className="video-bx content-media style-2 shadow">
-                                    <img src={IMAGES.video} alt="" />
+                                    <img src={IMAGES.video} alt="Interior design project video walkthrough" />
                                     <div className="video-btn aos-item aos-init aos-animate" data-aos="zoom-in"
                                         data-aos-duration="1000" data-aos-delay="400">
                                         <Link onClick={() => { setOpen(true) }} className="popup-youtube"><i
@@ -111,7 +128,7 @@ const PortfolioDetail = () => {
                                         data-aos-delay="200">
                                         <div className="dz-box overlay style-1">
                                             <div className="dz-media">
-                                                <img src={item.img} alt="" />
+                                                <img src={item.img} alt={`Interior design gallery project ${ind + 1}`} />
                                             </div>
                                             <div className="dz-info">
                                                 <span onClick={() => { setGalleryOpen(true) }} data-exthumbimage={item.img} data-src={item.img}
@@ -159,7 +176,7 @@ const PortfolioDetail = () => {
                                         <SwiperSlide className="swiper-slide" key={i}>
                                             <div className={`dz-box overlay style-1 ${item.changeStyle}`}>
                                                 <div className="dz-media">
-                                                    <img src={item.swipperImg} alt="" />
+                                                    <img src={item.swipperImg} alt={`Modern house interior design project ${i + 1}`} />
                                                 </div>
                                                 <div className="dz-info">
                                                     <span data-exthumbimage="images/work/work-1/pic-1.jpg"

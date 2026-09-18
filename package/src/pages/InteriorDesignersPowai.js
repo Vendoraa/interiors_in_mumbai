@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import CommanBanner from '../elements/CommanBanner';
 import { IMAGES } from '../constants/theme';
 import SEO from '../components/SEO';
+import ServiceDetailSections from '../components/ServiceDetailSections';
+import { SERVICE_ORDER } from '../seo/serviceContent';
+import { Certifications, Warranty, ServiceAreas } from '../components/EeatSignals';
 import { Helmet } from 'react-helmet-async';
 
 const InteriorDesignersPowai = () => {
@@ -10,7 +13,7 @@ const InteriorDesignersPowai = () => {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Interiors in Mumbai - Powai",
-        "image": "https://www.interiorsinmumbai.com/logo.png",
+        "image": "https://www.interiorsinmumbai.com/logo512.png",
         "url": "https://www.interiorsinmumbai.com/interior-designers-powai",
         "telephone": "+919987241424",
         "address": {
@@ -99,14 +102,14 @@ const InteriorDesignersPowai = () => {
 
                                 <div className="widget widget_tag_cloud m-b30">
                                     <div className="tagcloud">
-                                        <a href="#">Hiranandani Gardens</a>
-                                        <a href="#">Lake Lucerne</a>
-                                        <a href="#">Nahar Amrit Shakti</a>
-                                        <a href="#">Raheja Vihar</a>
-                                        <a href="#">L&T Emerald Isle</a>
-                                        <a href="#">Godrej The Trees</a>
-                                        <a href="#">Chandivali</a>
-                                        <a href="#">Kanjurmarg</a>
+                                        <span className="tag">Hiranandani Gardens</span>
+                                        <span className="tag">Lake Lucerne</span>
+                                        <span className="tag">Nahar Amrit Shakti</span>
+                                        <span className="tag">Raheja Vihar</span>
+                                        <span className="tag">L&T Emerald Isle</span>
+                                        <span className="tag">Godrej The Trees</span>
+                                        <span className="tag">Chandivali</span>
+                                        <span className="tag">Kanjurmarg</span>
                                     </div>
                                 </div>
 
@@ -209,9 +212,37 @@ const InteriorDesignersPowai = () => {
                         </div>
                     </div>
                 </section>
+                <section className="content-inner-2">
+                    <div className="container">
+                        <div className="section-head style-1 text-center">
+                            <h6 className="sub-title text-primary">OUR SERVICES</h6>
+                            <h2 className="title">Interior Design Services in Powai</h2>
+                            <p>From modular kitchens to complete turnkey interiors, here are the services we provide across Powai and nearby areas.</p>
+                        </div>
+                        {SERVICE_ORDER.map((key) => (
+                            <ServiceDetailSections key={key} serviceKey={key} location="Powai" />
+                        ))}
+                    </div>
+                </section>
+                <section className="content-inner-2">
+                    <div className="container">
+                        <div className="section-head style-1 text-center">
+                            <h6 className="sub-title text-primary">WHY CHOOSE US</h6>
+                            <h2 className="title">Powai's Trusted Interior Team</h2>
+                            <p>Local experience, certified work, and written warranties for homes across Powai and nearby areas.</p>
+                        </div>
+
+                        <Certifications />
+                        <Warranty />
+                        <ServiceAreas />
+                    </div>
+                </section>
             </div>
         </>
     );
 };
 
 export default InteriorDesignersPowai;
+
+
+

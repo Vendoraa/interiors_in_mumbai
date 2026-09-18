@@ -17,11 +17,11 @@ const ServicesDetail = () => {
             <p>Our floor plan design services ensure your space is used to its fullest potential. We create detailed plans that reflect your lifestyle and needs, making sure every square foot is optimized for both form and function.</p>
             <div className="row">
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic3} className="m-b30  w-100" alt=""/>
+                <img src={IMAGES.ServicePic3} className="m-b30  w-100" alt="Professional floor plan design layout in Mumbai"/>
                 <p className="m-b0">Whether you're building a new home or renovating an existing space, our floor plans provide a solid foundation for your project. We consider flow, natural light, and your personal preferences to create a layout that works for you.</p>
               </div>
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic4} className="m-b30 w-100" alt=""/>
+                <img src={IMAGES.ServicePic4} className="m-b30 w-100" alt="Detailed architectural floor plan blueprint"/>
                 <p className="m-b0">Our team collaborates with you to ensure the final design meets all your requirements. From initial sketches to detailed blueprints, we provide comprehensive floor plan services that pave the way for successful construction and remodeling projects.</p>
               </div>
             </div>
@@ -34,11 +34,11 @@ const ServicesDetail = () => {
             <p>Our custom furniture services offer personalized pieces designed to fit your unique style and space. From concept to creation, we ensure each piece meets your exact specifications and enhances your home's aesthetic.</p>
             <div className="row">
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic5} className="m-b30  w-100" alt=""/>
+                <img src={IMAGES.ServicePic5} className="m-b30  w-100" alt="Bespoke custom furniture design"/>
                 <p className="m-b0">Using high-quality materials and expert craftsmanship, we create furniture that is both beautiful and functional. Let us help you bring your vision to life with pieces that are tailored to your needs.</p>
               </div>
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic6} className="m-b30 w-100" alt=""/>
+                <img src={IMAGES.ServicePic6} className="m-b30 w-100" alt="Handcrafted custom furniture piece"/>
                 <p className="m-b0">Whether you're looking for a statement piece or practical storage solutions, our custom furniture designs will transform your home. Contact us to start designing your perfect piece today.</p>
               </div>
             </div>
@@ -51,11 +51,11 @@ const ServicesDetail = () => {
             <p>Our painting services provide a fresh, vibrant look to your home. Whether you're looking to update a single room or your entire house, our skilled painters deliver high-quality results with attention to detail.</p>
             <div className="row">
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic7} className="m-b30  w-100" alt=""/>
+                <img src={IMAGES.ServicePic7} className="m-b30  w-100" alt="Professional home wall painting service"/>
                 <p className="m-b0">We use premium paints and techniques to ensure a flawless finish. From color consultation to final touch-ups, we handle every step of the process with professionalism and care.</p>
               </div>
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic8} className="m-b30 w-100" alt=""/>
+                <img src={IMAGES.ServicePic8} className="m-b30 w-100" alt="Fresh interior paint finish"/>
                 <p className="m-b0">Transform your space with a fresh coat of paint. Our team is dedicated to providing exceptional service and ensuring your complete satisfaction.</p>
               </div>
             </div>
@@ -68,11 +68,11 @@ const ServicesDetail = () => {
             <p>Our electrical services ensure your home is safe and up to code. From installations to repairs, our experienced electricians provide reliable solutions for all your electrical needs.</p>
             <div className="row">
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic9} className="m-b30  w-100" alt=""/>
+                <img src={IMAGES.ServicePic9} className="m-b30  w-100" alt="Residential electrical installation work"/>
                 <p className="m-b0">We handle everything from lighting design to wiring and maintenance. Trust us to keep your home's electrical systems running smoothly and efficiently.</p>
               </div>
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic10} className="m-b30 w-100" alt=""/>
+                <img src={IMAGES.ServicePic10} className="m-b30 w-100" alt="Home lighting and wiring setup"/>
                 <p className="m-b0">Safety and quality are our top priorities. Our team is committed to providing electrical services that meet the highest standards of excellence.</p>
               </div>
             </div>
@@ -85,11 +85,11 @@ const ServicesDetail = () => {
             <p>Maximize your home's potential with our space-saving solutions. We design and implement strategies that make the most of your available space, creating functional and organized living areas.</p>
             <div className="row">
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic11} className="m-b30  w-100" alt=""/>
+                <img src={IMAGES.ServicePic11} className="m-b30  w-100" alt="Innovative space saving furniture solution"/>
                 <p className="m-b0">From built-in storage to multifunctional furniture, our solutions are tailored to your needs. Let us help you create a home that is both stylish and practical.</p>
               </div>
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic12} className="m-b30 w-100" alt=""/>
+                <img src={IMAGES.ServicePic12} className="m-b30 w-100" alt="Smart space optimization layout"/>
                 <p className="m-b0">Our team works with you to identify the best ways to optimize your space. Whether you're dealing with a small apartment or a large home, we have the expertise to create a more efficient living environment.</p>
               </div>
             </div>
@@ -102,11 +102,11 @@ const ServicesDetail = () => {
             <p>Upgrade your kitchen with our modular kitchen designs. We create stylish, functional kitchens that are customized to fit your space and lifestyle.</p>
             <div className="row">
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic13} className="m-b30  w-100" alt=""/>
+                <img src={IMAGES.ServicePic13} className="m-b30  w-100" alt="Modern modular kitchen design"/>
                 <p className="m-b0">Our modular kitchens are designed for efficiency and ease of use. With smart storage solutions and modern appliances, we create kitchens that make cooking and entertaining a joy.</p>
               </div>
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic14} className="m-b30 w-100" alt=""/>
+                <img src={IMAGES.ServicePic14} className="m-b30 w-100" alt="Custom modular kitchen with smart storage"/>
                 <p className="m-b0">We offer a wide range of styles and finishes to choose from, ensuring your kitchen reflects your personal taste. Contact us today to start designing your dream kitchen.</p>
               </div>
             </div>
@@ -120,11 +120,11 @@ const ServicesDetail = () => {
             <p>Discover the perfect blend of style and functionality. Our expert team specializes in transforming homes into beautiful, personalized spaces. Whether you're looking for a modern makeover or a classic touch, we cater to all your interior design needs.</p>
             <div className="row">
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic1} className="m-b30  w-100" alt=""/>
+                <img src={IMAGES.ServicePic1} className="m-b30  w-100" alt="Expert interior design transformation in Mumbai"/>
                 <p className="m-b0">Our experienced designers work closely with you to bring your vision to life. From selecting the perfect color palette to choosing the right furniture, we ensure every detail is just right.</p>
               </div>
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic2} className="m-b30 w-100" alt=""/>
+                <img src={IMAGES.ServicePic2} className="m-b30 w-100" alt="Quality interior design craftsmanship"/>
                 <p className="m-b0">Quality craftsmanship and attention to detail are at the heart of what we do. We take pride in delivering interiors that not only look stunning but also stand the test of time.</p>
               </div>
             </div>

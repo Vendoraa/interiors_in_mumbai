@@ -1,21 +1,19 @@
 import { createClient } from 'contentful';
 
-const space = 'as5c0n8s85du';
-// Changed to use a Content Delivery API token instead of a Management token
-const accessToken = 'aCjkJS44Vwh5BekGNhWUu8Df_TlFSLiZEqGTmbrd1rI';
-const environment = 'master';
+const space = process.env.REACT_APP_CONTENTFUL_SPACE;
+const accessToken = process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN;
+const environment = process.env.REACT_APP_CONTENTFUL_ENVIRONMENT || 'master';
 
 console.log('Initializing Contentful client with:', {
   space,
   environment,
-  accessTokenPrefix: accessToken.substring(0, 4) + '...'
+  accessTokenPrefix: accessToken ? accessToken.substring(0, 4) + '...' : 'NOT_SET'
 });
 
 export const client = createClient({
   space,
   accessToken,
   environment,
-  // Add request/response logging
   logHandler: (level, data) => {
     if (level === 'error') {
       console.error('Contentful Error:', data);

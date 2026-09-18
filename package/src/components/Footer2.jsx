@@ -53,11 +53,11 @@ const Footer2 = () => {
 											<h6 style={{ color: 'white' }}>Tel: +91 998 724 1424 </h6>
 											<h6 style={{ color: 'white' }}>Email: hello@interiorsinmumbai.com </h6>
 											<ul className="social-list style-1">
-												<li><Link to="https://www.facebook.com/dexignzone/" target="_blank" aria-label="Facebook"><i className="fab fa-facebook-f"></i></Link></li>
-												<li><Link to="https://www.instagram.com/dexignzone/" target="_blank" aria-label="Instagram"><i className="fab fa-instagram"></i></Link></li>
-												<li><Link to="https://twitter.com/dexignzones/" target="_blank" aria-label="Twitter"><i className="fab fa-twitter"></i></Link></li>
-												<li><Link to="https://www.youtube.com/@dexignzone1723" target="_blank" aria-label="YouTube"><i className="fab fa-youtube"></i></Link></li>
-												<li><Link to="https://wa.me/919987241424?text=Hi,%20I%20am%20contacting%20you%20from%20interiors%20in%20mumbai%20Website." target="_blank" aria-label="WhatsApp"><i className="fab fa-whatsapp"></i></Link></li>
+												<li><Link to={process.env.REACT_APP_FACEBOOK_URL || "https://www.facebook.com/interiorsinmumbai"} target="_blank" aria-label="Facebook"><i className="fab fa-facebook-f"></i></Link></li>
+												<li><Link to={process.env.REACT_APP_INSTAGRAM_URL || "https://www.instagram.com/interiorsinmumbai"} target="_blank" aria-label="Instagram"><i className="fab fa-instagram"></i></Link></li>
+												<li><Link to={process.env.REACT_APP_TWITTER_URL || "https://twitter.com/interiorsinmumbai"} target="_blank" aria-label="Twitter"><i className="fab fa-twitter"></i></Link></li>
+												<li><Link to={process.env.REACT_APP_YOUTUBE_URL || "https://www.youtube.com/@interiorsinmumbai"} target="_blank" aria-label="YouTube"><i className="fab fa-youtube"></i></Link></li>
+												<li><Link to={process.env.REACT_APP_WHATSAPP_URL || "https://wa.me/919987241424?text=Hi,%20I%20am%20contacting%20you%20from%20interiors%20in%20mumbai%20Website."} target="_blank" aria-label="WhatsApp"><i className="fab fa-whatsapp"></i></Link></li>
 											</ul>
 										</div>
 									</div>
