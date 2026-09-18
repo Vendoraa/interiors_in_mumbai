@@ -15,8 +15,7 @@ import Faq from '../components/Faq';
 
 import HowWeWork from '../components/HowWeWork';
 import SEO from '../components/SEO';
-import { StatsBand, Certifications, Testimonials } from '../components/EeatSignals';
-import BeforeAfter from '../components/BeforeAfter';
+import { StatsBand, Certifications } from '../components/EeatSignals';
 
 const slideImg = [
     { text: "Interiors in Mumbai", img: process.env.PUBLIC_URL + "/images/main-slider/pic1.webp" },
@@ -63,7 +62,7 @@ const Home = () => {
                                             <div className="inner-content">
                                                 <h6 className="sub-title">{i.text}</h6>
                                                 <div className="title">LET'S MAKE</div>
-                                                <h1 className="title-small">Your Perfect Home</h1>
+                                                <p className="title-small">Your Perfect Home</p>
                                                 <Link to="/about-us" className="btn shadow-primary btn-light btn-rounded btn-ov-secondary" aria-label="Read more about us">READ MORE <i className="m-l10 fas fa-caret-right"></i></Link>
                                             </div>
                                             <div className="overlay-slide" data-swiper-parallax="100%"></div>
@@ -112,10 +111,8 @@ const Home = () => {
                 <section className="content-inner-1 bg-gray line-img" style={{ backgroundImage: `url(images/background/bg2.png)`, backgroundPosition: 'right bottom', backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>
                     <Blog />
                 </section>
-                <BeforeAfter />
                 <StatsBand />
                 <Certifications />
-                <Testimonials />
             </div>
 
         </>

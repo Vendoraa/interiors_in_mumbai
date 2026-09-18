@@ -47,10 +47,11 @@ const ComingSoon = () => {
   //componentDidMount
   useEffect(() => {
     startTimer();
+    const currentInterval = interval.current;
     return () => {
-      clearInterval(interval.current);
+      clearInterval(currentInterval);
     };
-  });
+  }, []);
 
 
   return (
@@ -148,7 +149,7 @@ const ComingSoon = () => {
         <div className="menu-close" onClick={() => setGetIn(false)}></div>
         <Modal className={`inquiry-modal `} show={addfade} onHide={setAddfade} centered>
           <div className="inquiry-adv">
-            <img src={IMAGES.modal} alt="Interior design modal image" />
+            <img src={IMAGES.modal} alt="Interior design newsletter subscription promotion" />
           </div>
           <div className="contact-modal">
             <div className="modal-header">

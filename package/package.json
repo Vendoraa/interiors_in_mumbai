@@ -40,7 +40,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "node scripts/generate-sitemap.js && react-snap",
+    "postbuild": "react-snap && node scripts/generate-sitemap.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "sass": "sass --watch src/assets/scss/main.scss:src/assets/css/style.css --source-map"
@@ -55,7 +55,6 @@
       "/contact-us",
       "/privacy-policy",
       "/pricing",
-      "/team",
       "/services-details",
       "/interior-designers-mira-road",
       "/interior-designers-andheri",
@@ -64,7 +63,7 @@
       "/interior-designers-thane"
     ],
     "delay": 5000,
-    "timeout": 30000,
+    "timeout": 60000,
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox",
@@ -72,10 +71,9 @@
       "--disable-accelerated-2d-canvas",
       "--no-first-run",
       "--no-zygote",
-      "--single-process",
       "--disable-gpu"
     ],
-    "skipThirdPartyRequests": true,
+    "skipThirdPartyRequests": false,
     "removeScriptTags": false,
     "removeBlobs": false
   },
@@ -89,7 +87,8 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "chrome 79"
     ],
     "development": [
       "last 1 chrome version",

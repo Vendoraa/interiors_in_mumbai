@@ -1,12 +1,10 @@
 import React from 'react';
 import CommanBanner from '../elements/CommanBanner';
 import { IMAGES } from '../constants/theme';
-import Faq from '../components/Faq';
 import SEO from '../components/SEO';
 import JsonLd from '../components/JsonLd';
 import { buildAboutPage } from '../seo/schema';
-import { StatsBand, Certifications, ServiceAreas, Warranty, Testimonials } from '../components/EeatSignals';
-import BeforeAfter from '../components/BeforeAfter';
+import { StatsBand, Certifications, ServiceAreas, Warranty } from '../components/EeatSignals';
 import { COMPANY } from '../seo/eeat';
 
 const workingProcess = [
@@ -34,7 +32,7 @@ const AboutUs = () => {
                 <div>
                   <h2 className="title mb-4">Who We Are</h2>
                   <p>We are <strong>Interiors in Mumbai</strong> (Shrishti Interiors), a Mumbai-based interior design and turnkey contracting firm. Since {COMPANY.foundingDate}, we have helped more than {COMPANY.projectsCompleted.toLocaleString('en-IN')} families across the city turn their apartments and homes into beautiful, functional spaces.</p>
-                  <p>With <strong>{COMPANY.yearsInBusiness}+ years in business</strong> and a team of {COMPANY.teamSize}+ designers and craftsmen, we pride ourselves on transparent pricing, on-time delivery, and quality that is backed by a written warranty. Whether it is a 1BHK makeover or a complete 3BHK turnkey renovation, we manage everything under one roof.</p>
+                  <p>With <strong>{COMPANY.yearsInBusiness}+ years in business</strong>, we pride ourselves on transparent pricing, on-time delivery, and quality that is backed by a written warranty. Whether it is a 1BHK makeover or a complete 3BHK turnkey renovation, we manage everything under one roof.</p>
                   <ul className="list-check primary">
                     <li>Single accountable team for design + execution</li>
                     <li>3D designs and fixed quotations before work begins</li>
@@ -73,7 +71,6 @@ const AboutUs = () => {
         <Certifications />
         <Warranty />
         <ServiceAreas />
-        <BeforeAfter />
 
         <section className="section-full content-inner bg-gray">
           <div className="container">
@@ -97,7 +94,7 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <Testimonials />
+
       </div>
     </>
   );

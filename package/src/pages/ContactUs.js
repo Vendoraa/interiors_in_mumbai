@@ -6,6 +6,7 @@ import SEO from '../components/SEO';
 import ReCAPTCHA from 'react-google-recaptcha';
 import emailjs from '@emailjs/browser';
 import { COMPANY, SERVICE_AREAS, WARRANTY } from '../seo/eeat';
+import useUserInteraction from '../useUserInteraction';
 
 const cards = [
   { id: '01', icon: "flaticon-telephone", title: "Text Now", detail: "+91 998 724 1424,", detail2: "+91 836 965 8010" },
@@ -27,6 +28,7 @@ const ContactUs = () => {
   const [formStatus, setFormStatus] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const interacted = useUserInteraction();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -169,7 +171,17 @@ const ContactUs = () => {
         </section>
         <section className="content-inner-1 pt-0">
           <div className="map-iframe">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.731080445125!2d72.8679797747259!3d19.294057345091755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b040bdb92279%3A0x4e768a3c2acf50a!2sCinemax%20Rd!5e0!3m2!1sen!2sus!4v1711261820644!5m2!1sen!2sus" className="align-self-stretch radius-sm" style={{ border: 0, width: '100%', minHeight: '100%' }} allowFullScreen title="Google Map Location"></iframe>
+            {interacted ? (
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.731080445125!2d72.8679797747259!3d19.294057345091755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b040bdb92279%3A0x4e768a3c2acf50a!2sCinemax%20Rd!5e0!3m2!1sen!2sus!4v1711261820644!5m2!1sen!2sus" className="align-self-stretch radius-sm" style={{ border: 0, width: '100%', minHeight: '100%' }} allowFullScreen title="Google Map Location"></iframe>
+            ) : (
+              <div className="align-self-stretch radius-sm" style={{ border: 0, width: '100%', minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f5f5f5' }}>
+                <div className="text-center">
+                  <i className="flaticon-placeholder text-primary" style={{ fontSize: '36px' }}></i>
+                  <p className="m-b10">Shop 7, Aashirwad Building, Mira Road East, Mumbai 401107</p>
+                  <a href="https://www.google.com/maps?q=Cinemax+Rd,+Mira+Road+East,+Mumbai" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                </div>
+              </div>
+            )}
           </div>
           <div className="container">
             <div className="contact-area aos-item">
@@ -333,10 +345,16 @@ const ContactUs = () => {
                       </div>
                     </div>
                     <div className="col-sm-12 m-b20">
-                      <ReCAPTCHA
-                        sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
-                        onChange={onCaptchaChange}
-                      />
+                      {interacted ? (
+                        <ReCAPTCHA
+                          sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                          onChange={onCaptchaChange}
+                        />
+                      ) : (
+                        <div className="recaptcha-loading" style={{ minHeight: '78px', display: 'flex', alignItems: 'center', color: '#6c757d', fontSize: '14px' }}>
+                          Security verification will appear once you start interacting with this page.
+                        </div>
+                      )}
                     </div>
                     <div className="col-sm-12 text-center">
                       <button

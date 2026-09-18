@@ -11,7 +11,6 @@ export const COMPANY = {
   foundingDate: '2009',
   yearsInBusiness: 15,
   projectsCompleted: 1200,
-  teamSize: 45,
   satisfaction: 98,
   priceRange: '₹₹',
   hours: 'Monday to Saturday, 10:00 AM – 7:00 PM',
@@ -26,7 +25,6 @@ export const COMPANY = {
 export const STATS = [
   { value: '15+', label: 'Years in business' },
   { value: '1,200+', label: 'Projects completed' },
-  { value: '45+', label: 'Designers & craftsmen' },
   { value: '98%', label: 'Customer satisfaction' },
 ];
 
@@ -37,12 +35,6 @@ export const CERTIFICATIONS = [
   { name: 'Asian Paints Approved Contractor', detail: 'Trained painting applicator' },
   { name: 'ISO 9001:2015 Quality Management', detail: 'Process & quality certified' },
   { name: 'GST Registered Business', detail: 'Transparent, compliant billing' },
-];
-
-export const AWARDS = [
-  'Mumbai Interior Design Award 2023 – Residential',
-  'Best Turnkey Execution (Suburban Mumbai) 2022',
-  'Customer Choice Award 2021',
 ];
 
 export const SERVICE_AREAS = [
@@ -67,51 +59,6 @@ export const WARRANTY = [
   { title: '5-Year Warranty', text: 'On waterproofing and false-ceiling work for leak- and crack-free performance.' },
   { title: '2-Year Warranty', text: 'On painting, electrical, and hardware mechanisms with free service visits.' },
   { title: 'AMC Option', text: 'Annual maintenance contracts available for ongoing care of your interiors.' },
-];
-
-export const TEAM = [
-  {
-    img: IMAGES.team1,
-    name: 'Amit Deshmukh',
-    role: 'Principal Architect',
-    bio: 'Leads design direction with 14+ years shaping Mumbai apartments and bungalows. IIID-registered architect focused on space-efficient, livable homes.',
-    sameAs: '',
-  },
-  {
-    img: IMAGES.team2,
-    name: 'Neha Sharma',
-    role: 'Head of Interior Design',
-    bio: 'Specialises in modular kitchens and wardrobes, blending aesthetics with ergonomics across 400+ Mumbai homes.',
-    sameAs: '',
-  },
-  {
-    img: IMAGES.team3,
-    name: 'Rohit Pawar',
-    role: 'Turnkey Project Manager',
-    bio: 'Coordinates civil, carpentry, electrical, and painting teams to deliver projects on time with a single point of accountability.',
-    sameAs: '',
-  },
-  {
-    img: IMAGES.team4,
-    name: 'Sandeep Kulkarni',
-    role: 'Site Supervisor & Quality Lead',
-    bio: 'Ensures every site meets our quality checklist, from material checks to final snag clearance before handover.',
-    sameAs: '',
-  },
-  {
-    img: IMAGES.team5,
-    name: 'Priya Nair',
-    role: 'Senior Designer',
-    bio: 'Creates 3D concepts and colour stories that help clients visualise their home before a single tile is laid.',
-    sameAs: '',
-  },
-  {
-    img: IMAGES.team6,
-    name: 'Karan Mehta',
-    role: 'Estimation & Client Relations',
-    bio: 'Prepares transparent, fixed quotations so clients know the full cost upfront with no hidden surprises.',
-    sameAs: '',
-  },
 ];
 
 export const TESTIMONIALS = [];

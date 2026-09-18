@@ -1,13 +1,15 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import useUserInteraction from '../useUserInteraction';
 
 const MetaPixel = () => {
     const location = useLocation();
     const initialized = useRef(false);
+    const interacted = useUserInteraction();
 
     useEffect(() => {
-        // Only initialize once
-        if (initialized.current) return;
+        // Only initialize once, and only after the user interacts (keeps pre-render bots and initial page load clean)
+        if (initialized.current || !interacted) return;
 
         // Check if already loaded
         if (window.fbq) {
@@ -44,7 +46,7 @@ const MetaPixel = () => {
         document.body.appendChild(noscript);
 
         initialized.current = true;
-    }, []);
+    }, [interacted]);
 
     useEffect(() => {
         // Track page views on route change

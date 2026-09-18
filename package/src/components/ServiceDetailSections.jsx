@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { IMAGES } from '../constants/theme';
 import SERVICES, { localize } from '../seo/serviceContent';
 
 const slugify = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 const ServiceDetailSections = ({ serviceKey, location }) => {
+  const [openFaq, setOpenFaq] = useState(0);
   const base = SERVICES[serviceKey];
   if (!base) return null;
   const s = location ? localize(base, location) : base;
@@ -81,15 +81,14 @@ const ServiceDetailSections = ({ serviceKey, location }) => {
           {s.faqs.map((item, i) => {
             const headId = `head-${anchor}-${i}`;
             const bodyId = `body-${anchor}-${i}`;
-            const expanded = i === 0;
+            const expanded = openFaq === i;
             return (
               <div className="accordion-item" key={i}>
                 <h4 className="accordion-header" id={headId}>
                   <button
                     className={`accordion-button${expanded ? '' : ' collapsed'}`}
                     type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target={`#${bodyId}`}
+                    onClick={() => setOpenFaq(expanded ? null : i)}
                     aria-expanded={expanded ? 'true' : 'false'}
                     aria-controls={bodyId}
                   >
@@ -100,7 +99,6 @@ const ServiceDetailSections = ({ serviceKey, location }) => {
                   id={bodyId}
                   className={`accordion-collapse collapse${expanded ? ' show' : ''}`}
                   aria-labelledby={headId}
-                  data-bs-parent={`#accordion-${anchor}`}
                 >
                   <div className="accordion-body">{item.a}</div>
                 </div>

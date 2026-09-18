@@ -5,7 +5,7 @@ const SEO = ({ title, description, keywords, image, canonical }) => {
     const siteTitle = "Interiors in Mumbai";
     const defaultDescription = "Premier interior design firm in Mumbai offering premium home renovations, modern office design, and turnkey architectural projects.";
     const defaultKeywords = "interior design, mumbai, architects, home renovation, premium interiors";
-    const defaultImage = `${process.env.REACT_APP_SITE_URL || "https://www.interiorsinmumbai.com"}/og-image.png`;
+    const defaultImage = `${process.env.REACT_APP_SITE_URL || "https://www.interiorsinmumbai.com"}/logo512.png`;
 
     const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle;
     const metaDescription = description || defaultDescription;
@@ -51,6 +51,7 @@ const SEO = ({ title, description, keywords, image, canonical }) => {
             <meta property="og:title" content={metaTitle} />
             <meta property="og:description" content={metaDescription} />
             <meta property="og:image" content={metaImage} />
+            <meta property="og:url" content={canonicalUrl} />
             <meta property="og:type" content="website" />
 
             {/* Twitter Card tags */}

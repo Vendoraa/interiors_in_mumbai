@@ -5,8 +5,7 @@ import { IMAGES } from '../constants/theme';
 import SEO from '../components/SEO';
 import ServiceDetailSections from '../components/ServiceDetailSections';
 import { SERVICE_ORDER } from '../seo/serviceContent';
-import { Testimonials, Certifications, Warranty, ServiceAreas } from '../components/EeatSignals';
-import BeforeAfter from '../components/BeforeAfter';
+import { Certifications, Warranty, ServiceAreas } from '../components/EeatSignals';
 import { Helmet } from 'react-helmet-async';
 
 const InteriorDesignersBandra = () => {
@@ -14,7 +13,7 @@ const InteriorDesignersBandra = () => {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Interiors in Mumbai - Bandra",
-        "image": "https://www.interiorsinmumbai.com/logo.png",
+        "image": "https://www.interiorsinmumbai.com/logo512.png",
         "url": "https://www.interiorsinmumbai.com/interior-designers-bandra",
         "telephone": "+919987241424",
         "address": {
@@ -233,7 +232,7 @@ const InteriorDesignersBandra = () => {
                             <h2 className="title">Bandra's Trusted Interior Team</h2>
                             <p>Local experience, certified work, and written warranties for homes across Bandra and nearby areas.</p>
                         </div>
-                        <Testimonials limit={3} />
+
                         <Certifications />
                         <Warranty />
                         <ServiceAreas />

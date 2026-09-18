@@ -15,7 +15,6 @@ const staticRoutes = [
   '/contact-us',
   '/privacy-policy',
   '/pricing',
-  '/team',
   '/services-details',
   '/interior-designers-mira-road',
   '/interior-designers-andheri',
@@ -32,7 +31,6 @@ const routeConfig = {
   '/blog': { changefreq: 'daily', priority: 0.8 },
   '/about-us': { changefreq: 'monthly', priority: 0.7 },
   '/pricing': { changefreq: 'monthly', priority: 0.7 },
-  '/team': { changefreq: 'monthly', priority: 0.6 },
   '/contact-us': { changefreq: 'monthly', priority: 0.7 },
   '/privacy-policy': { changefreq: 'yearly', priority: 0.3 },
   '/services-details': { changefreq: 'weekly', priority: 0.6 },
@@ -43,15 +41,27 @@ const routeConfig = {
   '/interior-designers-thane': { changefreq: 'weekly', priority: 0.8 },
 };
 
+// Discover pre-rendered blog detail routes (react-snap output)
+function discoverBlogRoutes() {
+  const blogDir = path.join(BUILD_DIR, 'blog-details');
+  if (!fs.existsSync(blogDir)) return [];
+  return fs
+    .readdirSync(blogDir)
+    .filter((f) => fs.statSync(path.join(blogDir, f)).isDirectory())
+    .map((slug) => `/blog-details/${slug}`);
+}
+
 function generateSitemap() {
   const today = new Date().toISOString().split('T')[0];
-  
+
+  const routes = [...staticRoutes, ...discoverBlogRoutes()];
+
   let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
   sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
   sitemap += '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
 
-  staticRoutes.forEach(route => {
-    const config = routeConfig[route] || { changefreq: 'weekly', priority: 0.5 };
+  routes.forEach(route => {
+    const config = routeConfig[route] || { changefreq: 'monthly', priority: 0.6 };
     sitemap += '  <url>\n';
     sitemap += `    <loc>${SITE_URL}${route}</loc>\n`;
     sitemap += `    <lastmod>${today}</lastmod>\n`;
@@ -68,7 +78,7 @@ function generateSitemap() {
 
   const outputPath = path.join(BUILD_DIR, 'sitemap.xml');
   fs.writeFileSync(outputPath, sitemap);
-  console.log(`✅ Sitemap generated at ${outputPath} with ${staticRoutes.length} URLs`);
+  console.log(`✅ Sitemap generated at ${outputPath} with ${routes.length} URLs`);
   
   // Also copy to public for dev reference
   const publicPath = path.join(PUBLIC_DIR, 'sitemap.xml');

@@ -1,20 +1,11 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IMAGES } from '../constants/theme'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
 import { Menu } from './Menu';
 import logo2 from './../assets/images/interiors_in_mumbai_logo.svg';
 
-const reducer = (previousState, updatedState) => ({
-    ...previousState,
-    ...updatedState,
-});
-const initialState = {
-    activeSubmenu: "",
-}
-
 const Header = () => {
-    const [open, setOpen] = useState();
+    const [open, setOpen] = useState(false);
     const [headerFix, setheaderFix] = useState(false);
     useEffect(() => {
         let ticking = false;
@@ -32,16 +23,7 @@ const Header = () => {
             window.removeEventListener("scroll", onScroll);
         };
     }, []);
-    // For menu
 
-
-    const [state, setState] = useReducer(reducer, initialState);
-    const handleSubmenuActive = (status) => {
-        setState({ activeSubmenu: status })
-        if (state.activeSubmenu === status) {
-            setState({ activeSubmenu: "" })
-        }
-    }
 
     function LogoComponent() {
         const [logoVal, setLogoVal] = useState("");

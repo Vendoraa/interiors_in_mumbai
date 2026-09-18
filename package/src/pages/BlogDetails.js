@@ -251,19 +251,20 @@ const BlogDetails = () => {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": currentBlog.fields.title || "Blog Post",
-    "image": currentBlog.fields.featuredImage?.fields?.file?.url ? `https:${currentBlog.fields.featuredImage.fields.file.url}` : "https://visva.dexignzone.com/react/social-image.png",
+    "image": currentBlog.fields.featuredImage?.fields?.file?.url ? `https:${currentBlog.fields.featuredImage.fields.file.url}` : "https://www.interiorsinmumbai.com/logo512.png",
     "datePublished": currentBlog.sys.createdAt,
     "dateModified": currentBlog.sys.updatedAt,
     "author": {
-      "@type": "Person",
-      "name": currentBlog.fields.author || "Admin"
+      "@type": "Organization",
+      "name": "Interiors in Mumbai",
+      "url": "https://www.interiorsinmumbai.com"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Interiors in Mumbai",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.interiorsinmumbai.com/logo.png"
+        "url": "https://www.interiorsinmumbai.com/logo512.png"
       }
     },
     "description": currentBlog.fields.excerpt || currentBlog.fields.description || "Read our latest blog post."
@@ -321,9 +322,6 @@ const BlogDetails = () => {
                               <Link rel="category tag">{currentBlog.fields.category}</Link>
                             </li>
                           )}
-                          <li className="post-user">
-                            By <Link>{currentBlog.fields.author || 'Admin'}</Link>
-                          </li>
                         </ul>
                       </div>
                       <h2 className="dz-title blog-title">{currentBlog.fields.title}</h2>
@@ -446,10 +444,10 @@ const BlogDetails = () => {
                           </div>
                           <div className="dz-social-icon">
                             <ul>
-                              <li><a className="fab fa-facebook-f" href="https://www.facebook.com/"></a></li>
-                              <li><a className="fab fa-twitter" href="https://twitter.com/"></a></li>
-                              <li><a className="fab fa-linkedin" href="https://www.linkedin.com/"></a></li>
-                              <li><a className="fab fa-instagram" href="https://www.instagram.com/"></a></li>
+                              <li><a className="fab fa-facebook-f" href="https://www.facebook.com/" aria-label="Facebook"></a></li>
+                              <li><a className="fab fa-twitter" href="https://twitter.com/" aria-label="Twitter"></a></li>
+                              <li><a className="fab fa-linkedin" href="https://www.linkedin.com/" aria-label="LinkedIn"></a></li>
+                              <li><a className="fab fa-instagram" href="https://www.instagram.com/" aria-label="Instagram"></a></li>
                             </ul>
                           </div>
                         </div>

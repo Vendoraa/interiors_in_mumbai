@@ -5,7 +5,6 @@ import SEO from '../components/SEO';
 import CommanBanner from '../elements/CommanBanner';
 import Progress from '../components/Progress';
 import Faq from '../components/Faq';
-import BeforeAfterSlider from '../components/BeforeAfterSlider';
 
 const ImaGallery = [
     { id: 1, catagery: "Interior Design", img: IMAGES.portfolioLivingRoom, title: "Modern Living Room", location: "Mira Road" },
@@ -37,24 +36,7 @@ const Portfolio = () => {
             <div className="page-content bg-white">
                 <CommanBanner mainTitle="Portfolio" parentTitle="Home" pageName="Portfolio" bgImage={IMAGES.bannerbg3} />
 
-                {/* Before/After Slider Section */}
-                <section className="content-inner-2">
-                    <div className="container">
-                        <div className="section-head style-1 text-center">
-                            <h6 className="sub-title text-primary">Transformation</h6>
-                            <h2 className="title">See the Difference</h2>
-                            <p>Slide to see the dramatic transformation of a 1BHK living room in Mira Road.</p>
-                        </div>
-                        <div className="row justify-content-center">
-                            <div className="col-lg-10">
-                                <BeforeAfterSlider
-                                    beforeImage={IMAGES.before1bhk}
-                                    afterImage={IMAGES.after1bhk}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                {/* Before/After Slider Section Removed */}
 
                 <section className="content-inner line-img overflow-hidden">
                     <div className="site-filters style-1 clearfix center">

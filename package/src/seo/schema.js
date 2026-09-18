@@ -157,19 +157,6 @@ const buildAboutPage = () => ({
   ],
 });
 
-const buildTeamGraph = (members) => ({
-  '@context': 'https://schema.org',
-  '@graph': members.map((m, i) => ({
-    '@type': 'Person',
-    '@id': `${SITE_URL}/#person-${i + 1}`,
-    name: m.name,
-    jobTitle: m.role,
-    description: m.bio,
-    worksFor: { '@id': ORG_ID },
-    ...(m.sameAs ? { sameAs: [m.sameAs] } : {}),
-  })),
-});
-
 export {
   SITE_URL,
   SITE_NAME,
@@ -187,5 +174,4 @@ export {
   buildArticle,
   buildGlobalGraph,
   buildAboutPage,
-  buildTeamGraph,
 };

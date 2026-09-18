@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Accordion from 'react-bootstrap/Accordion';
 import { IMAGES } from '../constants/theme';
 import { Helmet } from 'react-helmet-async';
 
@@ -92,20 +91,19 @@ const Faq = () => {
                                 <h6 className="sub-title text-primary">FAQ</h6>
                                 <h2 className="title">Get Every Answer From Here</h2>
                             </div>
-                            <Accordion defaultActiveKey="0" className="dz-accordion accordion-sm" id="accordionFaq">
+                            <div className="faq-accordion" id="faq-accordion">
                                 {accordian.slice(0, visibleCount).map((d, i) => (
-                                    <Accordion.Item eventKey={`${d.key}`} key={i}>
-                                        <Accordion.Header as="h3">
+                                    <details className="faq-item" key={i} id={`faq-${d.key}`}>
+                                        <summary className="faq-question">
                                             {d.title}
                                             <span className="accordion-icon"></span>
-                                        </Accordion.Header>
-                                        <Accordion.Body>
+                                        </summary>
+                                        <div className="faq-answer">
                                             <p className="m-b0">{d.data}</p>
-                                        </Accordion.Body>
-                                    </Accordion.Item>
+                                        </div>
+                                    </details>
                                 ))}
-                            </Accordion>
-
+                            </div>
                             <div className="text-center m-t30">
                                 <button
                                     onClick={handleLoadMore}

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import {
   STATS,
   CERTIFICATIONS,
-  AWARDS,
   SERVICE_AREAS,
   WARRANTY,
   TESTIMONIALS,
@@ -15,7 +14,7 @@ export const StatsBand = () => (
     <div className="container">
       <div className="row text-center">
         {STATS.map((s, i) => (
-          <div className="col-6 col-md-3 m-b30" key={i}>
+          <div className="col-6 col-md-4 m-b30" key={i}>
             <div className="counter-bx">
               <h2 className="counter text-primary" style={{ fontSize: '42px', fontWeight: 700 }}>{s.value}</h2>
               <h4 className="m-b0">{s.label}</h4>
@@ -47,16 +46,6 @@ export const Certifications = () => (
           </div>
         ))}
       </div>
-      {AWARDS.length > 0 && (
-        <div className="mt-4">
-          <h3 className="h4 text-center">Awards & Recognition</h3>
-          <ul className="list-check primary justify-content-center" style={{ display: 'flex', flexWrap: 'wrap', gap: '0 30px' }}>
-            {AWARDS.map((a, i) => (
-              <li key={i}>{a}</li>
-            ))}
-          </ul>
-        </div>
-      )}
     </div>
   </section>
 );
