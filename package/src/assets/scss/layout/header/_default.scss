@@ -10,11 +10,12 @@
     margin-left: 0;
     margin-right: 0;
     width: 180px;
-    height: 80px;
+    height: auto;
     position: relative;
     z-index: 9;
 	@include respond('tab-land'){
 		width: 150px;
+		height: 60px;
 	}	
 	@include respond('tab-port'){
 		width: 180px;
@@ -30,12 +31,16 @@
 	img {
 		height: auto;
 		width: 100%;
+		max-width: 100%;
+    object-fit: contain;
 	}
 	
-	// Text Logo
+	// Text Logo fallback (removed SVG subtext)
 	span{
+		font-family: $font-family-title, Montserrat, sans-serif;
 		font-size: 20px;
-		letter-spacing: 20px;
+		letter-spacing: 4px;
+		display: none; // Hidden - using vector logo now
 	}
 }
 

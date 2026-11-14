@@ -18,8 +18,7 @@ import SEO from '../components/SEO';
 import { StatsBand, Certifications } from '../components/EeatSignals';
 
 const slideImg = [
-    { text: "Interiors in Mumbai", img: process.env.PUBLIC_URL + "/images/main-slider/pic1.webp" },
-    { text: "DESIGNING", img: pic2 },
+    { text: "Interior Design & Turnkey Contractors in Mumbai", img: process.env.PUBLIC_URL + "/images/main-slider/pic1.webp" },
 ];
 
 const Home = () => {
