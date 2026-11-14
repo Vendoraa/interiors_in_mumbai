@@ -28,7 +28,20 @@ const SEO = ({ title, description, keywords, image, canonical }) => {
     const metaImage = image || defaultImage;
 
     const siteUrl = process.env.REACT_APP_SITE_URL || "https://www.interiorsinmumbai.com";
-    const canonicalUrl = canonical || (typeof window !== 'undefined' ? `${siteUrl}${window.location.pathname}` : siteUrl);
+
+    // Netlify serves pages with a trailing slash (e.g. /about-us/), so the
+    // canonical must match that exact URL. Pointing the canonical at the
+    // non-slash version would target a URL that 301-redirects.
+    const normalizeCanonical = (url) => {
+        if (!url) return url;
+        const [base, hash] = url.split('#');
+        const [path, query] = base.split('?');
+        const withSlash = path.endsWith('/') ? path : `${path}/`;
+        return `${withSlash}${query ? `?${query}` : ''}${hash ? `#${hash}` : ''}`;
+    };
+
+    const rawCanonical = canonical || (typeof window !== 'undefined' ? `${siteUrl}${window.location.pathname}` : siteUrl);
+    const canonicalUrl = normalizeCanonical(rawCanonical);
 
     // Generate BreadcrumbList Schema
     const breadcrumbSchema = {

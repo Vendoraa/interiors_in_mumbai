@@ -62,15 +62,18 @@ function generateSitemap() {
 
   routes.forEach(route => {
     const config = routeConfig[route] || { changefreq: 'monthly', priority: 0.6 };
+    // Netlify serves pages with a trailing slash, so sitemap URLs must match
+    // the served URL exactly (otherwise they point at a 301 redirect).
+    const loc = route === '/' ? `${SITE_URL}/` : `${SITE_URL}${route}/`;
     sitemap += '  <url>\n';
-    sitemap += `    <loc>${SITE_URL}${route}</loc>\n`;
+    sitemap += `    <loc>${loc}</loc>\n`;
     sitemap += `    <lastmod>${today}</lastmod>\n`;
     sitemap += `    <changefreq>${config.changefreq}</changefreq>\n`;
     sitemap += `    <priority>${config.priority}</priority>\n`;
     
     // Add xhtml:link for hreflang (if needed for multi-language)
-    sitemap += `    <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}${route}" />\n`;
-    sitemap += `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}${route}" />\n`;
+    sitemap += `    <xhtml:link rel="alternate" hreflang="en" href="${loc}" />\n`;
+    sitemap += `    <xhtml:link rel="alternate" hreflang="x-default" href="${loc}" />\n`;
     sitemap += '  </url>\n';
   });
 

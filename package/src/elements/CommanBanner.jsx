@@ -2,6 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 const CommanBanner = (props) => {
+    // Allow pages to override the banner heading level. Blog detail pages pass
+    // titleTag="div" so the post title can be the single <h1> on the page.
+    const TitleTag = props.titleTag || 'h1';
     return (
         <div className="slidearea bannerside">
             <div className="side-contact-info">
@@ -15,7 +18,7 @@ const CommanBanner = (props) => {
             >
                 <div className="container-fluid">
                     <div className="dz-bnr-inr-entry">
-                        <h1>{props.mainTitle}</h1>
+                        <TitleTag>{props.mainTitle}</TitleTag>
                         <nav className="breadcrumb-row" aria-label="Breadcrumb">
                             <ul className="breadcrumb">
                                 <li className="breadcrumb-item"><Link to={"/"}>{props.parentTitle}</Link></li>
