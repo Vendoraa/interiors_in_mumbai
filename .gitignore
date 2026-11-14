@@ -22,3 +22,6 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Nested unrelated repo (was accidentally a submodule gitlink)
+seo-blog-writer-claude/
