@@ -279,7 +279,7 @@ const BlogDetails = () => {
           </Helmet>
         </>
       )}
-      <CommanBanner mainTitle="Blog Details" parentTitle="Home" pageName="Blog Details" bgImage={IMAGES.bannerbg3} />
+      <CommanBanner mainTitle="Blog Details" parentTitle="Home" pageName="Blog Details" bgImage={IMAGES.bannerbg3} titleTag="div" />
       <div className="page-content bg-white">
         <div className="content-inner">
           <div className="container">
@@ -316,7 +316,7 @@ const BlogDetails = () => {
                           )}
                         </ul>
                       </div>
-                      <h2 className="dz-title blog-title">{currentBlog.fields.title}</h2>
+                      <h1 className="dz-title blog-title">{currentBlog.fields.title}</h1>
 
                       {/* Blog content section */}
                       <div id="blog-content" className="dz-post-text">
@@ -348,7 +348,7 @@ const BlogDetails = () => {
                                     );
                                   },
                                   [BLOCKS.PARAGRAPH]: (node, children) => <p className="mb-4">{children}</p>,
-                                  [BLOCKS.HEADING_1]: (node, children) => <h1 className="mt-5 mb-3">{children}</h1>,
+                                  [BLOCKS.HEADING_1]: (node, children) => <h2 className="mt-5 mb-3">{children}</h2>,
                                   [BLOCKS.HEADING_2]: (node, children) => <h2 className="mt-4 mb-3">{children}</h2>,
                                   [BLOCKS.HEADING_3]: (node, children) => <h3 className="mt-4 mb-2">{children}</h3>,
                                   // Custom renderer for UL to force bullets
