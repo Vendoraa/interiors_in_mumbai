@@ -7,7 +7,22 @@ const SEO = ({ title, description, keywords, image, canonical }) => {
     const defaultKeywords = "interior design mumbai, home interiors mumbai, home renovation mumbai, modular kitchen mumbai, interior designers mira road";
     const defaultImage = `${process.env.REACT_APP_SITE_URL || "https://www.interiorsinmumbai.com"}/logo512.png`;
 
-    const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+    // Build a title that stays within the ~60 character SEO limit.
+    // Only append the brand name when the combined title still fits.
+    const MAX_TITLE_LENGTH = 60;
+    const buildTitle = (pageTitle) => {
+        if (!pageTitle) return siteTitle;
+        const withBrand = `${pageTitle} | ${siteTitle}`;
+        if (withBrand.length <= MAX_TITLE_LENGTH) return withBrand;
+        // If the page title alone already fits, use it without the brand suffix
+        if (pageTitle.length <= MAX_TITLE_LENGTH) return pageTitle;
+        // Otherwise truncate at a word boundary to fit
+        const truncated = pageTitle.slice(0, MAX_TITLE_LENGTH - 1);
+        const lastSpace = truncated.lastIndexOf(' ');
+        return `${(lastSpace > 0 ? truncated.slice(0, lastSpace) : truncated).trimEnd()}…`;
+    };
+
+    const metaTitle = buildTitle(title);
     const metaDescription = description || defaultDescription;
     const metaKeywords = keywords || defaultKeywords;
     const metaImage = image || defaultImage;
