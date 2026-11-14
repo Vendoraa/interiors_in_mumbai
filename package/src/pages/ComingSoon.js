@@ -141,7 +141,7 @@ const ComingSoon = () => {
               </div>
               <div className="icon-content">
                 <h5 className="tilte">Email Now</h5>
-                <p className="m-b0">15/B Miranda House, New York, US</p>
+                <p className="m-b0">Shop 7, Aashirwad Building, Mira Road East, Mumbai 401107</p>
               </div>
             </div>
           </div>

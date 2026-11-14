@@ -31,8 +31,8 @@ const AboutUs = () => {
               <div className="col-lg-6 col-md-12">
                 <div>
                   <h2 className="title mb-4">Who We Are</h2>
-                  <p>We are <strong>Interiors in Mumbai</strong> (Shrishti Interiors), a Mumbai-based interior design and turnkey contracting firm. Since {COMPANY.foundingDate}, we have helped more than {COMPANY.projectsCompleted.toLocaleString('en-IN')} families across the city turn their apartments and homes into beautiful, functional spaces.</p>
-                  <p>With <strong>{COMPANY.yearsInBusiness}+ years in business</strong>, we pride ourselves on transparent pricing, on-time delivery, and quality that is backed by a written warranty. Whether it is a 1BHK makeover or a complete 3BHK turnkey renovation, we manage everything under one roof.</p>
+                  <p>We are <strong>Interiors in Mumbai</strong> (Shrishti Interiors), an interior design and turnkey contracting firm based in Mira Road East. We started in {COMPANY.foundingDate} and have since completed more than {COMPANY.projectsCompleted.toLocaleString('en-IN')} homes across Mumbai and Mira-Bhayandar.</p>
+                  <p>Most of our work comes from repeat clients and referrals. We give you a fixed quote before work starts, share 3D designs so you know what you are paying for, and back the carpentry and civil work with a written warranty. Whether it is a 1BHK makeover or a full 3BHK turnkey renovation, one team handles design and execution.</p>
                   <ul className="list-check primary">
                     <li>Single accountable team for design + execution</li>
                     <li>3D designs and fixed quotations before work begins</li>
@@ -61,7 +61,7 @@ const AboutUs = () => {
             <div className="row justify-content-center">
               <div className="col-lg-8">
                 <p className="text-center" style={{ fontFamily: 'Roboto, sans-serif', lineHeight: '1.8', fontSize: '16px', color: '#555', textAlign: 'justify' }}>
-                  Our mission is to provide top-notch interior and remodeling services that enhance the beauty and functionality of your home. We are committed to using the best materials and latest techniques to ensure our projects are completed to the highest standards. Your satisfaction is our ultimate goal, and we strive to build lasting relationships with our clients based on trust and excellence.
+                  We keep things simple: honest quotes, good materials, and work finished on the date we promised. You deal with the same team from the first site visit to the final handover, and you can call us after the project is done if anything needs attention. That is how we have stayed in business since 2009.
                 </p>
               </div>
             </div>
@@ -78,15 +78,13 @@ const AboutUs = () => {
               <h6 className="sub-title text-primary">WORK PROCESS</h6>
               <h2 className="title">How We Work</h2>
             </div>
-            <div className="row">
+            <div className="card-grid cols-4">
               {
                 workingProcess.map((i) => (
-                  <div className="col-lg-3 col-sm-6" key={i.num}>
-                    <div className="work-process shadow text-center m-b30">
-                      <div className="number">{i.num}</div>
-                      <h4 className="title m-b15">{i.heading}</h4>
-                      <p className="m-b0">{i.text}</p>
-                    </div>
+                  <div className="work-process shadow text-center" key={i.num}>
+                    <div className="number">{i.num}</div>
+                    <h4 className="title m-b15">{i.heading}</h4>
+                    <p className="m-b0">{i.text}</p>
                   </div>
                 ))
               }

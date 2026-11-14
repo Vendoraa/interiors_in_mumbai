@@ -56,9 +56,9 @@ const InteriorDesignersAndheri = () => {
     return (
         <>
             <SEO
-                title="Top Interior Designers in Andheri West & East | Premium Home Interiors"
-                description="Premium interior design services in Andheri, Lokhandwala, and Versova. We specialize in premium apartments, celebrity homes, and modern office spaces in Andheri."
-                keywords="interior designers andheri west, interior designers lokhandwala, interior decorators andheri east, premium interiors versova, office interior design andheri"
+                title="Interior Designers in Andheri West & East | Home Interiors"
+                description="Interior design and renovation in Andheri, Lokhandwala and Versova. Flats, offices and shops, with 3D designs and a fixed quote before work starts."
+                keywords="interior designers andheri west, interior designers lokhandwala, interior decorators andheri east, interior design versova, office interior design andheri"
             />
             <Helmet>
                 <script type="application/ld+json">
@@ -74,32 +74,32 @@ const InteriorDesignersAndheri = () => {
                         <div className="row">
                             <div className="col-lg-8 m-b30">
                                 <div className="section-head style-1">
-                                    <h6 className="sub-title text-primary">Andheri's Design Experts</h6>
-                                    <h2 className="title">Premium Interiors for Andheri Homes</h2>
-                                    <p>Andheri is the heart of Mumbai's lifestyle. From the posh high-rises of Lokhandwala to the spacious apartments in Versova and the corporate hubs of Andheri East, we understand the diverse design needs of this vibrant suburb. We bring a blend of glamour and functionality to your space.</p>
+                                    <h6 className="sub-title text-primary">Andheri</h6>
+                                    <h2 className="title">Interior Design in Andheri</h2>
+                                    <p>Andheri covers a lot of ground: the older buildings around Andheri station, the towers in Lokhandwala and Oshiwara, and the corporate offices in Andheri East. We do full home interiors, single-room work and office fit-outs, and we plan the schedule around your society's working hours.</p>
                                 </div>
 
                                 <div className="row m-b30">
                                     <div className="col-md-6">
                                         <ul className="list-check primary">
-                                            <li>Premium High-Rise Specialists</li>
-                                            <li>Celebrity Home Design Experience</li>
-                                            <li>Space-Saving Solutions</li>
-                                            <li>Modern & Contemporary Styles</li>
+                                            <li>Full home interiors</li>
+                                            <li>Modular kitchens</li>
+                                            <li>Space-saving furniture</li>
+                                            <li>False ceiling and lighting</li>
                                         </ul>
                                     </div>
                                     <div className="col-md-6">
                                         <ul className="list-check primary">
-                                            <li>Premium Material Selection</li>
-                                            <li>Smart Home Automation</li>
-                                            <li>Corporate Office Designs</li>
-                                            <li>Timely Project Completion</li>
+                                            <li>Custom wardrobes</li>
+                                            <li>Painting and waterproofing</li>
+                                            <li>Office and shop fit-outs</li>
+                                            <li>Society NOC assistance</li>
                                         </ul>
                                     </div>
                                 </div>
 
-                                <h3>Designing for Andheri's Lifestyle</h3>
-                                <p className="m-b30">We have extensive experience working in Andheri's most prestigious addresses. We understand the specific requirements of cooperative societies and new developments in the area.</p>
+                                <h3>Working in Andheri</h3>
+                                <p className="m-b30">Andheri has a mix of old co-operative societies and newer towers, and each has its own rules on working hours, lift use and debris removal. We have worked in both, so we plan the schedule around your society's restrictions.</p>
 
                                 <div className="widget widget_tag_cloud m-b30">
                                     <div className="tagcloud">
@@ -115,15 +115,15 @@ const InteriorDesignersAndheri = () => {
                                 </div>
 
                                 <h3>Our Expertise in Andheri</h3>
-                                <div className="row">
+                                <div className="card-grid cols-2">
                                     <div className="col-md-6 m-b30">
                                         <div className="icon-bx-wraper style-3 left p-a30 box-hover w-100">
                                             <div className="icon-lg text-primary m-b20">
                                                 <span className="icon-cell"><i className="flaticon-office"></i></span>
                                             </div>
                                             <div className="icon-content">
-                                                <h4 className="dlab-title m-b10">Premium Apartments</h4>
-                                                <p>Bespoke designs for 3BHK, 4BHK, and Penthouses with premium finishes.</p>
+                                                <h4 className="dlab-title m-b10">3BHK and 4BHK Flats</h4>
+                                                <p>Full home interiors with wardrobes, false ceiling and modular kitchen. Most take 10 to 14 weeks.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -145,7 +145,7 @@ const InteriorDesignersAndheri = () => {
                                             </div>
                                             <div className="icon-content">
                                                 <h4 className="dlab-title m-b10">Modular Kitchens</h4>
-                                                <p>High-end modular kitchens with German hardware and premium finishes.</p>
+                                                <p>L-shape and parallel kitchens with Hettich or Hafele hardware and granite counters.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -156,7 +156,7 @@ const InteriorDesignersAndheri = () => {
                                             </div>
                                             <div className="icon-content">
                                                 <h4 className="dlab-title m-b10">Master Bedrooms</h4>
-                                                <p>Luxurious bedroom suites with walk-in closets and ensuite designs.</p>
+                                                <p>Wardrobes, bed with storage, study table and false ceiling, planned as one room.</p>
                                             </div>
                                         </div>
                                     </div>

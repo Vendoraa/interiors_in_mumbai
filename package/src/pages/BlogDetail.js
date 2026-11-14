@@ -39,6 +39,7 @@ const BlogDetail = () => {
               title: fields.title || 'Untitled Blog Post',
               description: fields.excerpt || fields.description || '',
               date: sys.createdAt || new Date().toISOString(),
+              dateModified: sys.updatedAt || sys.createdAt || new Date().toISOString(),
               url: slug ? `/blog-details/${slug}` : `/blog-details/${sys.id}`,
             };
           });
@@ -77,6 +78,7 @@ const BlogDetail = () => {
                 description: blog.description,
                 image: blog.featuredImage,
                 datePublished: blog.date,
+                dateModified: blog.dateModified,
                 url: `${SITE_URL}${blog.url}`,
               }),
             })),

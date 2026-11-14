@@ -68,19 +68,19 @@ export const BEFORE_AFTER = [
     before: IMAGES.before1bhk,
     after: IMAGES.after1bhk,
     title: '1BHK Makeover – Mira Road',
-    text: 'A bare shell 1BHK turned into a warm, storage-rich family home with a closed kitchen and custom wardrobes.',
+    text: 'A bare 1BHK with no kitchen and no storage. We added a closed kitchen, floor-to-ceiling wardrobes and loft storage above the doors.',
   },
   {
     before: IMAGES.mumbai2bhk,
     after: IMAGES.mumbaiKitchen,
     title: '2BHK Renovation – Andheri',
-    text: 'Open, brighter living space with a modern modular kitchen and space-saving furniture.',
+    text: 'The living room wall was removed to open up the space. New modular kitchen, TV unit and a sofa-cum-bed for guests.',
   },
   {
     before: IMAGES.mumbai3bhk,
     after: IMAGES.portfolioLivingRoom,
     title: '3BHK Interior – Powai',
-    text: 'Elegant living room and bedrooms with layered lighting and premium laminate finishes.',
+    text: 'Living room and bedrooms with false ceiling, cove lighting and laminate finishes.',
   },
 ];
 

@@ -32,8 +32,8 @@ const Pricing = () => {
     return (
         <>
             <SEO
-                title="Interior Design Cost in Mumbai | Pricing & Packages 2024"
-                description="Transparent interior design pricing in Mumbai. Basic packages from ₹800/sq ft, Premium from ₹1500/sq ft. Get detailed cost breakdown for 1BHK, 2BHK, 3BHK."
+                title="Interior Design Cost in Mumbai | Pricing & Packages 2026"
+                description="Transparent interior design pricing in Mumbai. Basic packages from ₹600/sq ft, Premium from ₹1,500/sq ft. Get a detailed cost breakdown for 1BHK, 2BHK and 3BHK homes."
                 keywords="interior design cost mumbai, 2bhk interior cost, 3bhk interior cost, interior design packages, renovation cost mumbai"
             />
             <Helmet>
@@ -50,7 +50,7 @@ const Pricing = () => {
                         <div className="section-head style-1 text-center">
                             <h6 className="sub-title text-primary">Transparent Pricing</h6>
                             <h2 className="title">Interior Design Packages in Mumbai</h2>
-                            <p>We believe in complete transparency. No hidden costs, no surprises. Choose a package that fits your budget and lifestyle.</p>
+                            <p>Every quote is itemised, so you can see what each item costs. Pick a package that fits your budget, or ask us to build a custom scope.</p>
                         </div>
 
                         <div className="row pricing-table-wraper">
@@ -60,7 +60,7 @@ const Pricing = () => {
                                     <div className="pricingtable-inner">
                                         <div className="pricingtable-title">
                                             <h3>Basic Essentials</h3>
-                                            <p>Perfect for rental homes or budget makeovers</p>
+                                            <p>For rental flats and budget makeovers</p>
                                         </div>
                                         <div className="pricingtable-price">
                                             <h2 className="pricingtable-bx">₹600 - ₹900</h2>
@@ -87,7 +87,7 @@ const Pricing = () => {
                                     <div className="pricingtable-inner">
                                         <div className="pricingtable-title">
                                             <h3>Premium Living</h3>
-                                            <p>Our most popular choice for homeowners</p>
+                                            <p>Our most booked package</p>
                                         </div>
                                         <div className="pricingtable-price">
                                             <h2 className="pricingtable-bx">₹1,500 - ₹2,500</h2>
@@ -114,7 +114,7 @@ const Pricing = () => {
                                     <div className="pricingtable-inner">
                                         <div className="pricingtable-title">
                                             <h3>Elite</h3>
-                                            <p>For those who want the absolute best</p>
+                                            <p>Veneer, marble and automation</p>
                                         </div>
                                         <div className="pricingtable-price">
                                             <h2 className="pricingtable-bx">₹3,000+</h2>

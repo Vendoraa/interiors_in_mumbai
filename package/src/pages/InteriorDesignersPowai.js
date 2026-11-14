@@ -56,7 +56,7 @@ const InteriorDesignersPowai = () => {
         <>
             <SEO
                 title="Best Interior Designers in Powai & Hiranandani | Modern Home Decor"
-                description="Expert interior designers for Hiranandani Gardens, Powai, and Chandivali. We create elegant, space-efficient interiors for modern apartments and lake-view homes."
+                description="Interior designers for Hiranandani Gardens, Powai and Chandivali. We know the township layouts and society rules, and plan storage for compact flats."
                 keywords="interior designers powai, interior designers hiranandani gardens, home renovation powai, chandivali interior design, lake view apartment interiors"
             />
             <Helmet>
@@ -73,32 +73,32 @@ const InteriorDesignersPowai = () => {
                         <div className="row">
                             <div className="col-lg-8 m-b30">
                                 <div className="section-head style-1">
-                                    <h6 className="sub-title text-primary">Modern Living</h6>
-                                    <h2 className="title">Elegant Interiors for Powai Homes</h2>
-                                    <p>Powai is synonymous with modern, planned living. From the neo-classical architecture of Hiranandani Gardens to the contemporary high-rises of Chandivali, we design interiors that complement the upscale lifestyle of Powai residents. We focus on elegance, functionality, and maximizing views.</p>
+                                    <h6 className="sub-title text-primary">Powai</h6>
+                                    <h2 className="title">Interior Design in Powai</h2>
+                                    <p>Most Powai flats are in large townships like Hiranandani Gardens, Nahar Amrit Shakti and Raheja Vihar. These buildings have fixed working hours, designated lift timings for material, and strict rules on drilling. We plan the schedule around them so your neighbours are not disturbed.</p>
                                 </div>
 
                                 <div className="row m-b30">
                                     <div className="col-md-6">
                                         <ul className="list-check primary">
-                                            <li>Neo-Classical & Modern Fusion</li>
-                                            <li>Lake-View Balcony Designs</li>
-                                            <li>Space-Efficient Furniture</li>
-                                            <li>Kids Room Specialists</li>
+                                            <li>Full home interiors</li>
+                                            <li>Balcony and window seating</li>
+                                            <li>Space-saving furniture</li>
+                                            <li>Kids room design</li>
                                         </ul>
                                     </div>
                                     <div className="col-md-6">
                                         <ul className="list-check primary">
-                                            <li>Rental-Friendly Makeovers</li>
-                                            <li>Home Office Setups</li>
-                                            <li>Modular Kitchens</li>
-                                            <li>Quick Turnaround Time</li>
+                                            <li>Rental-friendly makeovers</li>
+                                            <li>Home office setups</li>
+                                            <li>Modular kitchens</li>
+                                            <li>Society NOC assistance</li>
                                         </ul>
                                     </div>
                                 </div>
 
-                                <h3>Tailored for Hiranandani & Beyond</h3>
-                                <p className="m-b30">We are familiar with the specific layouts and regulations of major Powai townships. We ensure seamless execution without disturbing your neighbors.</p>
+                                <h3>Working in Powai Townships</h3>
+                                <p className="m-b30">We have worked in Hiranandani Gardens, Nahar Amrit Shakti, Raheja Vihar and L&T Emerald Isle, so we already know the building rules and where the service lifts are. Material is cut at our workshop and brought in ready to fit, which keeps the noise and dust down.</p>
 
                                 <div className="widget widget_tag_cloud m-b30">
                                     <div className="tagcloud">
@@ -114,7 +114,7 @@ const InteriorDesignersPowai = () => {
                                 </div>
 
                                 <h3>Our Focus in Powai</h3>
-                                <div className="row">
+                                <div className="card-grid cols-2">
                                     <div className="col-md-6 m-b30">
                                         <div className="icon-bx-wraper style-3 left p-a30 box-hover w-100">
                                             <div className="icon-lg text-primary m-b20">

@@ -78,6 +78,7 @@ const BlogGrid = () => {
                   description: fields.excerpt || fields.content?.substring(0, 120) + '...',
                   image: imageUrl,
                   datePublished: sys.createdAt,
+                  dateModified: sys.updatedAt || sys.createdAt,
                   url: `${SITE_URL}${linkUrl}`,
                 }),
               };

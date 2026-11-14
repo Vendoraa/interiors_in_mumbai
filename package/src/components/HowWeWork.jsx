@@ -2,10 +2,10 @@ import React from 'react'
 import { motion } from 'framer-motion';
 
 const workingProcess = [
-    { num: "01", heading: "Book an appointment", text: "Book an appointment with Interiors in Mumbai to bring your vision to life." },
-    { num: "02", heading: "Design and approval", text: "Our collaborative design process ensures your vision comes to life, and with your approval, we create functional, beautiful spaces." },
-    { num: "03", heading: "Execution", text: "Our skilled team ensures precise and timely implementation, turning design concepts into stunning reality for your dream home." },
-    { num: "04", heading: "Project Handover", text: "Our project handover process is seamless, ensuring a smooth transition and delivering a space that exceeds your expectations, ready for you to create lasting memories." },
+    { num: "01", heading: "Book an appointment", text: "Call or WhatsApp us and we will visit your flat to measure and understand what you need. Site visits are free across Mumbai." },
+    { num: "02", heading: "Design and approval", text: "We share layout options, 3D views and a fixed itemised quote. Nothing is ordered until you approve the design and price." },
+    { num: "03", heading: "Execution", text: "Our carpenters, painters and electricians work to a written schedule. You get weekly updates and a site supervisor's number." },
+    { num: "04", heading: "Project Handover", text: "We do a joint walkthrough, fix anything on your snag list, then hand over with the warranty papers and material bills." },
 ]
 
 const HowWeWork = () => {

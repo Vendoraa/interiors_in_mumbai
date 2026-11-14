@@ -8,7 +8,7 @@ const BeforeAfter = () => (
       <div className="section-head style-1 text-center">
         <h6 className="sub-title text-primary">PROOF OF WORK</h6>
         <h2 className="title">Before & After Transformations</h2>
-        <p>See how we turn bare shells and outdated homes into functional, beautiful spaces across Mumbai.</p>
+        <p>Before and after photos from projects we have completed across Mumbai.</p>
       </div>
       <div className="row">
         {BEFORE_AFTER.map((item, i) => (

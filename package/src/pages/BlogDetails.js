@@ -51,20 +51,12 @@ const BlogDetails = () => {
         }
       }
 
-      // 2. If not found by ID, try to find by slug field
+      // 2. If not found by ID, try to find by slug field.
+      // NOTE: The blogPost content type has no `slug` field, so querying
+      // `fields.slug` returns HTTP 422. We skip that query and go straight to
+      // the cached title-slug match below to avoid two failed requests per page.
       if (!entry) {
-        const response = await getEntries('blogPost', {
-          'fields.slug': identifier,
-          limit: 1
-        });
-        if (response && response.items && response.items.length > 0) {
-          entry = response.items[0];
-        }
-      }
-
-      // 3. If still not found (no slug field yet), fetch all and match title-slug (Fallback)
-      if (!entry) {
-        console.log('Slug lookup failed, trying title match fallback...');
+        console.log('Looking up blog by title-slug...');
         const allPosts = await getEntries('blogPost');
         if (allPosts && allPosts.items) {
           entry = allPosts.items.find(post => {

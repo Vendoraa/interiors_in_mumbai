@@ -26,7 +26,7 @@ const Services = () => {
         <>
             <SEO
                 title="Interior Design Services Mumbai | Residential & Commercial"
-                description="Explore our wide range of interior design services in Mumbai, including residential design, commercial spaces, turnkey projects, and custom furniture."
+                description="Interior design services in Mumbai: full home interiors, modular kitchens, custom furniture, painting, electrical and civil work. See cost and timeline for each."
                 keywords="Interior Design Services Mumbai, Residential Interiors, Commercial Interior Design, Turnkey Projects, Custom Furniture Design"
             />
             <JsonLd data={{ '@context': 'https://schema.org', '@graph': servicesSchema }} />

@@ -2,14 +2,14 @@ const SERVICES = {
   "Interior Design": {
     slug: "interior-design",
     title: "Interior Design",
-    what: "Interior design is the process of planning, designing, and executing the look and function of a home or office so every room works for the way you live. Our interior design service in Mumbai covers space planning, colour and material selection, furniture layouts, lighting design, and complete turnkey execution.",
-    whyNeed: "Most Mumbai apartments have limited square footage, awkward layouts, and strict society rules. Good interior design helps you get the most usable space, avoid costly mistakes, and create a home that feels larger. Without a proper plan you risk wasted corners, poor lighting, weak storage, and rework, whereas a professional design gives you a clear 3D vision before any money is spent on materials.",
+    what: "We handle the full interior of your flat, from the first site visit to the day you move in. That covers space planning, 3D designs, material selection, carpentry, false ceiling, electrical, plumbing and painting. You deal with one team for everything.",
+    whyNeed: "Mumbai flats are small and the layouts are often awkward, so a plan matters more than a big budget. We measure your flat, work out where the storage and furniture will actually fit, and show you 3D views before you spend anything on materials. That way you avoid rework, blocked passages and corners that end up unused.",
     benefits: [
-      "Better use of every square foot with smart storage and layout planning",
-      "A cohesive look tailored to your style instead of mismatched pieces",
-      "Fewer surprises and cost overruns thanks to 3D renders and fixed quotes",
-      "One team handling design plus execution, so nothing falls between the cracks",
-      "Higher resale and rental value for your Mumbai property",
+      "Storage planned around your actual wall sizes, not standard sizes",
+      "One finish and colour scheme across every room",
+      "A fixed quote and 3D views before any material is ordered",
+      "One team for design and execution, so you have a single point of contact",
+      "Better resale and rental value for your Mumbai property",
     ],
     process: [
       "Free consultation and site measurement at your home",
@@ -40,12 +40,12 @@ const SERVICES = {
   "Modular Kitchen": {
     slug: "modular-kitchen",
     title: "Modular Kitchen",
-    what: "A modular kitchen is a factory-made, modular system of cabinets, drawers, and shutters built to fit your kitchen layout, with standardised modules that are easy to install and repair. Our modular kitchen service in Mumbai covers L-shape, U-shape, parallel, and straight layouts with smart storage and modern finishes.",
-    whyNeed: "Mumbai kitchens are usually small, so you need maximum storage and work space in a compact area. A modular kitchen gives you ergonomic counters, soft-close drawers, and tall units that use vertical space, making daily cooking faster and cleaner than with loose carpentry.",
+    what: "Modular kitchens are factory-made cabinets and shutters built to fit your kitchen's exact measurements. We do L-shape, U-shape, parallel and straight layouts, with soft-close drawers, tall units and a granite or quartz counter.",
+    whyNeed: "Most Mumbai kitchens are small, so storage has to go up the walls, not across the floor. A modular kitchen gives you drawers that pull out fully, corner carousels that use dead space, and tall units for the mixer and pressure cooker. It is also easier to repair later, because you can replace one module instead of the whole kitchen.",
     benefits: [
       "Up to 30% more storage with carousel units, pull-outs, and tall pantries",
       "Easy to clean, termite-proof, and water-resistant materials",
-      "Soft-close hardware for a premium, noise-free feel",
+      "Soft-close hinges and channels, so shutters and drawers close quietly",
       "Faster installation than fully site-built kitchens",
       "Modules can be repaired or replaced individually",
     ],
@@ -76,14 +76,14 @@ const SERVICES = {
   "Custom Furniture": {
     slug: "custom-furniture",
     title: "Custom Furniture",
-    what: "Custom furniture is made-to-measure woodwork built for your exact space and style, instead of ready-made pieces that may not fit. Our custom furniture service in Mumbai covers wardrobes, beds, sofa-cum-storage, study tables, TV units, and bespoke pieces designed around how you use your home.",
-    whyNeed: "Ready-made furniture rarely fits Mumbai apartments, where ceiling heights, wall widths, and corners are unique. Custom furniture uses every inch, gives you the storage you actually need, and matches the rest of your interiors.",
+    what: "We build wardrobes, beds, TV units, study tables and storage benches to your wall sizes. Nothing is bought ready-made and cut down to fit. You pick the plywood, laminate and hardware, and we build it at our Mira Road workshop.",
+    whyNeed: "Ready-made furniture almost never fits Mumbai flats properly. Ceiling heights vary, walls are not square, and there is usually a beam or a window in the way. Custom furniture uses that space instead of leaving gaps, and you get storage sized for what you actually own.",
     benefits: [
       "Fits awkward corners, bay windows, and non-standard wall sizes",
       "Built-in storage that reduces clutter in small homes",
       "Choice of finish, colour, and hardware to match your theme",
-      "Stronger joints and longer life than mass-produced furniture",
-      "One-of-a-kind pieces tailored to your lifestyle",
+      "Stronger joints than flat-pack furniture, and repairable locally",
+      "Pieces built for how you actually use the room",
     ],
     process: [
       "Understand your storage needs and style preference",
@@ -113,11 +113,11 @@ const SERVICES = {
   "Painting": {
     slug: "painting",
     title: "Painting",
-    what: "Our professional painting service covers interior and exterior walls, textures, waterproofing, and colour consultation for homes and offices. We handle surface preparation, priming, and a clean, flawless finish using premium paints.",
-    whyNeed: "Mumbai's humidity, monsoon, and salty air cause damp patches, peeling, and fungus. Proper surface preparation and the right paint protect your walls, improve air quality, and refresh the entire look of your home without structural work.",
+    what: "Interior and exterior painting for flats, bungalows and shops. We do the putty, primer and two finish coats, and you can pick shades from the Asian Paints, Berger or Nerolac cards at our office.",
+    whyNeed: "Mumbai's humidity and monsoon cause damp patches, peeling paint and fungus on walls, especially on the outside and in bathrooms. Doing the putty and primer properly is what stops that, and it is the step most painters skip to finish faster. Good paint also makes a room look brighter without any structural work.",
     benefits: [
       "Protection from dampness, fungus, and weathering",
-      "Brighter, fresher rooms with the right colour psychology",
+      "Brighter rooms with the right shade for the light in each room",
       "Low-VOC options that are safer for families",
       "Clean, streak-free finish with proper priming",
       "Quick transformation compared to renovation",
@@ -150,14 +150,14 @@ const SERVICES = {
   "Electrical": {
     slug: "electrical",
     title: "Electrical",
-    what: "Our electrical service covers new wiring, rewiring, lighting design, switchboards, inverter and fan installations, and repairs for homes and offices. All work is done by experienced electricians with safety and compliance in mind.",
-    whyNeed: "Old or faulty wiring is a fire and shock risk, and Mumbai's power fluctuations can damage appliances. Proper electrical planning gives you safe circuits, enough points for modern devices, and good lighting that makes rooms usable and efficient.",
+    what: "Wiring, rewiring, lighting points, switchboards, inverter and fan installation for homes and offices. All work is done by licensed electricians, with MCB and ELCB protection included.",
+    whyNeed: "Old wiring in Mumbai flats is a real fire and shock risk, and the city's power fluctuations damage appliances over time. We check the existing load before adding AC or geyser points, so your circuits do not trip or overheat. Good lighting planning also makes rooms usable at night instead of just bright.",
     benefits: [
       "Safer homes with compliant wiring and earthing",
       "Well-planned points for AC, geyser, and EV chargers",
-      "Layered lighting (ambient, task, accent) for comfort",
-      "Reduced power wastage with the right fixtures",
-      "Fewer breakdowns and easy future upgrades",
+      "Separate lighting for general use, reading and kitchen counters",
+      "Lower power bills with LED fixtures",
+      "Fewer breakdowns, and points that are easy to add to later",
     ],
     process: [
       "Load assessment and lighting layout plan",
@@ -187,14 +187,14 @@ const SERVICES = {
   "Floor Plan Design": {
     slug: "floor-plan-design",
     title: "Floor Plan Design",
-    what: "Floor plan design is the technical layout that shows walls, rooms, doors, windows, and furniture placement to scale. Our floor plan design service in Mumbai gives you 2D plans and detailed drawings that form the backbone of any renovation or new home.",
-    whyNeed: "Before spending on materials, you need a plan that proves the space works. A good floor plan prevents blocked passages, poor ventilation, and wasted area, and it is required for society approvals and contractor quotes in Mumbai.",
+    what: "We redraw your flat's layout to scale, showing walls, doors, windows and where the furniture will sit. You get 2D CAD drawings, and 3D views if you want them, before any work starts.",
+    whyNeed: "It is cheaper to fix a bad layout on paper than on site. A scaled plan shows you whether the bed and wardrobe actually fit, whether the door will open, and where the light comes from. Most Mumbai societies also ask for a marked layout before they approve renovation work.",
     benefits: [
       "Clear, to-scale layout before any money is spent",
       "Better flow, light, and ventilation across rooms",
       "Easy to get accurate quotes from contractors",
       "Required drawings for society and bank approvals",
-      "A base for 3D visualisation and execution",
+      "A base for 3D views and for the contractor to work from",
     ],
     process: [
       "Site measurement and requirement study",
@@ -224,14 +224,14 @@ const SERVICES = {
   "Space Saving": {
     slug: "space-saving",
     title: "Space Saving",
-    what: "Space-saving design uses multifunctional furniture, built-in storage, and smart layouts to make small homes feel bigger. Our space-saving service in Mumbai is built for 1BHK and 2BHK apartments where every square foot counts.",
-    whyNeed: "Mumbai homes are compact, and buying standard furniture leaves dead space. Space-saving solutions like wall beds, lofts, and concealed storage give you a functional home without crowding the rooms.",
+    what: "We find the storage that is already in your flat but unused. That usually means loft storage above doorways, a bed with drawers underneath, a fold-down study table, and wardrobes that run floor to ceiling instead of stopping short.",
+    whyNeed: "Small Mumbai flats lose space to bad planning, not to size. Buying standard furniture leaves gaps above and beside it that could have been storage. We plan this at the drawing stage, so the extra units do not eat into your walking space or block the windows.",
     benefits: [
       "More open floor area in small apartments",
       "Hidden storage in beds, stairs, and partitions",
       "Multifunctional pieces (sofa-cum-bed, study-cum-dining)",
       "Cleaner, less cluttered rooms",
-      "Lower overall cost than moving to a bigger home",
+      "Cheaper than moving to a bigger flat",
     ],
     process: [
       "Study how each room is actually used",

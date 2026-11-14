@@ -82,7 +82,7 @@ const Header = () => {
                                     {Menu.map((item, index) => {
                                         return (
                                             <li key={index}>
-                                                <Link to={item.to}>
+                                                <Link to={item.to} onClick={() => setOpen(false)}>
                                                     {item.title}
                                                 </Link>
                                             </li>

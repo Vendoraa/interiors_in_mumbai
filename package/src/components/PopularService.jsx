@@ -2,20 +2,17 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const card = [
-    { id: 1, delay: 0.1, icon: 'flaticon-blueprint-1', heading: "Custom Furniture", text: "Elevate your home with unique charm through our bespoke custom furniture. Crafted with precision and passion, our pieces redefine your space with individuality and style." },
-    { id: 2, delay: 0.2, icon: 'flaticon-crane', heading: "Interior Design", text: "Transform your living spaces into curated masterpieces with our expert interior designing services. From concept to execution, we infuse style and functionality to create environments that reflect your unique taste and lifestyle." },
-    { id: 3, delay: 0.3, icon: 'flaticon-interior-design-1', heading: "Painting", text: "Add a splash of personality to your home with our expert painting services. Transform spaces with vibrant colors and meticulous craftsmanship for a truly captivating ambiance." },
-    { id: 4, delay: 0.6, icon: 'flaticon-furniture', heading: "Modular Kitchen", text: "Experience the epitome of modern convenience with our modular kitchen solutions. Tailored for efficiency and elegance, our designs seamlessly integrate style into every culinary masterpiece." },
-    { id: 5, delay: 0.7, icon: 'flaticon-home', heading: "Electrical", text: "Energize your home with our top-notch electrical services. From wiring to lighting, we ensure safety and efficiency, illuminating your space with precision and reliability" },
-    { id: 6, delay: 0.8, icon: 'flaticon-support', heading: "Space Saving", text: "Maximize your living spaces with our innovative space-saving solutions. Our designs seamlessly blend functionality and style, optimizing every inch to create a clutter-free and visually appealing environment." },
+    { id: 1, delay: 0.1, icon: 'flaticon-blueprint-1', heading: "Custom Furniture", text: "Wardrobes, beds, TV units and study tables built to fit your exact wall sizes. We use BWP plywood and branded hardware, so it lasts in Mumbai's humidity." },
+    { id: 2, delay: 0.2, icon: 'flaticon-crane', heading: "Interior Design", text: "Full home interiors from layout plan to final handover. You get 3D designs and a fixed quote before any work starts, so there are no surprises later." },
+    { id: 3, delay: 0.3, icon: 'flaticon-interior-design-1', heading: "Painting", text: "Interior and exterior painting with proper surface prep and priming. We use Asian Paints and Berger, and cover your furniture before we start." },
+    { id: 4, delay: 0.6, icon: 'flaticon-furniture', heading: "Modular Kitchen", text: "L-shape, U-shape, parallel or straight kitchens with soft-close drawers and tall units. Most kitchens are installed in 3 to 5 weeks." },
+    { id: 5, delay: 0.7, icon: 'flaticon-home', heading: "Electrical", text: "New wiring, rewiring, lighting and switchboard work. We use Polycab or Finolex wire and Legrand or Schneider switches, with MCB and ELCB safety." },
+    { id: 6, delay: 0.8, icon: 'flaticon-support', heading: "Space Saving", text: "Loft storage, pull-out units and multi-use furniture for small Mumbai flats. We find the storage you didn't know you had." },
 
 ]
 
 const PopularService = () => {
     const [addActive, setAddActive] = useState(1);
-    const gridItemStyle = {
-        minHeight: '400px', // Adjust the height as needed
-    };
 
     return (
         <>
@@ -24,17 +21,16 @@ const PopularService = () => {
                     <h6 className="sub-title text-primary">OUR SERVICES</h6>
                     <h2 className="title">Services we provide</h2>
                 </div>
-                <div className="row">
+                <div className="card-grid cols-3">
                     {
                         card.map((item, ind) => (
                             <div
                                 key={ind}
-                                className="col-lg-4 col-sm-6 aos-item"
+                                className="aos-item"
                             >
                                 <div
-                                    className={`icon-bx-wraper style-3 m-b30 ${addActive === item.id ? 'active' : ''}`}
+                                    className={`icon-bx-wraper style-3 ${addActive === item.id ? 'active' : ''}`}
                                     onMouseEnter={() => setAddActive(item.id)}
-                                    style={gridItemStyle}
                                 >
                                     <div className="icon-xl m-b30">
                                         <Link className="icon-cell"><i className={item.icon}></i></Link>

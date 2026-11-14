@@ -1,6 +1,6 @@
 [build]
   base = "package"
-  command = "echo 'Skipping build - deploying pre-rendered static files from deploy-build branch'"
+  command = "npm run build"
   publish = "build"
 
 [build.environment]
@@ -32,6 +32,12 @@
 
 [[headers]]
   for = "/llm.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Content-Type = "text/plain"
+
+[[headers]]
+  for = "/llms.txt"
   [headers.values]
     Cache-Control = "public, max-age=86400"
     Content-Type = "text/plain"

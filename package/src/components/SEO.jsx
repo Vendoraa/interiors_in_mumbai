@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, keywords, image, canonical }) => {
     const siteTitle = "Interiors in Mumbai";
-    const defaultDescription = "Premier interior design firm in Mumbai offering premium home renovations, modern office design, and turnkey architectural projects.";
-    const defaultKeywords = "interior design, mumbai, architects, home renovation, premium interiors";
+    const defaultDescription = "Interior design and turnkey home renovation in Mumbai. 1,200+ homes completed since 2009. Free site visit, 3D designs and a fixed quote before work starts.";
+    const defaultKeywords = "interior design mumbai, home interiors mumbai, home renovation mumbai, modular kitchen mumbai, interior designers mira road";
     const defaultImage = `${process.env.REACT_APP_SITE_URL || "https://www.interiorsinmumbai.com"}/logo512.png`;
 
     const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle;

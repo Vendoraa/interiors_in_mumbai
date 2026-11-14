@@ -108,10 +108,10 @@ const ContactUs = () => {
         <CommanBanner mainTitle="Contact Us" parentTitle="Home" pageName="Contact Us" bgImage={IMAGES.bannerbg3} />
         <section className="content-inner">
           <div className="container">
-            <div className="row">
+            <div className="card-grid cols-3">
               {
                 cards.map((i) => (
-                  <div key={i.id} className="col-lg-4 col-md-12 m-b30 aos-item">
+                  <div key={i.id} className="col-lg-4 col-md-12 aos-item">
                     <div className="icon-bx-wraper style-8 bg-white" data-name={i.id}>
                       <div className="icon-md m-r20">
                         <span className="icon-cell text-primary"><i className={i.icon}></i></span>

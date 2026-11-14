@@ -16,10 +16,10 @@ const CommanBanner = (props) => {
                 <div className="container-fluid">
                     <div className="dz-bnr-inr-entry">
                         <h1>{props.mainTitle}</h1>
-                        <nav className="breadcrumb-row">
+                        <nav className="breadcrumb-row" aria-label="Breadcrumb">
                             <ul className="breadcrumb">
                                 <li className="breadcrumb-item"><Link to={"/"}>{props.parentTitle}</Link></li>
-                                <li className="breadcrumb-item">{props.pageName}</li>
+                                <li className="breadcrumb-item" aria-current="page">{props.pageName}</li>
                             </ul>
                         </nav>
                     </div>

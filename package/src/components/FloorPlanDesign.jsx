@@ -13,16 +13,16 @@ const ServicesDetail = () => {
       case "Floor Plan Design":
         return (
           <>
-            <h2 className="title mb-2">Expert Floor Plan Design Services</h2>
-            <p>Our floor plan design services ensure your space is used to its fullest potential. We create detailed plans that reflect your lifestyle and needs, making sure every square foot is optimized for both form and function.</p>
+            <h2 className="title mb-2">Floor Plan Design</h2>
+            <p>We redraw your flat's layout before any work starts. That means checking wall positions, door swings, plumbing lines and window light, then working out where the bed, wardrobe and kitchen units will actually fit.</p>
             <div className="row">
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic3} className="m-b30  w-100" alt="Professional floor plan design layout in Mumbai"/>
-                <p className="m-b0">Whether you're building a new home or renovating an existing space, our floor plans provide a solid foundation for your project. We consider flow, natural light, and your personal preferences to create a layout that works for you.</p>
+                <img src={IMAGES.ServicePic3} className="m-b30  w-100" alt="Floor plan layout drawing for a Mumbai apartment"/>
+                <p className="m-b0">For new flats we work from the builder's plan. For older homes we measure on site, because Mumbai buildings rarely match the original drawing. You get a scaled plan you can hand to any contractor.</p>
               </div>
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic4} className="m-b30 w-100" alt="Detailed architectural floor plan blueprint"/>
-                <p className="m-b0">Our team collaborates with you to ensure the final design meets all your requirements. From initial sketches to detailed blueprints, we provide comprehensive floor plan services that pave the way for successful construction and remodeling projects.</p>
+                <img src={IMAGES.ServicePic4} className="m-b30 w-100" alt="Detailed floor plan blueprint with furniture layout"/>
+                <p className="m-b0">We usually share two or three layout options so you can compare storage against open space. Most clients finalise the plan in one or two rounds of changes.</p>
               </div>
             </div>
           </>
@@ -30,16 +30,16 @@ const ServicesDetail = () => {
       case "Custom Furniture":
         return (
           <>
-            <h2 className="title mb-2">Bespoke Custom Furniture</h2>
-            <p>Our custom furniture services offer personalized pieces designed to fit your unique style and space. From concept to creation, we ensure each piece meets your exact specifications and enhances your home's aesthetic.</p>
+            <h2 className="title mb-2">Custom Furniture</h2>
+            <p>Wardrobes, beds, TV units, study tables and storage benches built to your wall sizes. Nothing is bought off a catalogue and cut down to fit.</p>
             <div className="row">
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic5} className="m-b30  w-100" alt="Bespoke custom furniture design"/>
-                <p className="m-b0">Using high-quality materials and expert craftsmanship, we create furniture that is both beautiful and functional. Let us help you bring your vision to life with pieces that are tailored to your needs.</p>
+                <img src={IMAGES.ServicePic5} className="m-b30  w-100" alt="Custom wardrobe and storage unit built for a Mumbai flat"/>
+                <p className="m-b0">We use BWP or BWR plywood for wet areas and MR plywood elsewhere, with Hettich or Hafele hinges and channels. Laminate, acrylic or PU finish, whichever suits your budget.</p>
               </div>
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic6} className="m-b30 w-100" alt="Handcrafted custom furniture piece"/>
-                <p className="m-b0">Whether you're looking for a statement piece or practical storage solutions, our custom furniture designs will transform your home. Contact us to start designing your perfect piece today.</p>
+                <img src={IMAGES.ServicePic6} className="m-b30 w-100" alt="Handcrafted custom furniture with soft-close fittings"/>
+                <p className="m-b0">Carpentry is done at our Mira Road workshop and assembled at your site, so there is less dust and noise in your building. A standard 2BHK set takes about 4 to 6 weeks.</p>
               </div>
             </div>
           </>
@@ -47,16 +47,16 @@ const ServicesDetail = () => {
       case "Painting":
         return (
           <>
-            <h2 className="title mb-2">Professional Painting Services</h2>
-            <p>Our painting services provide a fresh, vibrant look to your home. Whether you're looking to update a single room or your entire house, our skilled painters deliver high-quality results with attention to detail.</p>
+            <h2 className="title mb-2">Painting</h2>
+            <p>Interior and exterior painting for flats, bungalows and shops. We do the putty, primer and two coats properly instead of skipping steps to finish faster.</p>
             <div className="row">
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic7} className="m-b30  w-100" alt="Professional home wall painting service"/>
-                <p className="m-b0">We use premium paints and techniques to ensure a flawless finish. From color consultation to final touch-ups, we handle every step of the process with professionalism and care.</p>
+                <img src={IMAGES.ServicePic7} className="m-b30  w-100" alt="Interior wall painting in a Mumbai apartment"/>
+                <p className="m-b0">We use Asian Paints, Berger or Nerolac, and you can pick from their shade cards at our office. Furniture and flooring are covered with plastic sheets before we start.</p>
               </div>
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic8} className="m-b30 w-100" alt="Fresh interior paint finish"/>
-                <p className="m-b0">Transform your space with a fresh coat of paint. Our team is dedicated to providing exceptional service and ensuring your complete satisfaction.</p>
+                <img src={IMAGES.ServicePic8} className="m-b30 w-100" alt="Freshly painted living room wall"/>
+                <p className="m-b0">A 2BHK interior repaint usually takes 5 to 7 days. We work around your society's permitted hours and clear the debris when we leave.</p>
               </div>
             </div>
           </>
@@ -64,16 +64,16 @@ const ServicesDetail = () => {
       case "Electrical":
         return (
           <>
-            <h2 className="title mb-2">Reliable Electrical Services</h2>
-            <p>Our electrical services ensure your home is safe and up to code. From installations to repairs, our experienced electricians provide reliable solutions for all your electrical needs.</p>
+            <h2 className="title mb-2">Electrical</h2>
+            <p>Wiring, rewiring, lighting points and switchboard work for homes and offices. All work is done by licensed electricians.</p>
             <div className="row">
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic9} className="m-b30  w-100" alt="Residential electrical installation work"/>
-                <p className="m-b0">We handle everything from lighting design to wiring and maintenance. Trust us to keep your home's electrical systems running smoothly and efficiently.</p>
+                <img src={IMAGES.ServicePic9} className="m-b30  w-100" alt="Electrical wiring and switchboard installation"/>
+                <p className="m-b0">We use Polycab or Finolex wire and Legrand, Schneider or Anchor switches. Concealed conduit work is done before plastering so nothing is left exposed.</p>
               </div>
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic10} className="m-b30 w-100" alt="Home lighting and wiring setup"/>
-                <p className="m-b0">Safety and quality are our top priorities. Our team is committed to providing electrical services that meet the highest standards of excellence.</p>
+                <img src={IMAGES.ServicePic10} className="m-b30 w-100" alt="Ceiling light and wiring setup in a flat"/>
+                <p className="m-b0">MCB and ELCB protection is included as standard. If you are renovating an old flat, we check the existing load before adding AC or geyser points.</p>
               </div>
             </div>
           </>
@@ -81,16 +81,16 @@ const ServicesDetail = () => {
       case "Space Saving":
         return (
           <>
-            <h2 className="title mb-2">Innovative Space Saving Solutions</h2>
-            <p>Maximize your home's potential with our space-saving solutions. We design and implement strategies that make the most of your available space, creating functional and organized living areas.</p>
+            <h2 className="title mb-2">Space Saving</h2>
+            <p>Most Mumbai flats lose usable space to bad planning, not to small size. We look at your layout and find the storage that is already there but unused.</p>
             <div className="row">
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic11} className="m-b30  w-100" alt="Innovative space saving furniture solution"/>
-                <p className="m-b0">From built-in storage to multifunctional furniture, our solutions are tailored to your needs. Let us help you create a home that is both stylish and practical.</p>
+                <img src={IMAGES.ServicePic11} className="m-b30  w-100" alt="Loft storage and space saving unit in a small flat"/>
+                <p className="m-b0">Common fixes: loft storage above doorways, a bed with drawers underneath, a fold-down study table, and a wardrobe that runs floor to ceiling instead of stopping short.</p>
               </div>
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic12} className="m-b30 w-100" alt="Smart space optimization layout"/>
-                <p className="m-b0">Our team works with you to identify the best ways to optimize your space. Whether you're dealing with a small apartment or a large home, we have the expertise to create a more efficient living environment.</p>
+                <img src={IMAGES.ServicePic12} className="m-b30 w-100" alt="Multi-purpose furniture layout for a compact home"/>
+                <p className="m-b0">We plan this at the drawing stage, so the extra storage does not eat into your walking space or block windows.</p>
               </div>
             </div>
           </>
@@ -98,16 +98,16 @@ const ServicesDetail = () => {
       case "Modular Kitchen":
         return (
           <>
-            <h2 className="title mb-2">Modern Modular Kitchen Designs</h2>
-            <p>Upgrade your kitchen with our modular kitchen designs. We create stylish, functional kitchens that are customized to fit your space and lifestyle.</p>
+            <h2 className="title mb-2">Modular Kitchen</h2>
+            <p>L-shape, U-shape, parallel and straight kitchens built to your kitchen's actual measurements. We plan the work triangle first, then the shutters and storage.</p>
             <div className="row">
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic13} className="m-b30  w-100" alt="Modern modular kitchen design"/>
-                <p className="m-b0">Our modular kitchens are designed for efficiency and ease of use. With smart storage solutions and modern appliances, we create kitchens that make cooking and entertaining a joy.</p>
+                <img src={IMAGES.ServicePic13} className="m-b30  w-100" alt="L-shape modular kitchen with granite counter"/>
+                <p className="m-b0">BWP plywood carcass, soft-close Hettich or Hafele hardware, and a granite or quartz counter. Tall units, corner carousels and cutlery trays are included where they fit.</p>
               </div>
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic14} className="m-b30 w-100" alt="Custom modular kitchen with smart storage"/>
-                <p className="m-b0">We offer a wide range of styles and finishes to choose from, ensuring your kitchen reflects your personal taste. Contact us today to start designing your dream kitchen.</p>
+                <img src={IMAGES.ServicePic14} className="m-b30 w-100" alt="Modular kitchen with tall unit and drawer storage"/>
+                <p className="m-b0">Shutter options include laminate, acrylic, PU and membrane. A standard kitchen is installed in 3 to 5 weeks, and we handle the plumbing and electrical points too.</p>
               </div>
             </div>
           </>
@@ -116,16 +116,16 @@ const ServicesDetail = () => {
       default:
         return (
           <>
-            <h2 className="title mb-2">Transform Your Space with Expert Interior Design</h2>
-            <p>Discover the perfect blend of style and functionality. Our expert team specializes in transforming homes into beautiful, personalized spaces. Whether you're looking for a modern makeover or a classic touch, we cater to all your interior design needs.</p>
+            <h2 className="title mb-2">Interior Design</h2>
+            <p>Full home interiors from the first site visit to final handover. You get a layout plan, 3D views and a fixed quote before any material is ordered.</p>
             <div className="row">
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic1} className="m-b30  w-100" alt="Expert interior design transformation in Mumbai"/>
-                <p className="m-b0">Our experienced designers work closely with you to bring your vision to life. From selecting the perfect color palette to choosing the right furniture, we ensure every detail is just right.</p>
+                <img src={IMAGES.ServicePic1} className="m-b30  w-100" alt="Living room interior designed for a Mumbai apartment"/>
+                <p className="m-b0">We handle false ceiling, flooring, painting, carpentry, electrical and plumbing under one contract. One project manager stays with you from start to finish.</p>
               </div>
               <div className="col-lg-6">
-                <img src={IMAGES.ServicePic2} className="m-b30 w-100" alt="Quality interior design craftsmanship"/>
-                <p className="m-b0">Quality craftsmanship and attention to detail are at the heart of what we do. We take pride in delivering interiors that not only look stunning but also stand the test of time.</p>
+                <img src={IMAGES.ServicePic2} className="m-b30 w-100" alt="Finished bedroom interior with custom wardrobe"/>
+                <p className="m-b0">A 2BHK turnkey project typically takes 8 to 12 weeks. Civil and carpentry work carries a 10-year written warranty.</p>
               </div>
             </div>
           </>

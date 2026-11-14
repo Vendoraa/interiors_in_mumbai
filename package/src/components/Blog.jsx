@@ -49,16 +49,16 @@ const Blog = () => {
           {
             id: 'fallback1',
             featuredImage: IMAGES.pic1,
-            title: 'Effortless Home Makeover',
-            description: 'Transform your living space with these simple tips and tricks.',
+            title: 'How Much Does a 2BHK Interior Cost in Mumbai?',
+            description: 'A breakdown of what you actually pay for: plywood, hardware, carpentry labour and finishes.',
             date: new Date().toISOString(),
             url: '/blog-details'
           },
           {
             id: 'fallback2',
             featuredImage: IMAGES.pic2,
-            title: 'Power of Color',
-            description: 'How to use color psychology to enhance your interior design.',
+            title: 'Choosing Paint Colours for Small Mumbai Flats',
+            description: 'Which shades make a compact room feel bigger, and which ones make it feel closed in.',
             date: new Date().toISOString(),
             url: '/blog-details'
           }
