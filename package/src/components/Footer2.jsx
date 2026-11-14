@@ -49,15 +49,15 @@ const Footer2 = () => {
 									<div className="col-md-7 col-sm-6 aos-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
 										<div className="widget widget_about">
 											<h4 className="footer-title">About Us</h4>
-											<p>In Mumbai, for over 35 years, we've built a reputation for custom craftsmanship. From dream kitchens to stunning remodels, we bring your vision to life. Contact us today to start your project.</p>
+											<p>Interior design and turnkey contracting in Mumbai since 2009. We handle full home interiors, modular kitchens, custom furniture, painting and civil work, with a fixed quote and a written warranty. Our office and workshop are in Mira Road East.</p>
 											<h6 style={{ color: 'white' }}>Tel: +91 998 724 1424 </h6>
 											<h6 style={{ color: 'white' }}>Email: hello@interiorsinmumbai.com </h6>
 											<ul className="social-list style-1">
-												<li><Link to="https://www.facebook.com/dexignzone/" target="_blank" aria-label="Facebook"><i className="fab fa-facebook-f"></i></Link></li>
-												<li><Link to="https://www.instagram.com/dexignzone/" target="_blank" aria-label="Instagram"><i className="fab fa-instagram"></i></Link></li>
-												<li><Link to="https://twitter.com/dexignzones/" target="_blank" aria-label="Twitter"><i className="fab fa-twitter"></i></Link></li>
-												<li><Link to="https://www.youtube.com/@dexignzone1723" target="_blank" aria-label="YouTube"><i className="fab fa-youtube"></i></Link></li>
-												<li><Link to="https://wa.me/919987241424?text=Hi,%20I%20am%20contacting%20you%20from%20interiors%20in%20mumbai%20Website." target="_blank" aria-label="WhatsApp"><i className="fab fa-whatsapp"></i></Link></li>
+												<li><Link to={process.env.REACT_APP_FACEBOOK_URL || "https://www.facebook.com/interiorsinmumbai"} target="_blank" aria-label="Facebook"><i className="fab fa-facebook-f"></i></Link></li>
+												<li><Link to={process.env.REACT_APP_INSTAGRAM_URL || "https://www.instagram.com/interiorsinmumbai"} target="_blank" aria-label="Instagram"><i className="fab fa-instagram"></i></Link></li>
+												<li><Link to={process.env.REACT_APP_TWITTER_URL || "https://twitter.com/interiorsinmumbai"} target="_blank" aria-label="Twitter"><i className="fab fa-twitter"></i></Link></li>
+												<li><Link to={process.env.REACT_APP_YOUTUBE_URL || "https://www.youtube.com/@interiorsinmumbai"} target="_blank" aria-label="YouTube"><i className="fab fa-youtube"></i></Link></li>
+												<li><Link to={process.env.REACT_APP_WHATSAPP_URL || "https://wa.me/919987241424?text=Hi,%20I%20am%20contacting%20you%20from%20interiors%20in%20mumbai%20Website."} target="_blank" aria-label="WhatsApp"><i className="fab fa-whatsapp"></i></Link></li>
 											</ul>
 										</div>
 									</div>
@@ -75,7 +75,7 @@ const Footer2 = () => {
 							<div className="col-md-6 text-center text-md-end">
 								<ul className="footer-link d-inline-block">
 									<li><Link to="/privacy-policy" >Privacy Policy</Link></li>
-									<li><Link>Terms & Condition</Link></li>
+									<li><Link to="/privacy-policy">Terms &amp; Condition</Link></li>
 								</ul>
 							</div>
 						</div>

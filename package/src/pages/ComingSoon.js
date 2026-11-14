@@ -47,10 +47,11 @@ const ComingSoon = () => {
   //componentDidMount
   useEffect(() => {
     startTimer();
+    const currentInterval = interval.current;
     return () => {
-      clearInterval(interval.current);
+      clearInterval(currentInterval);
     };
-  });
+  }, []);
 
 
   return (
@@ -140,7 +141,7 @@ const ComingSoon = () => {
               </div>
               <div className="icon-content">
                 <h5 className="tilte">Email Now</h5>
-                <p className="m-b0">15/B Miranda House, New York, US</p>
+                <p className="m-b0">Shop 7, Aashirwad Building, Mira Road East, Mumbai 401107</p>
               </div>
             </div>
           </div>
@@ -148,7 +149,7 @@ const ComingSoon = () => {
         <div className="menu-close" onClick={() => setGetIn(false)}></div>
         <Modal className={`inquiry-modal `} show={addfade} onHide={setAddfade} centered>
           <div className="inquiry-adv">
-            <img src={IMAGES.modal} alt="Interior design modal image" />
+            <img src={IMAGES.modal} alt="Interior design newsletter subscription promotion" />
           </div>
           <div className="contact-modal">
             <div className="modal-header">

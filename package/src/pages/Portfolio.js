@@ -5,12 +5,11 @@ import SEO from '../components/SEO';
 import CommanBanner from '../elements/CommanBanner';
 import Progress from '../components/Progress';
 import Faq from '../components/Faq';
-import BeforeAfterSlider from '../components/BeforeAfterSlider';
 
 const ImaGallery = [
     { id: 1, catagery: "Interior Design", img: IMAGES.portfolioLivingRoom, title: "Modern Living Room", location: "Mira Road" },
     { id: 2, catagery: "Interior Design", img: IMAGES.mumbai2bhk, title: "2BHK Apartment", location: "Andheri" },
-    { id: 3, catagery: "Interior Design", img: IMAGES.mumbai3bhk, title: "Premium 3BHK", location: "Bandra" },
+    { id: 3, catagery: "Interior Design", img: IMAGES.mumbai3bhk, title: "3BHK Full Interiors", location: "Bandra" },
     { id: 4, catagery: "Interior Design", img: IMAGES.mumbaiKitchen, title: "Modular Kitchen", location: "Powai" },
     { id: 5, catagery: "Construction", img: IMAGES.service5, title: "Commercial Space", location: "Thane" },
     { id: 6, catagery: "Interior Design", img: IMAGES.service3, title: "Master Bedroom", location: "Mumbai" },
@@ -30,67 +29,49 @@ const Portfolio = () => {
     return (
         <>
             <SEO
-                title="Interior Design Portfolio | Premium Projects Mumbai"
-                description="View our portfolio of stunning interior design projects in Mumbai. From premium apartments to modern offices, see how we transform spaces."
-                keywords="Interior Design Portfolio, Mumbai Interior Projects, Premium Home Design Gallery, Office Interior Portfolio, Recent Works"
+                title="Interior Design Portfolio | Projects in Mumbai"
+                description="Interior design projects we have completed across Mumbai. Browse flats, kitchens and offices with the area, budget and timeline for each."
+                keywords="Interior Design Portfolio, Mumbai Interior Projects, Home Design Gallery, Office Interior Portfolio, Recent Works"
             />
             <div className="page-content bg-white">
                 <CommanBanner mainTitle="Portfolio" parentTitle="Home" pageName="Portfolio" bgImage={IMAGES.bannerbg3} />
 
-                {/* Before/After Slider Section */}
-                <section className="content-inner-2">
-                    <div className="container">
-                        <div className="section-head style-1 text-center">
-                            <h6 className="sub-title text-primary">Transformation</h6>
-                            <h2 className="title">See the Difference</h2>
-                            <p>Slide to see the dramatic transformation of a 1BHK living room in Mira Road.</p>
-                        </div>
-                        <div className="row justify-content-center">
-                            <div className="col-lg-10">
-                                <BeforeAfterSlider
-                                    beforeImage={IMAGES.before1bhk}
-                                    afterImage={IMAGES.after1bhk}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                {/* Before/After Slider Section Removed */}
 
                 <section className="content-inner line-img overflow-hidden">
                     <div className="site-filters style-1 clearfix center">
                         <ul className="filters" data-toggle="buttons">
                             <li onClick={() => { setItem(ImaGallery); setActive(false) }} className={`btn ${item === ImaGallery ? 'active' : undefined}`}
                             >
-                                <Link aria-label="Show all projects">All</Link>
+                                <button type="button" aria-label="Show all projects" aria-pressed={item === ImaGallery}>All</button>
                             </li>
                             <li
                                 onClick={() => { fiterItemes('Interior Design') }}
                                 className={`btn ${active === 'Interior Design' ? 'active' : undefined}`} >
-                                <Link aria-label="Show interior design projects">Interior Design</Link>
+                                <button type="button" aria-label="Show interior design projects" aria-pressed={active === 'Interior Design'}>Interior Design</button>
                             </li>
                             <li onClick={() => { fiterItemes('Construction') }}
                                 className={`btn ${active === 'Construction' ? 'active' : undefined}`}
                             >
-                                <Link aria-label="Show construction projects">Construction</Link>
+                                <button type="button" aria-label="Show construction projects" aria-pressed={active === 'Construction'}>Construction</button>
                             </li>
                             <li onClick={() => { fiterItemes('Architecture') }}
                                 className={`btn ${active === 'Architecture' ? 'active' : undefined}`}
                             >
-                                <Link aria-label="Show architecture projects">Architecture</Link>
+                                <button type="button" aria-label="Show architecture projects" aria-pressed={active === 'Architecture'}>Architecture</button>
                             </li>
                         </ul>
                     </div>
                     <div className="container">
-                        <ul id="masonry" className="row lightgallery">
+                        <ul id="masonry" className="row">
                             {
                                 item.map((i, index) => (
                                     <li className="card-container col-xl-4 col-md-6 col-sm-6 architecture m-b30" key={index}>
                                         <div className="dz-box overlay style-1">
                                             <div className="dz-media">
-                                                <img src={i.img} alt={i.title} />
+                                                <img src={i.img} alt={`${i.title} in ${i.location} - interior design project by Interiors in Mumbai`} loading="lazy" />
                                             </div>
                                             <div className="dz-info">
-                                                <span data-exthumbimage={i.img} data-src={i.img} className="view-btn lightimg" title={i.title}></span>
                                                 <h6 className="sub-title">{i.catagery.toUpperCase()}</h6>
                                                 <h4 className="title m-b15"><Link to="/services">{i.title} <span>{i.location}</span></Link></h4>
                                             </div>

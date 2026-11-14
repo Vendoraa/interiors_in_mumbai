@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper'
 import ModalVideo from 'react-modal-video';
+import SEO from '../components/SEO';
 
 const largBlogGrid = [
     { img: IMAGES.blogGridPic1 },
@@ -21,6 +22,11 @@ const LargLeftSidebar = () => {
     const [isOpen, setOpen] = useState(false);
     return (
         <>
+            <SEO
+                title="Blog - Large Left Sidebar"
+                description="Browse our interior design blog with large left sidebar layout for easy navigation and reading."
+                keywords="interior design blog, blog sidebar, home renovation articles"
+            />
             <div className="page-content bg-white">
                 <CommanBanner mainTitle="Large Left Sidebar" parentTitle="Home" pageName="Our Blog" bgImage={IMAGES.bannerbg3} />
                 <div className="content-inner">
@@ -42,7 +48,7 @@ const LargLeftSidebar = () => {
                                                     <SwiperSlide className="swiper-slide"
                                                         key={ind}
                                                     >
-                                                        <Link to="/blog-details"><img src={item.img} alt="" /></Link>
+                                                        <Link to="/blog-details"><img src={item.img} alt={`Blog post ${ind + 1}`} /></Link>
                                                     </SwiperSlide>
                                                 ))
                                             }
@@ -83,7 +89,7 @@ const LargLeftSidebar = () => {
                                 <div className="dz-card blog-grid style-1 m-b50 post-video aos-item">
                                     <div className="dz-media">
                                         <Link to="#">
-                                            <img src={IMAGES.blogGridPic3} alt="" />
+                                            <img src={IMAGES.blogGridPic3} alt="Modern family house interior blog video" />
                                             <div className="post-video-icon fa fa-play"
                                                 onClick={() => { setOpen(true) }}
                                             ></div>

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Parallax } from "swiper";
+import { Parallax, Autoplay, Pagination } from "swiper";
 
 
-import pic2 from '../assets/images/main-slider/pic2.png';
+import pic2 from '../assets/images/main-slider/pic2.webp';
 import Working from '../components/Working';
 import VideoCounter from '../components/VideoCounter';
 import PopularService from '../components/PopularService';
@@ -15,51 +15,26 @@ import Faq from '../components/Faq';
 
 import HowWeWork from '../components/HowWeWork';
 import SEO from '../components/SEO';
-import { Helmet } from 'react-helmet-async';
+import { StatsBand, Certifications } from '../components/EeatSignals';
 
 const slideImg = [
-    { text: "Interiors in Mumbai", img: process.env.PUBLIC_URL + "/images/main-slider/pic1.png" },
+    { text: "Interiors in Mumbai", img: process.env.PUBLIC_URL + "/images/main-slider/pic1.webp" },
     { text: "DESIGNING", img: pic2 },
 ];
 
 const Home = () => {
     const swiperRef = React.useRef(null);
 
-    const organizationSchema = {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Interiors in Mumbai",
-        "url": "https://www.interiorsinmumbai.com",
-        "logo": "https://www.interiorsinmumbai.com/logo.png",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+919987241424",
-            "contactType": "customer service",
-            "areaServed": "Mumbai",
-            "availableLanguage": ["English", "Hindi", "Marathi"]
-        },
-        "sameAs": [
-            "https://www.facebook.com/dexignzone/",
-            "https://www.instagram.com/dexignzone/",
-            "https://twitter.com/dexignzones/",
-            "https://www.youtube.com/@dexignzone1723"
-        ]
-    };
-
     return (
         <>
             <SEO
-                title="Premium Interior Design & Home Renovation Services"
-                description="Leading interior designers in Mumbai specializing in premium home renovations, modern office designs, and complete turnkey projects."
-                keywords="Interior Designers Mumbai, Premium Interiors, Home Renovation Mumbai, Office Design, Turnkey Interior Contractors, Best Interior Designers"
+                title="Interior Designers in Mumbai | Home Interiors & Renovation"
+                description="Interior design and turnkey home renovation in Mumbai. 1,200+ homes completed since 2009. Free site visit, 3D designs and a fixed quote before work starts."
+                keywords="Interior Designers Mumbai, Home Interiors Mumbai, Home Renovation Mumbai, Modular Kitchen Mumbai, Turnkey Interior Contractors, Interior Design Mira Road"
             />
-            <Helmet>
-                <script type="application/ld+json">
-                    {JSON.stringify(organizationSchema)}
-                </script>
-            </Helmet>
 
             <div className="page-content bg-white">
+                <h1 className="visually-hidden">Interior Designers and Turnkey Contractors in Mumbai</h1>
                 <div className="slidearea">
                     <div className="side-contact-info">
                         <ul>
@@ -73,9 +48,10 @@ const Home = () => {
                             slidesPerView={1}
                             parallax={true}
                             speed={1500}
-                            loop={false}
-                            allowTouchMove={false}
-                            modules={[Parallax]}
+                            loop={true}
+                            autoplay={{ delay: 6000, disableOnInteraction: false }}
+                            pagination={{ clickable: true, el: '.main-slider-pagination' }}
+                            modules={[Parallax, Autoplay, Pagination]}
                         >
                             {
                                 slideImg.map((i, index) => (
@@ -86,8 +62,8 @@ const Home = () => {
                                         <div className="silder-content" data-swiper-parallax="-40%">
                                             <div className="inner-content">
                                                 <h6 className="sub-title">{i.text}</h6>
-                                                <h1 className="title">LET'S MAKE</h1>
-                                                <h2 className="title-small">Your Perfect Home</h2>
+                                                <div className="title">LET'S MAKE</div>
+                                                <p className="title-small">Your Perfect Home</p>
                                                 <Link to="/about-us" className="btn shadow-primary btn-light btn-rounded btn-ov-secondary" aria-label="Read more about us">READ MORE <i className="m-l10 fas fa-caret-right"></i></Link>
                                             </div>
                                             <div className="overlay-slide" data-swiper-parallax="100%"></div>
@@ -97,6 +73,7 @@ const Home = () => {
                             }
 
                         </Swiper>
+                        <div className="main-slider-pagination swiper-pagination"></div>
 
                     </div>
                 </div>
@@ -136,6 +113,8 @@ const Home = () => {
                 <section className="content-inner-1 bg-gray line-img" style={{ backgroundImage: `url(images/background/bg2.png)`, backgroundPosition: 'right bottom', backgroundSize: '100%', backgroundRepeat: 'no-repeat' }}>
                     <Blog />
                 </section>
+                <StatsBand />
+                <Certifications />
             </div>
 
         </>

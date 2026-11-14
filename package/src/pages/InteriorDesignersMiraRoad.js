@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import CommanBanner from '../elements/CommanBanner';
 import { IMAGES } from '../constants/theme';
 import SEO from '../components/SEO';
+import ServiceDetailSections from '../components/ServiceDetailSections';
+import { SERVICE_ORDER } from '../seo/serviceContent';
+import { Certifications, Warranty, ServiceAreas } from '../components/EeatSignals';
 import { Helmet } from 'react-helmet-async';
 
 const InteriorDesignersMiraRoad = () => {
@@ -10,7 +13,7 @@ const InteriorDesignersMiraRoad = () => {
         "@context": "https://schema.org",
         "@type": ["InteriorDesignBusiness", "GeneralContractor"],
         "name": "Interiors in Mumbai - Mira Road",
-        "image": "https://www.interiorsinmumbai.com/logo.png",
+        "image": "https://www.interiorsinmumbai.com/logo512.png",
         "url": "https://www.interiorsinmumbai.com/interior-designers-mira-road",
         "telephone": "+919987241424",
         "address": {
@@ -71,26 +74,26 @@ const InteriorDesignersMiraRoad = () => {
                         <div className="row">
                             <div className="col-lg-8 m-b30">
                                 <div className="section-head style-1">
-                                    <h6 className="sub-title text-primary">Local Experts</h6>
-                                    <h2 className="title">Transforming Homes in Mira Road</h2>
-                                    <p>As Mira Road's premier interior design and contracting firm, we understand the unique layouts and requirements of local residential complexes. From compact 1BHKs in Shanti Nagar to spacious 3BHKs in Kanakia and Lodha, we have designed over 200+ homes in your neighborhood.</p>
+                                    <h6 className="sub-title text-primary">Mira Road</h6>
+                                    <h2 className="title">Interior Design in Mira Road</h2>
+                                    <p>Our office and workshop are both in Mira Road East, so this is our home ground. We have completed more than 200 homes here, from 1BHKs in Shanti Nagar to 3BHKs in Kanakia and Lodha. Because the workshop is local, we can visit your site the same day if something needs checking.</p>
                                 </div>
 
                                 <div className="row m-b30">
                                     <div className="col-md-6">
                                         <ul className="list-check primary">
-                                            <li>Specialized in Mira Road layouts</li>
-                                            <li>Local workshop for faster delivery</li>
-                                            <li>Familiar with society regulations</li>
-                                            <li>Visit our studio in Aashirwad Bldg</li>
+                                            <li>Office and workshop in Mira Road East</li>
+                                            <li>Same-day site visits</li>
+                                            <li>Familiar with local society rules</li>
+                                            <li>200+ homes completed here</li>
                                         </ul>
                                     </div>
                                     <div className="col-md-6">
                                         <ul className="list-check primary">
-                                            <li>Budget-friendly packages</li>
-                                            <li>Turnkey Civil Contracting</li>
-                                            <li>Civil work experts</li>
-                                            <li>10-Year Warranty</li>
+                                            <li>Full home and single-room work</li>
+                                            <li>Civil work and tiling</li>
+                                            <li>Modular kitchens and wardrobes</li>
+                                            <li>10-year written warranty</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -103,14 +106,14 @@ const InteriorDesignersMiraRoad = () => {
 
                                 <div className="widget widget_tag_cloud m-b30">
                                     <div className="tagcloud">
-                                        <a href="#">Kanakia Spaces</a>
-                                        <a href="#">Lodha Aqua</a>
-                                        <a href="#">Jangid Complex</a>
-                                        <a href="#">Shanti Nagar</a>
-                                        <a href="#">Poonam Sagar</a>
-                                        <a href="#">Srishti Complex</a>
-                                        <a href="#">RNA Broadway</a>
-                                        <a href="#">Unique Gardens</a>
+                                        <span className="tag">Kanakia Spaces</span>
+                                        <span className="tag">Lodha Aqua</span>
+                                        <span className="tag">Jangid Complex</span>
+                                        <span className="tag">Shanti Nagar</span>
+                                        <span className="tag">Poonam Sagar</span>
+                                        <span className="tag">Srishti Complex</span>
+                                        <span className="tag">RNA Broadway</span>
+                                        <span className="tag">Unique Gardens</span>
                                     </div>
                                 </div>
 
@@ -164,9 +167,9 @@ const InteriorDesignersMiraRoad = () => {
                                     </div>
                                 </div>
 
-                                <h3>Our Services in Mira Road</h3>
-                                <p>We offer end-to-end interior solutions tailored to Mira Road apartments:</p>
-                                <div className="row">
+                                <h3>What We Do in Mira Road</h3>
+                                <p>Our workshop is in Mira Road East, so this is where most of our work is. We take up full flat renovations and single-room jobs:</p>
+                                <div className="card-grid cols-2">
                                     <div className="col-md-6 m-b30">
                                         <div className="icon-bx-wraper style-3 left p-a30 box-hover w-100">
                                             <div className="icon-lg text-primary m-b20">
@@ -174,7 +177,7 @@ const InteriorDesignersMiraRoad = () => {
                                             </div>
                                             <div className="icon-content">
                                                 <h4 className="dlab-title m-b10">Full Home Renovation</h4>
-                                                <p>Complete makeover including civil work, flooring, and painting.</p>
+                                                <p>Civil work, flooring, painting, carpentry and electrical under one contract.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -185,7 +188,7 @@ const InteriorDesignersMiraRoad = () => {
                                             </div>
                                             <div className="icon-content">
                                                 <h4 className="dlab-title m-b10">Modular Kitchens</h4>
-                                                <p>Space-saving designs perfect for Mira Road apartment layouts.</p>
+                                                <p>L-shape and straight kitchens with tall units, built for compact Mira Road layouts.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -196,7 +199,7 @@ const InteriorDesignersMiraRoad = () => {
                                             </div>
                                             <div className="icon-content">
                                                 <h4 className="dlab-title m-b10">Bedroom Wardrobes</h4>
-                                                <p>Custom sliding and hinged wardrobes to maximize storage.</p>
+                                                <p>Sliding or hinged wardrobes built floor to ceiling, with loft storage above.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -207,7 +210,7 @@ const InteriorDesignersMiraRoad = () => {
                                             </div>
                                             <div className="icon-content">
                                                 <h4 className="dlab-title m-b10">Civil Work & Flooring</h4>
-                                                <p>Expert tiling, plumbing, and electrical work for older buildings.</p>
+                                                <p>Tiling, plumbing and rewiring, which older Mira Road buildings usually need.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -218,7 +221,7 @@ const InteriorDesignersMiraRoad = () => {
                                             </div>
                                             <div className="icon-content">
                                                 <h4 className="dlab-title m-b10">False Ceiling & Lighting</h4>
-                                                <p>Modern POP designs and ambient lighting concepts.</p>
+                                                <p>POP or gypsum ceiling with cove and spot lighting, planned room by room.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -229,7 +232,7 @@ const InteriorDesignersMiraRoad = () => {
                                             </div>
                                             <div className="icon-content">
                                                 <h4 className="dlab-title m-b10">3D Visualization</h4>
-                                                <p>See your dream home before we start with realistic 3D renders.</p>
+                                                <p>3D views of each room before we order materials, so you can change things on screen.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -264,9 +267,37 @@ const InteriorDesignersMiraRoad = () => {
                         </div>
                     </div>
                 </section>
+                <section className="content-inner-2">
+                    <div className="container">
+                        <div className="section-head style-1 text-center">
+                            <h6 className="sub-title text-primary">OUR SERVICES</h6>
+                            <h2 className="title">Interior Design Services in Mira Road</h2>
+                            <p>From modular kitchens to complete turnkey interiors, here are the services we provide across Mira Road and nearby areas.</p>
+                        </div>
+                        {SERVICE_ORDER.map((key) => (
+                            <ServiceDetailSections key={key} serviceKey={key} location="Mira Road" />
+                        ))}
+                    </div>
+                </section>
+                <section className="content-inner-2">
+                    <div className="container">
+                        <div className="section-head style-1 text-center">
+                            <h6 className="sub-title text-primary">WHY CHOOSE US</h6>
+                            <h2 className="title">Mira Road's Trusted Interior Team</h2>
+                            <p>Local experience, certified work, and written warranties for homes across Mira Road and nearby areas.</p>
+                        </div>
+
+                        <Certifications />
+                        <Warranty />
+                        <ServiceAreas />
+                    </div>
+                </section>
             </div>
         </>
     );
 };
 
 export default InteriorDesignersMiraRoad;
+
+
+

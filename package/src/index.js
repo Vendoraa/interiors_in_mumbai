@@ -24,5 +24,5 @@ if (container.hasChildNodes() && !fallbackContent) {
   );
 }
 
-serviceWorkerRegistration.register();
+serviceWorkerRegistration.unregister();
 reportWebVitals();

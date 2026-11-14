@@ -1,0 +1,39 @@
+{
+  "seo_score": 9,
+  "geo_score": 10,
+  "aeo_score": 9,
+  "readability_score": 8,
+  "accuracy_score": 9,
+  "brand_score": 10,
+  "overall_score": 9,
+  "passed": true,
+  "issues": [
+    "Title was 74 characters ('Monsoon-Proof Interior Design for Mumbai Apartments: Complete Guide 2026') - exceeded 65 char limit",
+    "Closing CTA heading was 'Ready to Monsoon-Proof Your Home?' instead of required 'Ready to transform your Mumbai home?'",
+    "CTA body text did not match required format exactly",
+    "Phone number in CTA was '+919****4242' instead of '+919****1424'",
+    "Arrow symbol found in ventilation section (line 64): '->' instead of plain text dash",
+    "Company name 'Shrishti Interiors' not mentioned anywhere in blog body",
+    "Primary keyword 'monsoon proof interior design Mumbai' not in first paragraph",
+    "Primary keyword not present in any H2 headings",
+    "No internal links in blog body (3 suggestions provided in metadata but not used)",
+    "No Western line or transit reference for GEO completeness",
+    "Kitchen section had 6 list items, same as other list counts - needs variation"
+  ],
+  "fixes_applied": [
+    "Shortened title to 57 chars: 'Monsoon Proof Interior Design Mumbai Guide: Complete 2026' - includes primary keyword",
+    "Replaced closing CTA with exact required format: 'Ready to transform your Mumbai home?'",
+    "Fixed phone number to +919****1424",
+    "Removed arrow symbol '->' and replaced with plain text dash",
+    "Added 'Shrishti Interiors' brand mention in intro paragraph",
+    "Inserted primary keyword 'monsoon proof interior design Mumbai' naturally in first paragraph",
+    "Added primary keyword to 2 H2 headings: 'Why Monsoon-Proof Interior Design in Mumbai...' and 'The Kitchen: Monsoon Proof Interior Design in Mumbai'",
+    "Added 3 internal links with anchor text: modular kitchen design Mumbai, wardrobe design ideas, 1BHK interior design ideas",
+    "Added Western line and Dadar reference for GEO completeness",
+    "Reduced kitchen numbered list from 6 to 5 items (merged backsplash point) for varied list counts",
+    "Verified all ASCII compatibility: no em dashes, en dashes, rupee symbols, or arrows remain",
+    "All pricing uses 'Rs.' format throughout (no rupee symbols)",
+    "Confirmed 10 Mumbai neighborhoods mentioned: Goregaon, Mira Road, Dadar, Powai, Andheri, Kandivali, Worli, Lower Parel, Bandra, Vikhroli, Malad"
+  ],
+  "ready_to_publish": true
+}

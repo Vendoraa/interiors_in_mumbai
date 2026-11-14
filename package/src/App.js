@@ -1,6 +1,5 @@
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet, Navigate } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
-import CanonicalUrl from './components/CanonicalUrl';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import MetaPixel from './components/MetaPixel';
 import CookieConsent from './components/CookieConsent';
@@ -11,7 +10,6 @@ import "./assets/vendor/swiper/swiper-bundle.min.css";
 import './assets/css/style.css';
 
 import React, { Suspense } from 'react';
-import { BlogList } from './components/BlogList';
 import LazyLoadErrorBoundary from './components/LazyLoadErrorBoundary';
 import './App.css';
 
@@ -24,7 +22,6 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 //Pages - Lazy Loaded
 const Home = React.lazy(() => import("./pages/Home"));
 const AboutUs = React.lazy(() => import("./pages/AboutUs"));
-const Team = React.lazy(() => import("./pages/Team"));
 const ComingSoon = React.lazy(() => import("./pages/ComingSoon"));
 const Construction = React.lazy(() => import("./pages/Construction"));
 const Error404 = React.lazy(() => import("./pages/Error404"));
@@ -37,7 +34,7 @@ const LargLeftSidebar = React.lazy(() => import("./pages/LargLeftSidebar"));
 const ListLeftSidebar = React.lazy(() => import("./pages/ListLeftSidebar"));
 const BlogDetail = React.lazy(() => import("./pages/BlogDetail"));
 const BlogDetails = React.lazy(() => import("./pages/BlogDetails"));
-const ContectUs = React.lazy(() => import("./pages/ContectUs"));
+const ContactUs = React.lazy(() => import("./pages/ContactUs"));
 const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
 const Pricing = React.lazy(() => import("./pages/Pricing"));
 const InteriorDesignersMiraRoad = React.lazy(() => import("./pages/InteriorDesignersMiraRoad"));
@@ -52,7 +49,6 @@ function App() {
       <BrowserRouter>
         <GoogleAnalytics />
         <MetaPixel />
-        <CanonicalUrl />
         <CookieConsent />
         <HelmetProvider>
           <div className="page-wraper">
@@ -71,20 +67,20 @@ function App() {
                   <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route path="about-us" element={<AboutUs />} />
-                    <Route path="team" element={<Team />} />
+                    <Route path="team" element={<Navigate to="/about-us" replace />} />
                     <Route path="error-404" element={<Error404 />} />
                     <Route path="portfolio" element={<Portfolio />} />
                     <Route path="portfolio-details" element={<PortfolioDetail />} />
                     <Route path="services" element={<Services />} />
                     <Route path="services-details" element={<ServicesDetail />} />
-                    <Route path="blog" element={<BlogList />} />
+                    <Route path="blog" element={<BlogGrid />} />
                     <Route path="blog/:id" element={<BlogDetail />} />
-                    <Route path="blog-grid" element={<BlogGrid />} />
+                    <Route path="blog-grid" element={<Navigate to="/blog" replace />} />
                     <Route path="blog-large-left-sidebar" element={<LargLeftSidebar />} />
                     <Route path="blog-list-left-sidebar" element={<ListLeftSidebar />} />
                     <Route path="blog-details/:id" element={<BlogDetails />} />
                     <Route path="blog-details" element={<BlogDetail />} />
-                    <Route path="contact-us" element={<ContectUs />} />
+                    <Route path="contact-us" element={<ContactUs />} />
                     <Route path="privacy-policy" element={<PrivacyPolicy />} />
                     <Route path="pricing" element={<Pricing />} />
                     <Route path="interior-designers-mira-road" element={<InteriorDesignersMiraRoad />} />

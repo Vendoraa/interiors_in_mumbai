@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import CommanBanner from '../elements/CommanBanner';
 import { IMAGES } from '../constants/theme';
 import SEO from '../components/SEO';
+import ServiceDetailSections from '../components/ServiceDetailSections';
+import { SERVICE_ORDER } from '../seo/serviceContent';
+import { Certifications, Warranty, ServiceAreas } from '../components/EeatSignals';
 import { Helmet } from 'react-helmet-async';
 
 const InteriorDesignersThane = () => {
@@ -10,7 +13,7 @@ const InteriorDesignersThane = () => {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Interiors in Mumbai - Thane",
-        "image": "https://www.interiorsinmumbai.com/logo.png",
+        "image": "https://www.interiorsinmumbai.com/logo512.png",
         "url": "https://www.interiorsinmumbai.com/interior-designers-thane",
         "telephone": "+919987241424",
         "address": {
@@ -54,7 +57,7 @@ const InteriorDesignersThane = () => {
         <>
             <SEO
                 title="Best Interior Designers in Thane & Ghodbunder Road | Family Home Decor"
-                description="Top interior designers in Thane West, Hiranandani Estate, and Ghodbunder Road. We create spacious, family-friendly interiors for 2BHK and 3BHK apartments."
+                description="Interior designers in Thane West, Hiranandani Estate and Ghodbunder Road. Turnkey 2BHK and 3BHK interiors with modular kitchens and custom wardrobes."
                 keywords="interior designers thane, interior decorators thane west, ghodbunder road interiors, hiranandani estate interior design, home renovation thane"
             />
             <Helmet>
@@ -71,48 +74,48 @@ const InteriorDesignersThane = () => {
                         <div className="row">
                             <div className="col-lg-8 m-b30">
                                 <div className="section-head style-1">
-                                    <h6 className="sub-title text-primary">City of Lakes</h6>
-                                    <h2 className="title">Beautiful Homes for Thane Families</h2>
-                                    <p>Thane has transformed into a premium residential hub with spacious townships and lush greenery. We specialize in designing warm, family-centric homes for Thane's growing communities. Whether it's a new apartment on Ghodbunder Road or a renovation in the city center, we deliver quality and comfort.</p>
+                                    <h6 className="sub-title text-primary">Thane</h6>
+                                    <h2 className="title">Interior Design in Thane</h2>
+                                    <p>Thane flats are usually bigger than Mumbai ones, so there is more room to plan properly. Most of our work here is in the townships along Ghodbunder Road and Hiranandani Estate. We do full home interiors, and we also take up single-room work like a kitchen or a pooja room.</p>
                                 </div>
 
                                 <div className="row m-b30">
                                     <div className="col-md-6">
                                         <ul className="list-check primary">
-                                            <li>Family-Friendly Designs</li>
-                                            <li>Durable & Safe Materials</li>
-                                            <li>Ample Storage Solutions</li>
-                                            <li>Balcony & Garden Concepts</li>
+                                            <li>Full home interiors</li>
+                                            <li>Child-safe materials and edges</li>
+                                            <li>Loft and wardrobe storage</li>
+                                            <li>Balcony and garden seating</li>
                                         </ul>
                                     </div>
                                     <div className="col-md-6">
                                         <ul className="list-check primary">
-                                            <li>Township-Specific Packages</li>
-                                            <li>Civil Work Expertise</li>
-                                            <li>Pooja Room Designs</li>
-                                            <li>Budget-Friendly Options</li>
+                                            <li>Modular kitchens</li>
+                                            <li>Civil work and tiling</li>
+                                            <li>Pooja room design</li>
+                                            <li>Society NOC assistance</li>
                                         </ul>
                                     </div>
                                 </div>
 
-                                <h3>Experts in Thane Townships</h3>
-                                <p className="m-b30">We have successfully delivered projects in many of Thane's leading residential complexes. We understand the layout nuances and society rules.</p>
+                                <h3>Working in Thane Townships</h3>
+                                <p className="m-b30">We have completed projects in Hiranandani Estate, Rustomjee Urbania, Lodha Amara, Dosti Vihar and Puraniks City. Each township has its own rules on working hours and material movement, and we plan around them.</p>
 
                                 <div className="widget widget_tag_cloud m-b30">
                                     <div className="tagcloud">
-                                        <a href="#">Hiranandani Estate</a>
-                                        <a href="#">Rustomjee Urbania</a>
-                                        <a href="#">Lodha Amara</a>
-                                        <a href="#">Dosti Vihar</a>
-                                        <a href="#">Kalpataru Sunrise</a>
-                                        <a href="#">Puraniks City</a>
-                                        <a href="#">Runwal Eirene</a>
-                                        <a href="#">Sheth Avalon</a>
+                                        <span className="tag">Hiranandani Estate</span>
+                                        <span className="tag">Rustomjee Urbania</span>
+                                        <span className="tag">Lodha Amara</span>
+                                        <span className="tag">Dosti Vihar</span>
+                                        <span className="tag">Kalpataru Sunrise</span>
+                                        <span className="tag">Puraniks City</span>
+                                        <span className="tag">Runwal Eirene</span>
+                                        <span className="tag">Sheth Avalon</span>
                                     </div>
                                 </div>
 
                                 <h3>Our Services in Thane</h3>
-                                <div className="row">
+                                <div className="card-grid cols-2">
                                     <div className="col-md-6 m-b30">
                                         <div className="icon-bx-wraper style-3 left p-a30 box-hover w-100">
                                             <div className="icon-lg text-primary m-b20">
@@ -210,9 +213,37 @@ const InteriorDesignersThane = () => {
                         </div>
                     </div>
                 </section>
+                <section className="content-inner-2">
+                    <div className="container">
+                        <div className="section-head style-1 text-center">
+                            <h6 className="sub-title text-primary">OUR SERVICES</h6>
+                            <h2 className="title">Interior Design Services in Thane</h2>
+                            <p>From modular kitchens to complete turnkey interiors, here are the services we provide across Thane and nearby areas.</p>
+                        </div>
+                        {SERVICE_ORDER.map((key) => (
+                            <ServiceDetailSections key={key} serviceKey={key} location="Thane" />
+                        ))}
+                    </div>
+                </section>
+                <section className="content-inner-2">
+                    <div className="container">
+                        <div className="section-head style-1 text-center">
+                            <h6 className="sub-title text-primary">WHY CHOOSE US</h6>
+                            <h2 className="title">Thane's Trusted Interior Team</h2>
+                            <p>Local experience, certified work, and written warranties for homes across Thane and nearby areas.</p>
+                        </div>
+
+                        <Certifications />
+                        <Warranty />
+                        <ServiceAreas />
+                    </div>
+                </section>
             </div>
         </>
     );
 };
 
 export default InteriorDesignersThane;
+
+
+

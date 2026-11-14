@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { useContentful } from '../useContentful';
 import CommanBanner from '../elements/CommanBanner';
 import { IMAGES } from '../constants/theme';
+import SEO from '../components/SEO';
+import JsonLd from '../components/JsonLd';
+import { buildArticle, SITE_URL } from '../seo/schema';
 
 
 const BlogDetail = () => {
@@ -36,6 +39,7 @@ const BlogDetail = () => {
               title: fields.title || 'Untitled Blog Post',
               description: fields.excerpt || fields.description || '',
               date: sys.createdAt || new Date().toISOString(),
+              dateModified: sys.updatedAt || sys.createdAt || new Date().toISOString(),
               url: slug ? `/blog-details/${slug}` : `/blog-details/${sys.id}`,
             };
           });
@@ -54,8 +58,35 @@ const BlogDetail = () => {
 
 
   return (
-    <div className="page-content bg-white">
-      <CommanBanner mainTitle="Our Blog" parentTitle="Home" pageName="Blog Details" bgImage={IMAGES.bannerbg3} />
+    <>
+      <SEO
+        title="Latest Interior Design Blog | Decor & Renovation Trends"
+        description="Read the latest interior design insights, modern home renovation tips, modular kitchen ideas, and decor trends from Shrishti Interiors in Mumbai."
+        keywords="interior design blog, home renovation ideas, decor trends mumbai, interior decorator blog, modular kitchen tips"
+      />
+      {blogs.length > 0 && (
+        <JsonLd
+          data={{
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            itemListElement: blogs.map((blog, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              url: `${SITE_URL}${blog.url}`,
+              item: buildArticle({
+                headline: blog.title,
+                description: blog.description,
+                image: blog.featuredImage,
+                datePublished: blog.date,
+                dateModified: blog.dateModified,
+                url: `${SITE_URL}${blog.url}`,
+              }),
+            })),
+          }}
+        />
+      )}
+      <div className="page-content bg-white">
+        <CommanBanner mainTitle="Our Blog" parentTitle="Home" pageName="Blog Details" bgImage={IMAGES.bannerbg3} />
       <div className="container" style={{ padding: '60px 15px' }}>
         <div className="section-head style-1 text-center" style={{ marginBottom: '40px' }}>
           <h6 className="sub-title text-primary" style={{ fontFamily: 'Roboto, sans-serif', fontWeight: '500', fontSize: '18px', marginBottom: '10px' }}>OUR BLOG</h6>
@@ -98,7 +129,8 @@ const BlogDetail = () => {
         )}
       </div>
     </div>
-  );
+  </>
+);
 };
 
 export default BlogDetail;

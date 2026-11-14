@@ -1,0 +1,32 @@
+{
+  "topic": "monsoon-proof interior design for Mumbai apartments",
+  "title": "Monsoon Proof Interior Design Mumbai Guide: Complete 2026",
+  "status": "reviewed",
+  "content_score": 9,
+  "humanization_score": 8,
+  "quality_score": 9,
+  "blog_entry_id": null,
+  "url": "https://shrishtiinteriors.com/blog/monsoon-proof-interior-design-mumbai-apartments",
+  "published_at": "2026-08-11T15:58:00.000Z",
+  "total_time_minutes": 49,
+  "agents_used": ["content-writer", "image-generator", "humanizer", "quality-reviewer"],
+  "retries": 0,
+  "pipeline_summary": {
+    "phase_1_content_creation": "completed - 1380 words, 7 H2 sections, Mumbai-specific",
+    "phase_2_image_generation": "completed - image_manifest.json generated",
+    "phase_3_humanization": "completed - score 8/10, 8 experience markers added, 12 sentences shortened, 24 special chars replaced",
+    "phase_4_quality_review": "passed - overall score 9/10, all fixes applied",
+    "phase_5_publishing": "not executed - content ready for manual review and publish",
+    "fixes_applied_by_reviewer": [
+      "Shortened title to 57 chars with primary keyword",
+      "Fixed CTA to required format with correct phone number",
+      "Removed arrow symbols for ASCII compatibility",
+      "Added 'Shrishti Interiors' brand mention",
+      "Inserted primary keyword in first paragraph and 2 H2 headings",
+      "Added 3 internal links (modular kitchen, wardrobe design, 1BHK ideas)",
+      "Added Western line/Dadar reference for GEO",
+      "Reduced kitchen list items for variation",
+      "Verified all pricing uses 'Rs.' format"
+    ]
+  }
+}

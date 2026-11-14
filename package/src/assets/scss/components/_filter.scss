@@ -58,7 +58,12 @@
 				&:after{
 					content:none;	
 				}
-				a{
+				a,
+				button{
+					background: none;
+					border: 0;
+					cursor: pointer;
+					font-family: inherit;
 					color: $headings-color;
 					font-size: 18px;
 					margin: 0;
@@ -68,7 +73,8 @@
 					font-weight: 600;
 				}
 				&.active{
-					a{
+					a,
+					button{
 						color: var(--primary);
 						border-color: var(--primary);
 					}
@@ -81,13 +87,15 @@
 				}
 				@include respond ('tab-port'){
 					margin: 0 5px -1px;
-					a{
+					a,
+					button{
 						font-size: 15px;
 					}
 				}
 				@include respond ('phone'){
 					margin: 0 0px -6px;
-					a{
+					a,
+					button{
 						font-size: 14px;
 					}
 				}	

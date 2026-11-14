@@ -2,10 +2,16 @@ import React from 'react';
 import CommanBanner from '../elements/CommanBanner';
 import { IMAGES } from '../constants/theme';
 import Faq from '../components/Faq';
+import SEO from '../components/SEO';
 
 const PrivacyPolicy = () => {
     return (
         <>
+            <SEO
+                title="Privacy Policy | Shrishti Interiors"
+                description="Read the privacy policy of Shrishti Interiors. Learn how we collect, protect, and use your personal information on our website."
+                keywords="privacy policy shrishti interiors, data protection, cookies policy"
+            />
             <div className="page-content bg-white">
                 <CommanBanner mainTitle="Privacy Policy" parentTitle="Home" pageName="Privacy Policy" bgImage={IMAGES.bannerbg3} />
                 <section className="content-inner-2">

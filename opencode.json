@@ -1,0 +1,23 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "skills": {
+    "paths": [".opencode/skills"]
+  },
+  "mcp": {
+    "contentful": {
+      "type": "local",
+      "command": ["npx", "-y", "@contentful/mcp-server"],
+      "env": {
+        "CONTENTFUL_MANAGEMENT_ACCESS_TOKEN": "${env:CONTENTFUL_MANAGEMENT_ACCESS_TOKEN}",
+        "SPACE_ID": "as5c0n8s85du",
+        "ENVIRONMENT_ID": "master",
+        "CONTENTFUL_HOST": "api.contentful.com"
+      }
+    },
+    "netlify": {
+      "command": "npx",
+      "args": ["-y", "@netlify/mcp"],
+      "enabled": true
+    }
+  }
+}

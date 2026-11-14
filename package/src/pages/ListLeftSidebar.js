@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper'
 import ModalVideo from 'react-modal-video';
+import SEO from '../components/SEO';
 
 
 const listSidebar = [
@@ -21,6 +22,11 @@ const ListLeftSidebar = () => {
     const [isOpen, setOpen] = useState(false);
     return (
         <>
+            <SEO
+                title="Blog - List Left Sidebar"
+                description="Browse our interior design blog with list left sidebar layout for easy navigation and reading."
+                keywords="interior design blog, blog sidebar, home renovation articles"
+            />
             <div className="page-content bg-white">
                 <CommanBanner mainTitle="List Left Sidebar" parentTitle="Home" pageName="Our Blog" bgImage={IMAGES.bannerbg3} />
                 <div className="content-inner">
@@ -30,7 +36,7 @@ const ListLeftSidebar = () => {
                             <div className="col-xl-8 col-lg-8">
                                 <div className="dz-card blog-half style-1 m-b50 aos-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                                     <div className="dz-media">
-                                        <Link to="/blog-details"><img src={IMAGES.blogGridPic2} alt=""/></Link>
+                                        <Link to="/blog-details"><img src={IMAGES.blogGridPic2} alt="Modern house interior blog post"/></Link>
                                     </div>
                                     <div className="dz-info">
                                         <div className="dz-meta">
@@ -59,7 +65,7 @@ const ListLeftSidebar = () => {
                                             {
                                                 listSidebar.map((item, ind)=>(
                                                     <SwiperSlide className="swiper-slide" key={ind}>
-                                                        <Link to="/blog-details"><img src={item.img} alt="" /></Link>
+                                                        <Link to="/blog-details"><img src={item.img} alt={`Blog post ${ind + 1}`} /></Link>
                                                     </SwiperSlide>
                                                 ))
                                             }
@@ -90,7 +96,7 @@ const ListLeftSidebar = () => {
                                 <div className="dz-card blog-half style-1 m-b50 post-video aos-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                                     <div className="dz-media">
                                         <Link to="#">
-                                            <img src={IMAGES.blogGridPic3} alt=""/>
+                                            <img src={IMAGES.blogGridPic3} alt="Sample hotel art interior blog video"/>
                                                 <div className="post-video-icon fa fa-play"
                                                     onClick={() => { setOpen(true) }}
                                                 ></div>
@@ -131,7 +137,7 @@ const ListLeftSidebar = () => {
                                 </div>
                                 <div className="dz-card blog-half style-1 m-b50 aos-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                                     <div className="dz-media">
-                                        <Link to="/blog-details"><img src={IMAGES.blogGridPic2} alt=""/></Link>
+                                        <Link to="/blog-details"><img src={IMAGES.blogGridPic2} alt="Residential interior design project"/></Link>
                                     </div>
                                     <div className="dz-info">
                                         <div className="dz-meta">

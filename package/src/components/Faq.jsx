@@ -1,33 +1,32 @@
 import React, { useState } from 'react';
-import Accordion from 'react-bootstrap/Accordion';
 import { IMAGES } from '../constants/theme';
 import { Helmet } from 'react-helmet-async';
 
 const accordian = [
     // Existing Core Questions
-    { id: 1, key: 0, title: " What is your process for working with a client?", data: "We believe in open communication! We'll start with a free consultation to understand your vision and needs. Then, we provide a detailed estimate and project timeline. Our process includes: 1. Consultation, 2. Layout & 3D Design, 3. Material Selection, 4. Execution, and 5. Final Handover." },
-    { id: 2, key: 1, title: " How do you ensure the quality of your work?", data: "Quality is our top priority. We use premium materials from trusted brands like Greenply, Century, Asian Paints, and Hafele. We employ experienced, skilled professionals and conduct regular site supervision with a 50-point quality checklist to ensure perfection." },
-    { id: 3, key: 2, title: " Can you customize your services to fit my specific needs?", data: "Absolutely! Every project is unique. Whether you need a budget-friendly refresh or a premium transformation, we tailor our services to your vision, budget, and timeline. We offer both turnkey solutions and design-only packages." },
-    { id: 4, key: 3, title: " Do you offer any warranties on your work?", data: "Yes, we stand behind our work. We offer a comprehensive 10-year warranty on workmanship and materials (subject to brand warranties). This covers carpentry, hardware, and installation defects, ensuring your peace of mind." },
+    { id: 1, key: 0, title: " What is your process for working with a client?", data: "We start with a free site visit to measure your flat and understand what you need. Then we share layout options, 3D views and a fixed quote. Once you approve, we order materials and start work. The five stages are: 1. Site visit, 2. Layout and 3D design, 3. Material selection, 4. Execution, 5. Final handover." },
+    { id: 2, key: 1, title: " How do you ensure the quality of your work?", data: "We use branded materials only: Century or Greenply plywood, Merino or Royal Touch laminates, Hettich or Hafele hardware, and Asian Paints Royale. Our carpenters are in-house, not outsourced, and a supervisor checks the site against a 50-point list before we hand over." },
+    { id: 3, key: 2, title: " Can you customize your services to fit my specific needs?", data: "Yes. We do both turnkey projects and design-only packages, so you can pick what suits your budget and timeline. Some clients only want a modular kitchen or a wardrobe; others want the whole flat done." },
+    { id: 4, key: 3, title: " Do you offer any warranties on your work?", data: "Yes, and it is written into the contract. Civil and carpentry work carries a 10-year warranty, waterproofing 5 years, and painting and electrical 2 years. Brand warranties on hardware and fittings are passed on to you along with the bills." },
     { id: 5, key: 4, title: " What are your payment terms?", data: "We offer flexible payment options: 10% booking amount, 40% at material delivery, 40% during work progress, and 10% upon completion. We accept bank transfers, cheques, and UPI. We also assist with EMI options through banking partners." },
-    { id: 6, key: 5, title: " Do you offer a lowest price guarantee?", data: "Yes! We offer a Best Price Guarantee. If you receive a lower written quote from another qualified interior design firm for the same scope of work and quality, we'll match it. Terms apply - quotes must be for identical specifications." },
+    { id: 6, key: 5, title: " Do you offer a lowest price guarantee?", data: "Yes. If you get a lower written quote from another firm for the same scope and materials, we will match it. The quote has to be for identical specifications, so compare the plywood grade and hardware brands before you do." },
 
     // Pricing & Cost Questions (High Priority for AI)
     { id: 7, key: 6, title: " What is the interior design cost per square foot in Mumbai?", data: "Interior design costs in Mumbai typically range from ₹800 to ₹1,200 per sq ft for basic interiors, ₹1,500 to ₹2,500 per sq ft for premium interiors, and ₹3,000+ per sq ft for high-end projects. The final cost depends on materials, finish quality, and scope of work." },
     { id: 8, key: 7, title: " How much does a 2BHK interior design cost in Mumbai?", data: "A complete 2BHK interior design project in Mumbai usually costs between ₹7 Lakhs to ₹15 Lakhs. A budget package might start at ₹5 Lakhs, while a premium 2BHK renovation can go up to ₹25 Lakhs depending on material selection (veneers, Italian marble, etc.)." },
-    { id: 9, key: 8, title: " Do you charge a consultation fee?", data: "No, our initial consultation and site visit within Mumbai (including Mira Road, Thane, Andheri) are completely FREE. We discuss your requirements and provide a preliminary budget estimate at no cost." },
-    { id: 10, key: 9, title: " Are there any hidden costs in your estimates?", data: "We pride ourselves on transparency. Our quotes are itemized and detailed. Unless the scope of work changes or you select more expensive materials during the process, the price we quote is the price you pay. No surprises." },
+    { id: 9, key: 8, title: " Do you charge a consultation fee?", data: "No. The first site visit and consultation are free anywhere in Mumbai, including Mira Road, Thane and Andheri. We measure your flat, discuss what you need, and give you a rough budget range at no cost." },
+    { id: 10, key: 9, title: " Are there any hidden costs in your estimates?", data: "No. Our quotes are itemised line by line, so you can see what each item costs. The price we quote is the price you pay, unless you change the scope of work or pick more expensive materials later. We do not add charges at the end." },
 
     // Timeline & Process
     { id: 11, key: 10, title: " How long does it take to complete a home interior project?", data: "A standard 2BHK or 3BHK interior project takes 45 to 60 days to complete. This includes design finalization (1-2 weeks) and execution (4-6 weeks). Larger premium projects or complete renovations involving civil work may take 75-90 days." },
     { id: 12, key: 11, title: " Do you provide 3D designs before starting work?", data: "Yes, we provide 2D layouts and realistic 3D renderings for all major rooms (Living, Bedroom, Kitchen). This helps you visualize the final look, colors, and lighting before we cut a single piece of wood." },
-    { id: 13, key: 12, title: " Do I need to be present at the site every day?", data: "Not at all. We assign a dedicated project manager who supervises the site daily. We send you regular photo and video updates via WhatsApp so you can track progress from anywhere." },
+    { id: 13, key: 12, title: " Do I need to be present at the site every day?", data: "No. A project manager supervises the site daily and sends you photos and videos on WhatsApp. Most clients visit once a week, and we call you before any decision that affects the cost." },
 
     // Services & Scope
-    { id: 14, key: 13, title: " Do you do partial renovations or only full homes?", data: "We handle both! Whether you want to renovate just your kitchen, upgrade a bedroom, or redo your entire apartment, we are happy to help. We also specialize in modular kitchens and wardrobe units." },
-    { id: 15, key: 14, title: " Do you undertake commercial and office interior projects?", data: "Yes, we have extensive experience in commercial interiors. We design offices, retail showrooms, clinics, and restaurants, focusing on space optimization, brand aesthetics, and functional workflow." },
+    { id: 14, key: 13, title: " Do you do partial renovations or only full homes?", data: "Both. We take up single-room work like a kitchen or bedroom upgrade, and full-flat renovations. Modular kitchens and wardrobes are a large part of what we do." },
+    { id: 15, key: 14, title: " Do you undertake commercial and office interior projects?", data: "Yes. We do offices, retail showrooms, clinics and restaurants. Commercial work is usually planned around your working hours so the business can keep running during the fit-out." },
     { id: 16, key: 15, title: " Do you handle civil work like tiling and plumbing?", data: "Yes, we are a turnkey interior design firm. We handle everything including civil work, flooring, plumbing, electrical wiring, false ceilings, painting, and carpentry. You get a single point of contact for the entire project." },
-    { id: 17, key: 16, title: " Do you provide Vastu-compliant interior designs?", data: "Yes, we understand the importance of Vastu Shastra for many clients. Our designers can incorporate Vastu principles for entrance placement, master bedroom direction, kitchen layout, and color selection to ensure positive energy." },
+    { id: 17, key: 16, title: " Do you provide Vastu-compliant interior designs?", data: "Yes. If Vastu matters to you, we can plan the entrance, master bedroom direction, kitchen placement and colours accordingly. Tell us at the design stage, because it is harder to change once the carpentry is built." },
 
     // Materials & Comparison
     { id: 18, key: 17, title: " Modular Kitchen vs. Carpenter-made: Which is better?", data: "Modular kitchens offer better finish, machine-pressed durability, and faster installation (2-3 weeks). Carpenter-made kitchens offer more customization for odd-shaped spaces but take longer. We recommend Modular for quality and finish, but can provide semi-modular solutions too." },
@@ -35,13 +34,13 @@ const accordian = [
 
     // Location & Trust
     { id: 20, key: 19, title: " Which areas in Mumbai do you serve?", data: "We serve the entire Mumbai Metropolitan Region (MMR). Our primary focus areas include Mira Road, Bhayandar, Dahisar, Borivali, Kandivali, Malad, Goregaon, Andheri, Bandra, Thane, and Navi Mumbai." },
-    { id: 21, key: 20, title: " Why should I choose Interiors in Mumbai for my Mira Road home?", data: "We are locally based in Mira Road (Shop 7, Aashirwad Bldg), which means we can visit your site instantly. We understand the local building layouts (Lodha, Kanakia, etc.) and have strong relationships with local suppliers, ensuring faster execution and better support." },
-    { id: 22, key: 21, title: " Do you have your own labor team?", data: "Yes, we have our own in-house team of skilled carpenters, painters, electricians, and civil workers. We do not outsource critical tasks to random contractors, which allows us to maintain strict quality control and timelines." },
+    { id: 21, key: 20, title: " Why should I choose Interiors in Mumbai for my Mira Road home?", data: "Our office and workshop are both in Mira Road East, so we can reach your site the same day. We have worked in most of the local buildings, including Lodha and Kanakia, and we know the suppliers here, which keeps material delivery quick." },
+    { id: 22, key: 21, title: " Do you have your own labor team?", data: "Yes. Our carpenters, painters, electricians and civil workers are on our own payroll. We do not hand critical work to outside contractors, which is how we keep to the schedule and control the finish." },
 
     // Miscellaneous
-    { id: 23, key: 22, title: " Can you work with my existing furniture?", data: "Yes, we can refurbish or integrate your existing furniture into the new design. We believe in sustainable design and will advise you on what can be retained versus what should be replaced for the best look." },
-    { id: 24, key: 23, title: " Do you provide post-completion service?", data: "Yes, our relationship doesn't end at handover. We provide 6 months of free service support for any minor adjustments (hinges, alignment) and honor our 5-year warranty on materials and workmanship." },
-    { id: 25, key: 24, title: " How do I get started?", data: "It's simple! Call us at +91 998 724 1424 or fill out the contact form on our website. We'll schedule a free site visit, discuss your requirements, and give you a preliminary estimate." }
+    { id: 23, key: 22, title: " Can you work with my existing furniture?", data: "Yes. We can refurbish pieces that are still solid, or build new units around them so the finish matches. We will tell you honestly which items are worth keeping and which will look out of place." },
+    { id: 24, key: 23, title: " Do you provide post-completion service?", data: "Yes. You get 6 months of free service for minor adjustments like hinge alignment or drawer tuning. After that, the 10/5/2-year warranty still applies, and you can call the same number you used during the project." },
+    { id: 25, key: 24, title: " How do I get started?", data: "Call or WhatsApp us on +91 998 724 1424, or fill in the contact form on this site. We will fix a free site visit, look at your flat, and give you a rough budget range before you commit to anything." }
 ];
 
 const Faq = () => {
@@ -92,20 +91,19 @@ const Faq = () => {
                                 <h6 className="sub-title text-primary">FAQ</h6>
                                 <h2 className="title">Get Every Answer From Here</h2>
                             </div>
-                            <Accordion defaultActiveKey="0" className="dz-accordion accordion-sm" id="accordionFaq">
+                            <div className="faq-accordion" id="faq-accordion">
                                 {accordian.slice(0, visibleCount).map((d, i) => (
-                                    <Accordion.Item eventKey={`${d.key}`} key={i}>
-                                        <Accordion.Header as="h3">
+                                    <details className="faq-item" key={i} id={`faq-${d.key}`}>
+                                        <summary className="faq-question">
                                             {d.title}
                                             <span className="accordion-icon"></span>
-                                        </Accordion.Header>
-                                        <Accordion.Body>
+                                        </summary>
+                                        <div className="faq-answer">
                                             <p className="m-b0">{d.data}</p>
-                                        </Accordion.Body>
-                                    </Accordion.Item>
+                                        </div>
+                                    </details>
                                 ))}
-                            </Accordion>
-
+                            </div>
                             <div className="text-center m-t30">
                                 <button
                                     onClick={handleLoadMore}
