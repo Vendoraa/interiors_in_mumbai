@@ -15,11 +15,10 @@ import Faq from '../components/Faq';
 
 import HowWeWork from '../components/HowWeWork';
 import SEO from '../components/SEO';
-import { StatsBand, Certifications } from '../components/EeatSignals';
+import { StatsBand, Certifications, ServiceAreas } from '../components/EeatSignals';
 
 const slideImg = [
-    { text: "Interiors in Mumbai", img: process.env.PUBLIC_URL + "/images/main-slider/pic1.webp" },
-    { text: "DESIGNING", img: pic2 },
+    { text: "Interior Design & Turnkey Contractors in Mumbai", img: process.env.PUBLIC_URL + "/images/main-slider/pic1.webp" },
 ];
 
 const Home = () => {
@@ -28,7 +27,7 @@ const Home = () => {
     return (
         <>
             <SEO
-                title="Interior Designers in Mumbai | Home Interiors & Renovation"
+                title="Interior Designers in Mumbai | Home Renovation & Interiors"
                 description="Interior design and turnkey home renovation in Mumbai. 1,200+ homes completed since 2009. Free site visit, 3D designs and a fixed quote before work starts."
                 keywords="Interior Designers Mumbai, Home Interiors Mumbai, Home Renovation Mumbai, Modular Kitchen Mumbai, Turnkey Interior Contractors, Interior Design Mira Road"
             />
@@ -115,6 +114,7 @@ const Home = () => {
                 </section>
                 <StatsBand />
                 <Certifications />
+                <ServiceAreas />
             </div>
 
         </>

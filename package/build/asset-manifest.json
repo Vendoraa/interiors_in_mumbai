@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.d37e484b.css",
-    "main.js": "/static/js/main.832d4dd4.js",
+    "main.js": "/static/js/main.d391bfad.js",
     "static/css/684.aab367f2.chunk.css": "/static/css/684.aab367f2.chunk.css",
-    "static/js/684.058826e4.chunk.js": "/static/js/684.058826e4.chunk.js",
+    "static/js/684.f80adb16.chunk.js": "/static/js/684.f80adb16.chunk.js",
     "static/js/891.8aebb498.chunk.js": "/static/js/891.8aebb498.chunk.js",
     "static/js/752.cc589a5b.chunk.js": "/static/js/752.cc589a5b.chunk.js",
     "static/js/925.73ce2038.chunk.js": "/static/js/925.73ce2038.chunk.js",
@@ -150,12 +150,12 @@
     "static/media/logo-gray3.webp": "/static/media/logo-gray3.565a03faaf7bf5cf061a.webp",
     "static/media/logo-gray6.webp": "/static/media/logo-gray6.9614ec7f6ba0fbecbf4b.webp",
     "static/media/logo-icon.webp": "/static/media/logo-icon.1e078f186e517dbe6209.webp",
-    "static/media/interiors_in_mumbai_logo.svg": "/static/media/interiors_in_mumbai_logo.13b7d42460e057c53a4e15dc0059034d.svg",
+    "static/media/interiors_in_mumbai_logo.svg": "/static/media/interiors_in_mumbai_logo.0bf873460a04ef16a4f5e4536488ae00.svg",
     "static/media/black-twill.webp": "/static/media/black-twill.2b764ec53317a32f024e.webp",
     "static/media/white-twill.webp": "/static/media/white-twill.272bc5ee22e93ada12d9.webp"
   },
   "entrypoints": [
     "static/css/main.d37e484b.css",
-    "static/js/main.832d4dd4.js"
+    "static/js/main.d391bfad.js"
   ]
 }

@@ -9,6 +9,15 @@ import {
   GOOGLE_REVIEW_URL,
 } from '../seo/eeat';
 
+// Map service areas to their dedicated location landing pages (local SEO internal links)
+const AREA_LINKS = {
+  'Mira Road': '/interior-designers-mira-road',
+  'Andheri': '/interior-designers-andheri',
+  'Bandra': '/interior-designers-bandra',
+  'Powai': '/interior-designers-powai',
+  'Thane': '/interior-designers-thane',
+};
+
 export const StatsBand = () => (
   <section className="section-full content-inner-2 bg-gray">
     <div className="container">
@@ -57,11 +66,25 @@ export const ServiceAreas = () => (
         <p>We take up projects across Mumbai and the suburbs, from Mira Road to Navi Mumbai.</p>
       </div>
       <div className="row text-center">
-        {SERVICE_AREAS.map((area, i) => (
-          <div className="col-6 col-md-3 m-b20" key={i}>
-            <span className="tag m-b10" style={{ display: 'inline-block' }}>{area}</span>
-          </div>
-        ))}
+        {SERVICE_AREAS.map((area, i) => {
+          const slug = AREA_LINKS[area];
+          return (
+            <div className="col-6 col-md-3 m-b20" key={i}>
+              {slug ? (
+                <Link
+                  to={slug}
+                  className="tag m-b10"
+                  style={{ display: 'inline-block' }}
+                  aria-label={`Interior designers in ${area}`}
+                >
+                  {area}
+                </Link>
+              ) : (
+                <span className="tag m-b10" style={{ display: 'inline-block' }}>{area}</span>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   </section>
